@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Afghanistan (+93)</key>
+	<string>+93</string>
+	<key>Albania (+355)</key>
+	<string>+355</string>
+	<key>Algeria (+213)</key>
+	<string>+355</string>
+    <key>American Samoa (+1684)</key>
+    <string>+1684</string>
+    <key>Andorra (+376)</key>
+    <string>+376</string>
+    <key>Angola (+244)</key>
+    <string>+244</string>
+    <key>Anguilla (+1264)</key>
+    <string>+1264</string>
+    <key>Antigua and Barbuda (+1268)</key>
+    <string>+1268</string>
+    <key>Argentina-Buenos Aires (+54)</key>
+    <string>+54</string>
+    <key>Armenia (+374)</key>
+    <string>+374</string>
+    <key>Aruba (+297)</key>
+    <string>+297</string>
+    <key>Australia (+61)</key>
+    <string>+61</string>
+    <key>Austria (+43)</key>
+    <string>+43</string>
+    <key>Azerbaijan (+994)</key>
+    <string>+994</string>
+    <key>Bahamas (+1242)</key>
+    <string>+1242</string>
+    <key>Bahrain (+973)</key>
+    <string>+973</string>
+    <key>Bangladesh (+880)</key>
+    <string>+880</string>
+    <key>Barbados (+1246)</key>
+    <string>+1246</string>
+    <key>Belarus (+375)</key>
+    <string>+375</string>
+    <key>Belgium (+32)</key>
+    <string>+32</string>
+    <key>Belize (+501)</key>
+    <string>+501</string>
+    <key>Benin (+229)</key>
+    <string>+229</string>
+    <key>Bermuda (+1441)</key>
+    <string>+1441</string>
+    <key>Bhutan (+975)</key>
+    <string>+975</string>
+    <key>Bolivia (+591)</key>
+    <string>+591</string>
+    <key>Bosnia and Herzegovina (+387)</key>
+    <string>+387</string>
+    <key>Botswana (+267)</key>
+    <string>+267</string>
+    <key>Brazil (+55)</key>
+    <string>+55</string>
+    <key>British Indian Ocean (+246)</key>
+    <string>+246</string>
+    <key>British Virgin Islands (+1284)</key>
+    <string>+1284</string>
+    <key>Brunei (+673)</key>
+    <string>+673</string>
+    <key>Bulgaria (+359)</key>
+    <string>+359</string>
+    <key>Burkina Faso (+226)</key>
+    <string>+226</string>
+    <key>Burma-Myanmar (+95)</key>
+    <string>+95</string>
+    <key>Burundi (+257)</key>
+    <string>+257</string>
+    <key>Cambodja (+855)</key>
+    <string>+855</string>
+    <key>Cameroon (+237)</key>
+    <string>+237</string>
+    <key>Canada (+1)</key>
+    <string>+1</string>
+    <key>Cape Verde (+238)</key>
+    <string>+238</string>
+    <key>Cayman Islands (+1345)</key>
+    <string>+1345</string>
+    <key>Central African Republic (+236)</key>
+    <string>+236</string>
+    <key>Chad (+235)</key>
+    <string>+235</string>
+    <key>Chile (+56)</key>
+    <string>+56</string>
+    <key>China (+86)</key>
+    <string>+86</string>
+    <key>Christmas Island (+6189)</key>
+    <string>+6189</string>
+    <key>Colombia (+57)</key>
+    <string>+57</string>
+    <key>Comoros (+269)</key>
+    <string>+269</string>
+    <key>Congo (+242)</key>
+    <string>+242</string>
+    <key>Cook Islands (+682)</key>
+    <string>+682</string>
+    <key>Costa Rica (+506)</key>
+    <string>+506</string>
+    <key>Croatia (+385)</key>
+    <string>+385</string>
+    <key>Cuba (+53)</key>
+    <string>+53</string>
+    <key>Curaçao (+599)</key>
+    <string>+599</string>
+    <key>Cyprus (+357)</key>
+    <string>+357</string>
+    <key>Czech Republic (+420)</key>
+    <string>+420</string>
+    <key>Denmark (+45)</key>
+    <string>+45</string>
+    <key>Djibouti (+253)</key>
+    <string>+253</string>
+    <key>Dominica (+1767)</key>
+    <string>+1767</string>
+    <key>Dominican Republic (+1809)</key>
+    <string>+1809</string>
+    <key>East Timor (+670)</key>
+    <string>+670</string>
+    <key>Ecuador (+593)</key>
+    <string>+593</string>
+    <key>Egypt (+20)</key>
+    <string>+20</string>
+    <key>El Salvador (+503)</key>
+    <string>+503</string>
+    <key>Equatorial Guinea (+240)</key>
+    <string>+240</string>
+    <key>Eritrea (+291)</key>
+    <string>+291</string>
+    <key>Estonia (+372)</key>
+    <string>+372</string>
+    <key>Ethiopia (+251)</key>
+    <string>+251</string>
+    <key>Faroe Islands (+298)</key>
+    <string>+298</string>
+    <key>Fiji (+679)</key>
+    <string>+679</string>
+    <key>Finland (+358)</key>
+    <string>+358</string>
+    <key>France (+33)</key>
+    <string>+33</string>
+    <key>French Guiana (+594)</key>
+    <string>+594</string>
+    <key>French Polynesia (+689)</key>
+    <string>+689</string>
+    <key>Gabon (+241)</key>
+    <string>+241</string>
+    <key>Gambia (+220)</key>
+    <string>+220</string>
+    <key>Georgia (+995)</key>
+    <string>+995</string>
+    <key>Germany (+49)</key>
+    <string>+49</string>
+    <key>Ghana (+233)</key>
+    <string>+233</string>
+    <key>Guadeloupe (+590)</key>
+    <string>+590</string>
+    <key>Guam (+1671)</key>
+    <string>+1671</string>
+    <key>Guatemala (+502)</key>
+    <string>+502</string>
+    <key>Guinea (+224)</key>
+    <string>+224</string>
+    <key>Guinea-Bissau (+245)</key>
+    <string>+245</string>
+    <key>Guyana (+592)</key>
+    <string>+592</string>
+    <key>Haiti (+509)</key>
+    <string>+509</string>
+    <key>Honduras (+504)</key>
+    <string>+504</string>
+    <key>Hong Kong (+852)</key>
+    <string>+852</string>
+    <key>Hungary (+36)</key>
+    <string>+36</string>
+    <key>Iceland (+354)</key>
+    <string>+354</string>
+    <key>India (+91)</key>
+    <string>+91</string>
+    <key>Indonesia (+62)</key>
+    <string>+62</string>
+    <key>Iran (+98)</key>
+    <string>+98</string>
+    <key>Iraq (+964)</key>
+    <string>+964</string>
+    <key>Ireland (+353)</key>
+    <string>+353</string>
+    <key>Israel (+972)</key>
+    <string>+972</string>
+    <key>Italy (+39)</key>
+    <string>+39</string>
+    <key>Ivory Coast (+225)</key>
+    <string>+225</string>
+    <key>Jamaica (+1876)</key>
+    <string>+1876</string>
+    <key>Japan (+81)</key>
+    <string>+81</string>
+    <key>Jordan (+962)</key>
+    <string>+962</string>
+    <key>Kazakhstan (+7)</key>
+    <string>+7</string>
+    <key>Kenya (+254)</key>
+    <string>+254</string>
+    <key>Kiribati (+686)</key>
+    <string>+686</string>
+    <key>Kuwait (+965)</key>
+    <string>+965</string>
+    <key>Kyrgyzstan (+996)</key>
+    <string>+996</string>
+    <key>Laos (+856)</key>
+    <string>+856</string>
+    <key>Latvia (+371)</key>
+    <string>+371</string>
+    <key>Lebanon (+961)</key>
+    <string>+961</string>
+    <key>Lesotho (+266)</key>
+    <string>+266</string>
+    <key>Liberia (+231)</key>
+    <string>+231</string>
+    <key>Libya (+218)</key>
+    <string>+218</string>
+    <key>Liechtenstein (+423)</key>
+    <string>+423</string>
+    <key>Lithuania (+370)</key>
+    <string>+370</string>
+    <key>Luxembourg (+352)</key>
+    <string>+352</string>
+    <key>Macau (+853)</key>
+    <string>+853</string>
+    <key>Macedonia (+389)</key>
+    <string>+389</string>
+    <key>Madagascar (+261)</key>
+    <string>+261</string>
+    <key>Malawi (+265)</key>
+    <string>+265</string>
+    <key>Malaysia (+60)</key>
+    <string>+60</string>
+    <key>Maldives (+960)</key>
+    <string>+960</string>
+    <key>Mali (+223)</key>
+    <string>+223</string>
+    <key>Malta (+356)</key>
+    <string>+356</string>
+    <key>Marshall Islands (+692)</key>
+    <string>+692</string>
+    <key>Martinique (+596)</key>
+    <string>+596</string>
+    <key>Mauritania (+222)</key>
+    <string>+222</string>
+    <key>Mauritius (+230)</key>
+    <string>+230</string>
+    <key>Mayotte (+262)</key>
+    <string>+262</string>
+    <key>Mexico (+52)</key>
+    <string>+52</string>
+    <key>Moldova (+373)</key>
+    <string>+373</string>
+    <key>Monaco (+377)</key>
+    <string>+377</string>
+    <key>Mongolia (+976)</key>
+    <string>+976</string>
+    <key>Montenegro (+382)</key>
+    <string>+382</string>
+    <key>Montserrat (+1664)</key>
+    <string>+1664</string>
+    <key>Morocco (+212)</key>
+    <string>+212</string>
+    <key>Mozambique (+258)</key>
+    <string>+258</string>
+    <key>Namibia (+264)</key>
+    <string>+264</string>
+    <key>Nauru (+674)</key>
+    <string>+674</string>
+    <key>Nepal (+977)</key>
+    <string>+977</string>
+    <key>Netherlands (+31)</key>
+    <string>+31</string>
+    <key>New Caledonia (+687)</key>
+    <string>+687</string>
+    <key>New Zealand (+64)</key>
+    <string>+64</string>
+    <key>Nicaragua (+505)</key>
+    <string>+505</string>
+    <key>Niger (+227)</key>
+    <string>+227</string>
+    <key>Nigeria (+234)</key>
+    <string>+234</string>
+    <key>Niue (+683)</key>
+    <string>+683</string>
+    <key>Norfolk Island (+672)</key>
+    <string>+672</string>
+    <key>Northern Mariana Islands (+1670)</key>
+    <string>+1670</string>
+    <key>North Korea (+850)</key>
+    <string>+850</string>
+    <key>Norway (+47)</key>
+    <string>+47</string>
+    <key>Oman (+968)</key>
+    <string>+968</string>
+    <key>Pakistan (+92)</key>
+    <string>+92</string>
+    <key>Palau (+680)</key>
+    <string>+680</string>
+    <key>Palestine (+970)</key>
+    <string>+970</string>
+    <key>Panama (+507)</key>
+    <string>+507</string>
+    <key>Papua New Guinea (+675)</key>
+    <string>+675</string>
+    <key>Paraguay (+595)</key>
+    <string>+595</string>
+    <key>Peru (+51)</key>
+    <string>+51</string>
+    <key>Philippines (+63)</key>
+    <string>+63</string>
+    <key>Pitcairn Islands (+870)</key>
+    <string>+870</string>
+    <key>Poland (+48)</key>
+    <string>+48</string>
+    <key>Portugal (+351)</key>
+    <string>+351</string>
+    <key>Puerto Rico (+1787)</key>
+    <string>+1787</string>
+    <key>Qatar (+974)</key>
+    <string>+974</string>
+    <key>Réunion (+262)</key>
+    <string>+262</string>
+    <key>Romania (+40)</key>
+    <string>+40</string>
+    <key>Russia (+7)</key>
+    <string>+7</string>
+    <key>Rwanda (+250)</key>
+    <string>+250</string>
+    <key>Saint Helena (+290)</key>
+    <string>+290</string>
+    <key>Saint Kitts and Nevis (+1869)</key>
+    <string>+1869</string>
+    <key>Saint Lucia (+1758)</key>
+    <string>+1758</string>
+    <key>Saint Martin (+1599)</key>
+    <string>+1599</string>
+    <key>Saint Pierre and Miquelon (+508)</key>
+    <string>+508</string>
+    <key>Saint Vincent (+1784)</key>
+    <string>+1784</string>
+    <key>Samoa (+685)</key>
+    <string>+685</string>
+    <key>San Marino (+378)</key>
+    <string>+378</string>
+    <key>São Tomé and Príncipe (+239)</key>
+    <string>+239</string>
+    <key>Saudi Arabia (+966)</key>
+    <string>+966</string>
+    <key>Senegal (+221)</key>
+    <string>+221</string>
+    <key>Serbia (+381)</key>
+    <string>+381</string>
+    <key>Seychelles (+248)</key>
+    <string>+248</string>
+    <key>South Georgia (+500)</key>
+    <string>+500</string>
+    <key>Sierra Leone (+232)</key>
+    <string>+232</string>
+    <key>Singapore (+65)</key>
+    <string>+65</string>
+    <key>Slovakia (+421)</key>
+    <string>+421</string>
+    <key>Slovenia (+386)</key>
+    <string>+386</string>
+    <key>Solomon Islands (+677)</key>
+    <string>+677</string>
+    <key>Somalia (+252)</key>
+    <string>+252</string>
+    <key>South Africa (+27)</key>
+    <string>+27</string>
+    <key>South Korea (+82)</key>
+    <string>+82</string>
+    <key>South Sudan (+211)</key>
+    <string>+211</string>
+    <key>Spain (+34)</key>
+    <string>+34</string>
+    <key>Sri Lanka (+94)</key>
+    <string>+94</string>
+    <key>Sudan (+249)</key>
+    <string>+249</string>
+    <key>Suriname (+597)</key>
+    <string>+597</string>
+    <key>Swaziland (+268)</key>
+    <string>+268</string>
+    <key>Sweden (+46)</key>
+    <string>+46</string>
+    <key>Switzerland (+41)</key>
+    <string>+41</string>
+    <key>Syria (+963)</key>
+    <string>+963</string>
+    <key>Taiwan (+886)</key>
+    <string>+886</string>
+    <key>Tajikistan (+992)</key>
+    <string>+992</string>
+    <key>Tanzania (+255)</key>
+    <string>+255</string>
+    <key>Thailand (+66)</key>
+    <string>+66</string>
+    <key>Togo (+228)</key>
+    <string>+228</string>
+    <key>Tokelau (+690)</key>
+    <string>+228</string>
+    <key>Tonga (+676)</key>
+    <string>+676</string>
+    <key>Trinidad and Tobago (+1868)</key>
+    <string>+1868</string>
+    <key>Tunisia (+216)</key>
+    <string>+216</string>
+    <key>Turkey (+90)</key>
+    <string>+90</string>
+    <key>Turkmenistan (+993)</key>
+    <string>+993</string>
+    <key>Turks and Caicos Islands (+1649)</key>
+    <string>+1649</string>
+    <key>Tuvalu (+688)</key>
+    <string>+688</string>
+    <key>Uganda (+256)</key>
+    <string>+256</string>
+    <key>United Kingdom (+44)</key>
+    <string>+44</string>
+    <key>Ukraine (+380)</key>
+    <string>+380</string>
+    <key>United Arab Emirates (+971)</key>
+    <string>+971</string>
+    <key>Uruguay (+598)</key>
+    <string>+598</string>
+    <key>United States (+1)</key>
+    <string>+1</string>
+    <key>Uzbekistan (+998)</key>
+    <string>+998</string>
+    <key>Vanuatu (+678)</key>
+    <string>+678</string>
+    <key>Venezuela (+58)</key>
+    <string>+58</string>
+    <key>Vietnam (+84)</key>
+    <string>+84</string>
+    <key>Virgin Islands (+1340)</key>
+    <string>+1340</string>
+    <key>Wallis and Futuna (+681)</key>
+    <string>+681</string>
+    <key>Yemen (+967)</key>
+    <string>+967</string>
+    <key>Zambia (+260)</key>
+    <string>+260</string>
+    <key>Zimbabwe (+263)</key>
+    <string>+263</string>
+</dict>
+</plist>

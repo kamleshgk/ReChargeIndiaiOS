@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MGn-P0-zWf">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Menu-->
+        <scene sceneID="grl-Rl-16Q">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="RevealViewController" storyboardName="Menu" id="F4s-wM-npL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GiR-Of-ycm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-611" y="-120"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VP4-9j-eml">
+            <objects>
+                <navigationController id="MGn-P0-zWf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UaE-e8-5Y4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1BO-6w-6kp" kind="relationship" relationship="rootViewController" id="mY1-po-WC5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tE9-nY-iKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-344" y="298"/>
+        </scene>
+        <!--ReCharge India-->
+        <scene sceneID="Ouz-eD-Tzg">
+            <objects>
+                <viewController storyboardIdentifier="RegistrationViewController" id="1BO-6w-6kp" customClass="RegistrationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X24-pN-z1L"/>
+                        <viewControllerLayoutGuide type="bottom" id="eBp-qj-mmh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qla-i9-GXT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="u6A-kH-AUC">
+                                <rect key="frame" x="10" y="96" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="FCk-fY-8dv"/>
+                                    <constraint firstAttribute="height" constant="100" id="Xwh-sA-j9R"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ReCharge India Charging Stations App" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWW-oL-K4C">
+                                <rect key="frame" x="125" y="125" width="455" height="41"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xht-7K-h03">
+                                <rect key="frame" x="10" y="222" width="550" height="163"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="163" id="5KQ-k8-PAu"/>
+                                </constraints>
+                                <string key="text">The ReCharge India Charging Stations App needs to access your location to provide a full featured experience.
+
+We use your location to find nearby chargers and display your position on the map.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gke-Lb-fR7">
+                                <rect key="frame" x="195" y="445" width="209" height="30"/>
+                                <color key="backgroundColor" red="0.3061083342" green="0.62534893999999996" blue="0.99850118160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="209" id="4WN-vM-J1T"/>
+                                    <constraint firstAttribute="height" constant="30" id="7iW-pU-fdF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getStarted:" destination="1BO-6w-6kp" eventType="touchUpInside" id="fFS-kq-iCA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gke-Lb-fR7" firstAttribute="centerX" secondItem="Qla-i9-GXT" secondAttribute="centerX" id="2Ts-HJ-TaM"/>
+                            <constraint firstItem="gWW-oL-K4C" firstAttribute="leading" secondItem="u6A-kH-AUC" secondAttribute="trailing" constant="15" id="GCE-Hk-e1h"/>
+                            <constraint firstItem="Xht-7K-h03" firstAttribute="top" secondItem="u6A-kH-AUC" secondAttribute="bottom" constant="26" id="SoV-6r-34z"/>
+                            <constraint firstItem="eBp-qj-mmh" firstAttribute="top" secondItem="Gke-Lb-fR7" secondAttribute="bottom" constant="125" id="dzG-PX-mke"/>
+                            <constraint firstAttribute="trailing" secondItem="gWW-oL-K4C" secondAttribute="trailing" constant="20" id="ea4-Wc-tKP"/>
+                            <constraint firstItem="u6A-kH-AUC" firstAttribute="leading" secondItem="Qla-i9-GXT" secondAttribute="leading" constant="10" id="ehw-KM-0pd"/>
+                            <constraint firstItem="gWW-oL-K4C" firstAttribute="top" secondItem="X24-pN-z1L" secondAttribute="bottom" constant="61" id="mE0-01-Qb2"/>
+                            <constraint firstItem="u6A-kH-AUC" firstAttribute="top" secondItem="X24-pN-z1L" secondAttribute="bottom" constant="32" id="nUJ-yZ-PhJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Xht-7K-h03" secondAttribute="trailing" constant="40" id="slM-CZ-CxD"/>
+                            <constraint firstItem="Xht-7K-h03" firstAttribute="leading" secondItem="Qla-i9-GXT" secondAttribute="leading" constant="10" id="xhw-3H-Mrf"/>
+                            <constraint firstItem="gWW-oL-K4C" firstAttribute="centerY" secondItem="u6A-kH-AUC" secondAttribute="centerY" id="z8w-PU-VH5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ReCharge India" id="XwG-qO-jVC"/>
+                    <connections>
+                        <outlet property="getStarted" destination="Gke-Lb-fR7" id="q5G-OQ-CGJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kyd-ks-jHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="367" y="298"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Icon" width="180" height="180"/>
+    </resources>
+</document>

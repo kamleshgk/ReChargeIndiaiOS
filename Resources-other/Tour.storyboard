@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rD7-7r-6Gd">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="VVW-Sw-stO">
+            <objects>
+                <navigationController id="rD7-7r-6Gd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AQ2-Pb-zlk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="NBe-Gw-pav" kind="relationship" relationship="rootViewController" id="VdI-IW-pYi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bu7-FQ-PcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="373" y="-103"/>
+        </scene>
+        <!--ReCharge India Tour-->
+        <scene sceneID="nQg-yQ-fab">
+            <objects>
+                <viewController storyboardIdentifier="TourController" id="NBe-Gw-pav" customClass="TourController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lcm-oB-H2V"/>
+                        <viewControllerLayoutGuide type="bottom" id="cbW-Rl-wW7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IIf-7G-7Jm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tour1.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="Nqx-VW-O1Q">
+                                <rect key="frame" x="0.0" y="64" width="600" height="455"/>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="VZo-df-grQ">
+                                <rect key="frame" x="0.0" y="519" width="600" height="37"/>
+                                <color key="backgroundColor" red="0.074074902139999996" green="0.1444222943" blue="0.7205024807" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="sCY-1s-WE6"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changeScreen:" destination="NBe-Gw-pav" eventType="valueChanged" id="fn7-1k-X1s"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.013284633949558906" green="0.033466242898848406" blue="0.22880456396666671" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nqx-VW-O1Q" firstAttribute="leading" secondItem="IIf-7G-7Jm" secondAttribute="leading" id="22a-Bp-HKm"/>
+                            <constraint firstItem="cbW-Rl-wW7" firstAttribute="top" secondItem="VZo-df-grQ" secondAttribute="bottom" id="6Ol-bj-njq"/>
+                            <constraint firstItem="Nqx-VW-O1Q" firstAttribute="top" secondItem="Lcm-oB-H2V" secondAttribute="bottom" id="Df9-Ue-jZ5"/>
+                            <constraint firstItem="VZo-df-grQ" firstAttribute="leading" secondItem="IIf-7G-7Jm" secondAttribute="leading" id="DhA-ce-T27"/>
+                            <constraint firstAttribute="trailing" secondItem="Nqx-VW-O1Q" secondAttribute="trailing" id="LJW-xy-HMx"/>
+                            <constraint firstItem="VZo-df-grQ" firstAttribute="top" secondItem="Nqx-VW-O1Q" secondAttribute="bottom" id="NEw-Fr-qlT"/>
+                            <constraint firstAttribute="trailing" secondItem="VZo-df-grQ" secondAttribute="trailing" id="x2L-Ie-PWR"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="ReCharge India Tour" id="GyT-bs-iJE">
+                        <barButtonItem key="leftBarButtonItem" image="sidemenu" id="Mig-M7-o4n"/>
+                        <barButtonItem key="rightBarButtonItem" title="Start" id="BTn-Qm-V5E">
+                            <connections>
+                                <action selector="closeView:" destination="NBe-Gw-pav" id="7zM-mV-o8a"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="closeBarBtn" destination="BTn-Qm-V5E" id="fne-Ld-u5E"/>
+                        <outlet property="pageControl" destination="VZo-df-grQ" id="RGt-Vp-tEn"/>
+                        <outlet property="sideMenuBarBtn" destination="Mig-M7-o4n" id="PBg-Vj-9LY"/>
+                        <outlet property="tourImage" destination="Nqx-VW-O1Q" id="R98-FJ-3Lu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wbn-dZ-ypF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1127" y="-103"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sidemenu" width="17" height="12"/>
+        <image name="tour1.PNG" width="640" height="1136"/>
+    </resources>
+</document>

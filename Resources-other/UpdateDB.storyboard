@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fuy-xC-cOG">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="2g7-cb-Xe3">
+            <objects>
+                <navigationController id="fuy-xC-cOG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="reJ-Hx-Vxd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="AJH-9k-eA4" kind="relationship" relationship="rootViewController" id="Lex-jX-oFX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mak-53-idu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-529" y="423"/>
+        </scene>
+        <!--Update Charge Point List-->
+        <scene sceneID="qap-c3-AZY">
+            <objects>
+                <viewController id="AJH-9k-eA4" customClass="UpdateDBViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tXD-hO-rOa"/>
+                        <viewControllerLayoutGuide type="bottom" id="3VW-z7-OE2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cxx-wX-o1g">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Database Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdv-xO-neO">
+                                <rect key="frame" x="20" y="97" width="202" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="202" id="7y9-HF-J5T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total Number of stations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HL2-jv-IHP">
+                                <rect key="frame" x="20" y="165" width="202" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date updated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5YQ-SL-ZWj">
+                                <rect key="frame" x="20" y="131" width="202" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="25th January 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0h-kU-JIl">
+                                <rect key="frame" x="267" y="131" width="323" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="21" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpg-kM-aq7">
+                                <rect key="frame" x="267" y="165" width="323" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGe-Xx-Aiv">
+                                <rect key="frame" x="196" y="422" width="209" height="30"/>
+                                <color key="backgroundColor" red="0.3061083342" green="0.62534893999999996" blue="0.99850118160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="S6F-wh-RE4"/>
+                                    <constraint firstAttribute="width" constant="209" id="TBh-qb-eia"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <state key="normal" title="Update Now!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UpdateDBNow:" destination="AJH-9k-eA4" eventType="touchUpInside" id="EwD-Qo-SEq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E72-zD-F3E">
+                                <rect key="frame" x="267" y="97" width="323" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1j4-2h-LZz">
+                                <rect key="frame" x="20" y="216" width="570" height="149"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="149" id="qI7-c6-cac"/>
+                                </constraints>
+                                <string key="text">Tap on the 'Update Now!' button to check if there is an updated database. 
+If an updated database is found,  the app will download the database and replace it for immediate use.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1j4-2h-LZz" secondAttribute="trailing" constant="10" id="0bf-4V-U79"/>
+                            <constraint firstItem="Wdv-xO-neO" firstAttribute="top" secondItem="tXD-hO-rOa" secondAttribute="bottom" constant="33" id="1Yn-iJ-GaW"/>
+                            <constraint firstAttribute="trailing" secondItem="zpg-kM-aq7" secondAttribute="trailing" constant="10" id="Bx7-y1-H9M"/>
+                            <constraint firstItem="5YQ-SL-ZWj" firstAttribute="leading" secondItem="HL2-jv-IHP" secondAttribute="leading" id="CVi-Pj-Sne"/>
+                            <constraint firstItem="RGe-Xx-Aiv" firstAttribute="top" secondItem="1j4-2h-LZz" secondAttribute="bottom" constant="57" id="GMc-O9-oJO"/>
+                            <constraint firstAttribute="trailing" secondItem="E72-zD-F3E" secondAttribute="trailing" constant="10" id="HgA-9K-V5a"/>
+                            <constraint firstAttribute="trailing" secondItem="G0h-kU-JIl" secondAttribute="trailing" constant="10" id="J66-1U-hWz"/>
+                            <constraint firstItem="5YQ-SL-ZWj" firstAttribute="leading" secondItem="Wdv-xO-neO" secondAttribute="leading" id="bCV-M2-W1z"/>
+                            <constraint firstItem="5YQ-SL-ZWj" firstAttribute="centerY" secondItem="G0h-kU-JIl" secondAttribute="centerY" id="bM7-Q5-g3h"/>
+                            <constraint firstItem="HL2-jv-IHP" firstAttribute="top" secondItem="5YQ-SL-ZWj" secondAttribute="bottom" constant="15" id="bpA-dz-CpR"/>
+                            <constraint firstItem="E72-zD-F3E" firstAttribute="centerY" secondItem="Wdv-xO-neO" secondAttribute="centerY" id="lR5-Cp-e07"/>
+                            <constraint firstItem="RGe-Xx-Aiv" firstAttribute="centerX" secondItem="cxx-wX-o1g" secondAttribute="centerX" id="nGq-63-dLg"/>
+                            <constraint firstItem="5YQ-SL-ZWj" firstAttribute="top" secondItem="Wdv-xO-neO" secondAttribute="bottom" constant="15" id="sRA-Xm-GUq"/>
+                            <constraint firstItem="HL2-jv-IHP" firstAttribute="centerY" secondItem="zpg-kM-aq7" secondAttribute="centerY" id="tKN-NB-ZEL"/>
+                            <constraint firstItem="Wdv-xO-neO" firstAttribute="leading" secondItem="cxx-wX-o1g" secondAttribute="leading" constant="20" id="wle-9t-zMW"/>
+                            <constraint firstItem="1j4-2h-LZz" firstAttribute="top" secondItem="HL2-jv-IHP" secondAttribute="bottom" constant="32" id="wz7-OZ-CO9"/>
+                            <constraint firstItem="HL2-jv-IHP" firstAttribute="leading" secondItem="1j4-2h-LZz" secondAttribute="leading" id="xmN-k6-X0b"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Update Charge Point List" id="VfA-bA-YU7">
+                        <barButtonItem key="leftBarButtonItem" image="sidemenu" id="ASP-2H-TG3"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="databaseDateAdded" destination="G0h-kU-JIl" id="kzp-Oa-wgX"/>
+                        <outlet property="databaseVersion" destination="E72-zD-F3E" id="lhR-A1-Xf9"/>
+                        <outlet property="sideMenuBarBtn" destination="ASP-2H-TG3" id="E7Y-Bv-3rT"/>
+                        <outlet property="stationCount" destination="zpg-kM-aq7" id="ZpF-8U-muq"/>
+                        <outlet property="updateButton" destination="RGe-Xx-Aiv" id="bTn-9O-6RH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bKg-zz-tvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="423"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sidemenu" width="17" height="12"/>
+    </resources>
+</document>

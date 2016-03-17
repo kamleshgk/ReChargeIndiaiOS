@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BWM-94-YYS">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="hFC-dJ-1ri">
+            <objects>
+                <navigationController id="BWM-94-YYS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PmN-zd-5dU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="UzA-D3-qLa" kind="relationship" relationship="rootViewController" id="qAG-yW-DEy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6KX-Pk-tR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-629" y="22"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="j3v-ol-5hk">
+            <objects>
+                <viewController id="UzA-D3-qLa" customClass="AboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Fo-ox-bpk"/>
+                        <viewControllerLayoutGuide type="bottom" id="h5d-5w-UOe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ug9-Mo-yqB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxf-nj-cky">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="l1x-fN-5Q0">
+                                <rect key="frame" x="563" y="72" width="37" height="37"/>
+                                <animations/>
+                                <color key="color" red="0.039000035080000002" green="0.093942060490000007" blue="0.63113789730000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="l1x-fN-5Q0" secondAttribute="trailing" id="03t-6Q-o2I"/>
+                            <constraint firstItem="h5d-5w-UOe" firstAttribute="top" secondItem="gxf-nj-cky" secondAttribute="bottom" id="FhA-OX-n9D"/>
+                            <constraint firstAttribute="trailing" secondItem="gxf-nj-cky" secondAttribute="trailing" id="UhH-hD-bkA"/>
+                            <constraint firstItem="l1x-fN-5Q0" firstAttribute="top" secondItem="1Fo-ox-bpk" secondAttribute="bottom" constant="8" id="aJQ-EE-YCs"/>
+                            <constraint firstItem="gxf-nj-cky" firstAttribute="leading" secondItem="Ug9-Mo-yqB" secondAttribute="leading" id="aRd-zI-6tv"/>
+                            <constraint firstItem="gxf-nj-cky" firstAttribute="top" secondItem="1Fo-ox-bpk" secondAttribute="bottom" id="hdX-Eh-iCA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="Qmp-Ld-JH6">
+                        <barButtonItem key="leftBarButtonItem" image="sidemenu" id="qIA-Cb-BfF"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activity" destination="l1x-fN-5Q0" id="3EP-4v-aeK"/>
+                        <outlet property="item" destination="Qmp-Ld-JH6" id="YbB-qV-mc5"/>
+                        <outlet property="sideMenuBarBtn" destination="qIA-Cb-BfF" id="2px-Hb-Qjm"/>
+                        <outlet property="webView" destination="gxf-nj-cky" id="cCz-1Q-b9G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SVR-lC-iz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="109" y="22"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sidemenu" width="17" height="12"/>
+    </resources>
+</document>
