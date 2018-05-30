@@ -15,7 +15,7 @@
 - (void)downloadUpdatedStationDB:(void (^)(NSMutableArray *stationList, NSError *error))completionHandler
 {
     //To be implemented
-    completionHandler(nil, error);
+    completionHandler(nil, nil);
     return;
 }
 

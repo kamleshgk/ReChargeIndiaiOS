@@ -64,9 +64,9 @@
     self.searchController.searchBar.translucent = YES;
     
     [self.searchController.searchBar sizeToFit];
-    self.searchController.searchBar.placeholder = @"Search Chargers";
+    self.searchController.searchBar.placeholder = @"City, Area";
     [self.searchController.searchBar setFrame:CGRectMake(0, 0, 200, 45)];
-    self.searchController.searchBar.barTintColor = [UIColor colorWithRed:19.0/255.0 green:36.0/255.0 blue:184.0/255.0 alpha:1];
+    self.searchController.searchBar.barTintColor = [UIColor colorWithRed:103.0/255.0 green:171.0/255.0 blue:69.0/255.0 alpha:1];
     // This is where you set the search bar in the navigation bar, instead of using table view's header ...
     [searchTextView addSubview:self.searchController.searchBar];
     
