@@ -50,11 +50,17 @@
     self.snippet = snippetString;
     
     if ([stationDetails.type isEqualToString:@"1"])
-        self.icon = [UIImage imageNamed:@"green"];
+        self.icon = [UIImage imageNamed:@"communityBus"];
     else if ([stationDetails.type isEqualToString:@"2"])
-        self.icon = [UIImage imageNamed:@"red"];
+        self.icon = [UIImage imageNamed:@"mahindra"];
     else if ([stationDetails.type isEqualToString:@"3"])
-        self.icon = [UIImage imageNamed:@"blue"];
+        self.icon = [UIImage imageNamed:@"ather"];
+    else if ([stationDetails.type isEqualToString:@"4"])
+        self.icon = [UIImage imageNamed:@"communityHome"];
+    else if ([stationDetails.type isEqualToString:@"5"])
+        self.icon = [UIImage imageNamed:@"fastCharger"];
+    else if ([stationDetails.type isEqualToString:@"6"])
+        self.icon = [UIImage imageNamed:@"sun"];
     
     self.groundAnchor = CGPointMake(0.5, 1);
     self.appearAnimation = kGMSMarkerAnimationPop;

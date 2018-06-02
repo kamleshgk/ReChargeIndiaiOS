@@ -128,7 +128,7 @@
 		"phones": "09582111692",
 		"pricing": "Free",
 		"notes": "At all reasonable times , late evening the owners charge their electric car. During the day it is accessible",
-		"type": "1",
+		"type": "4",
 		"isValidated": "1",
 		"lattitude": "28.58139",
 		"longitude": "77.21536"
@@ -608,7 +608,7 @@
 		"phones": "9945433992",
 		"pricing": "free",
 		"notes": "The charging station is available 7 days a week between 7.00AM TO 10.00PM. There is a 15 amp socket that can be used for all electric vehicles. Please call before going. Lots of open places to walk around, A bakery near by. ",
-		"type": "1",
+		"type": "4",
 		"isValidated": "1",
 		"lattitude": "12.97537",
 		"longitude": "77.47812"
@@ -634,8 +634,8 @@
 		"notes": "The charging station is available all days a week for 24 hours. There are 2 charge point (15 Amp) sockets for all electric vehicles. Sachin makes good snacks like Poha, Omelette etc. in his shop.  Also there are nice trails around the shop for walks amidst spectacular Mountain views",
 		"type": "1",
 		"isValidated": "1",
-		"lattitude": "18.02685",
-		"longitude": "74.0224"
+		"lattitude": "18.030283",
+		"longitude": "74.021813"
 	}, {
 		"stationid": "113",
 		"name": "MAPRO Food Park, Wai - Charging Station",
@@ -722,16 +722,16 @@
 		"longitude": "73.50756"
 	}, {
 		"stationid": "120",
-		"name": "Shirwal Charging - Transparent Energy Factory",
+		"name": "Hotel Vegas",
 		"contact": "Reception",
-		"address": "Opposite Hotel Vegas. Just before the Nira river bridge. Transparent Energy Pvt. Ltd., Pune - Bangalore Hwy, Shindewadi, Maharashtra 412801, India",
-		"phones": "+912169244879",
+		"address": "Pune - Bengaluru Hwy, Shindewadi, Maharashtra 412801",
+		"phones": "",
 		"pricing": "Free",
-		"notes": "The charging station is available all days a week from 9 AM to 7 PM. There are 2 charge point (15 Amp) sockets for all electric vehicles. Get in touch with Security at the gate. Hotel Vegas just opposite for good food.",
+		"notes": "Pune Community member charged once.  It is better to have something at the restaurant",
 		"type": "1",
 		"isValidated": "1",
-		"lattitude": "18.17218",
-		"longitude": "73.9526"
+		"lattitude": "18.171562",
+		"longitude": "73.953223"
 	}, {
 		"stationid": "121",
 		"name": "Jaipur GoEv GoPro Community Charging",
@@ -740,7 +740,7 @@
 		"phones": "+918824734427",
 		"pricing": "Free",
 		"notes": "The charging station is available 24 hours a day and supports Mahindra e2o, and all other EVs but you need to have to bring your own charger",
-		"type": "1",
+		"type": "4",
 		"isValidated": "1",
 		"lattitude": "26.905430",
 		"longitude": "75.834532"
@@ -752,24 +752,12 @@
 		"phones": "+919811013227",
 		"pricing": "Free",
 		"notes": "The charging station is available between 8.00 a.m. till 10.00 p.m and supports Mahindra e2o, and all other EVs. Please send a request msg on the number provided before coming. Please tell the guard that you want to charge your electric vehicle at flat 1027's garage and he will let you in. You will be asked to fill in your details in the register.",
-		"type": "1",
+		"type": "4",
 		"isValidated": "1",
 		"lattitude": "28.571706",
 		"longitude": "77.336336"
 	}, {
 		"stationid": "123",
-		"name": "Shirdi#3 - Vasavi Bhavan Hotel",
-		"contact": "Reception",
-		"address": "# 5 / 37/ 2 Neetha Lodge Road, 500 mts from Sai Baba Temple, Shirdi",
-		"phones": "+919423227799",
-		"pricing": "Free",
-		"notes": "The charging station is available between 8.00 a.m. till 10.00 p.m and supports all electric vehicles",
-		"type": "1",
-		"isValidated": "1",
-		"lattitude": "19.768041",
-		"longitude": "74.480351"
-	}, {
-		"stationid": "124",
 		"name": "Shirdi#3 - Vasavi Bhavan Hotel",
 		"contact": "Reception",
 		"address": "# 5 / 37/ 2 Neetha Lodge Road, 500 mts from Sai Baba Temple, Shirdi",
@@ -800,7 +788,7 @@
 		"phones": "9810267883",
 		"pricing": "Free",
 		"notes": "The charging station is available between 9 am to 6 pm on working days and supports all electric vehicles. Please sms/WhatsApp your name and car number and call before coming.",
-		"type": "1",
+		"type": "4",
 		"isValidated": "1",
 		"lattitude": "28.616933",
 		"longitude": "77.380404"
@@ -812,7 +800,7 @@
 		"phones": "9845839357",
 		"pricing": "Free",
 		"notes": "The charging station is available between 8am to 8pm and supports Mahindra electric cars. ",
-		"type": "1",
+		"type": "4",
 		"isValidated": "1",
 		"lattitude": "13.066148",
 		"longitude": "77.578483"
@@ -824,7 +812,7 @@
 		"phones": "9746228918",
 		"pricing": "Free",
 		"notes": "The charging station is available between 10am to 6pm and supports Mahindra electric cars.",
-		"type": "1",
+		"type": "4",
 		"isValidated": "1",
 		"lattitude": "10.5165562",
 		"longitude": "76.2206943"
@@ -847,7 +835,7 @@
 		"address": "Trinetra Petrol Pump, Mumbai-Pune Express Highway, near Lonavala Toll Plaza, Lonavala, Pune District",
 		"phones": "9822057263, 9850000777",
 		"pricing": "Rs 75 per hour",
-		"notes": "The charging station is available 24 hours and supports all electric vehicles. There is one 15 Amp socket",
+		"notes": "The charging station is available 24 hours and supports all electric vehicles. There are two 15 Amp sockets",
 		"type": "1",
 		"isValidated": "1",
 		"lattitude": "18.760835",
@@ -872,7 +860,7 @@
 		"phones": "+91 9845311225",
 		"pricing": "Free",
 		"notes": "The charging station has a 15Amp 3Pin socket.  This charge point is for Emergency or Top Up needs only. Avoid normal charging.",
-		"type": "1",
+		"type": "4",
 		"isValidated": "1",
 		"lattitude": "13.026418",
 		"longitude": "77.602789"
@@ -1081,30 +1069,6 @@
 		"lattitude": "17.534583",
 		"longitude": "78.488871"
 	}, {
-		"stationid": "154",
-		"name": "Mom & ME, Madhapur",
-		"contact": "Faiq(Store Manager)",
-		"address": "B.K.Towers, Plot No 1, Survey No 64, Huda Techno Enclave, Close to Cyber Towers building,Above HERO Motors, Diagonally opp to Paradise hotel,Madhapur , Hyderabad ",
-		"phones": "7799888033",
-		"pricing": "Free",
-		"notes": "The charging station has a e2o Wall Mounted Unit.  Available from 10:00 to 20:00 Hrs",
-		"type": "2",
-		"isValidated": "1",
-		"lattitude": "17.444751",
-		"longitude": "78.382691"
-	}, {
-		"stationid": "155",
-		"name": "Mom & ME, Banjara Hills",
-		"contact": "Manzoor(Store Manager)",
-		"address": "No. 8-2-793/A, Road # 12, AG Heights II, Next to Amruths Valley,Banjara Hills , Hyderabad ",
-		"phones": "7799888033",
-		"pricing": "Free",
-		"notes": "The charging station has a e2o Wall Mounted Unit.  Available from 10:00 to 20:00 Hrs",
-		"type": "2",
-		"isValidated": "1",
-		"lattitude": "17.407630",
-		"longitude": "78.445466"
-	}, {
 		"stationid": "156",
 		"name": "Sparsh, Ghoshpara",
 		"contact": "Manzoor(Store Manager)",
@@ -1116,90 +1080,6 @@
 		"isValidated": "1",
 		"lattitude": "22.63426",
 		"longitude": "88.43627"
-	}, {
-		"stationid": "157",
-		"name": "Mom & ME, Gachibowli",
-		"contact": "",
-		"address": "Netaji Plaza, Plot #123 & 124, Vinayak Nagar,Gachibowli , Hyderabad ",
-		"phones": "",
-		"pricing": "Free",
-		"notes": "The charging station has a e2o Wall Mounted Unit.  Available from 10:00 to 20:00 Hrs",
-		"type": "2",
-		"isValidated": "1",
-		"lattitude": "17.441437",
-		"longitude": "78.358558"
-	}, {
-		"stationid": "158",
-		"name": "Mom & ME, Madinaguda",
-		"contact": "Kareem(Store Manager)",
-		"address": "Ichoice Superstores Pvt Ltd, 9 & 10, Tulsiram Chambers,Madinaguda , Hyderabad ",
-		"phones": "9502289133",
-		"pricing": "Free",
-		"notes": "The charging station has a e2o Wall Mounted Unit.  Available from 10:00 to 20:00 Hrs",
-		"type": "2",
-		"isValidated": "1",
-		"lattitude": "17.494791",
-		"longitude": "78.341105"
-	}, {
-		"stationid": "159",
-		"name": "Mom & ME, Tolichowki",
-		"contact": "Mohammad Salauddin(Store Manager)",
-		"address": "Anand Silicon Chip, Gachibowli Road. (150 ft), Beside MC Donalds & brand factory, Old Mumbai highway,Tolichowki , Hyderabad ",
-		"phones": "7799664102",
-		"pricing": "Free",
-		"notes": "The charging station has a e2o Wall Mounted Unit.  Available from 10:00 to 20:00 Hrs",
-		"type": "2",
-		"isValidated": "1",
-		"lattitude": "17.405899",
-		"longitude": "78.403384"
-	}, {
-		"stationid": "160",
-		"name": "Mom & ME, Bahadur Guda",
-		"contact": "Santosh Kumar ( Store manager)",
-		"address": "Survey no:49/7,49/14,49/15, Bahadur Guda, LB Nagar , Hyderabad ",
-		"phones": "9160019155",
-		"pricing": "Free",
-		"notes": "The charging station has a e2o Wall Mounted Unit.  Available from 10:00 to 20:00 Hrs",
-		"type": "2",
-		"isValidated": "1",
-		"lattitude": "17.345769",
-		"longitude": "78.552782"
-	}, {
-		"stationid": "161",
-		"name": "Mom & ME, Begumpet",
-		"contact": "Mr.Mohsin( Store manager)",
-		"address": "No. 1-11-91 to 93, I, II & III Floor, Begumpet Main Road,Begumpet , Hyderabad ",
-		"phones": "9160018366",
-		"pricing": "Free",
-		"notes": "The charging station has a e2o Wall Mounted Unit.  Available from 10:00 to 20:00 Hrs",
-		"type": "2",
-		"isValidated": "1",
-		"lattitude": "17.444783",
-		"longitude": "78.461877"
-	}, {
-		"stationid": "162",
-		"name": "Mom & ME, Tirumalagiri",
-		"contact": "Ms. Rukmani ( Store manager)",
-		"address": "MP Plaza, Plot No 73, In Sy No 30, G.L.R. SY No 371, P&T Colony, Diagonally opp. RTA Office, Trimulagiri Main Road,Tirumalagiri , Secunderabad ",
-		"phones": "9160018366",
-		"pricing": "Free",
-		"notes": "The charging station has a e2o Wall Mounted Unit.  Available from 10:00 to 20:00 Hrs",
-		"type": "2",
-		"isValidated": "1",
-		"lattitude": "17.468659",
-		"longitude": "78.506655"
-	}, {
-		"stationid": "163",
-		"name": "Mom & ME, Habisguda",
-		"contact": "Dinesh(Store Manager)",
-		"address": "Welcome Plaza, 1-30,31,32,33, Uppal road, Next to woodland, Opp: Hotel Krishna Residency,Habisguda , Hyderabad ",
-		"phones": "9160088181",
-		"pricing": "Free",
-		"notes": "The charging station has a e2o Wall Mounted Unit.  Available from 10:00 to 20:00 Hrs",
-		"type": "2",
-		"isValidated": "1",
-		"lattitude": "17.416194",
-		"longitude": "78.544326"
 	}, {
 		"stationid": "164",
 		"name": "Mohan Motors Pvt Ltd, SALT LAKE CITY",
@@ -1298,18 +1178,6 @@
 		"longitude": "75.792922"
 	}, {
 		"stationid": "177",
-		"name": "Auto World, Sitapura Industrial Area",
-		"contact": "",
-		"address": "Near Poddar Pigment workshop, Sitapura Industrial Area, Jaipur ",
-		"phones": "",
-		"pricing": "Free",
-		"notes": "The charging station has a e2o Wall Mounted Unit.  Available from 10:00 to 20:00 Hrs",
-		"type": "2",
-		"isValidated": "1",
-		"lattitude": "26.781312",
-		"longitude": "75.830244"
-	}, {
-		"stationid": "178",
 		"name": "Auto World, Sitapura Industrial Area",
 		"contact": "",
 		"address": "Near Poddar Pigment workshop, Sitapura Industrial Area, Jaipur ",
@@ -1496,7 +1364,7 @@
 		"phones": "+91 8951234689",
 		"pricing": "Free. But encouraged to call before coming.",
 		"notes": "The charging station has a 15 Amp socket.  Available 9 AM to 7 PM",
-		"type": "1",
+		"type": "4",
 		"isValidated": "1",
 		"lattitude": "12.9235891",
 		"longitude": "77.5911703"
@@ -1532,7 +1400,7 @@
 		"phones": "+91 9412348345",
 		"pricing": "Free. Please call atleast 2 hours before coming.",
 		"notes": "The charging station has a 15 Amp socket. Station  available at all times. Owners available on phone during day hours.",
-		"type": "1",
+		"type": "4",
 		"isValidated": "1",
 		"lattitude": "30.3121",
 		"longitude": "78.05165"
@@ -1544,7 +1412,7 @@
 		"phones": "+91 9911144415",
 		"pricing": "Free.  Please call on the number mentioned in case of emergency charging in late hours.",
 		"notes": "The charging station has a 15 Amp socket compatible to Mahindra e2o. Available 7 am - 9 pm",
-		"type": "1",
+		"type": "4",
 		"isValidated": "1",
 		"lattitude": "28.615372",
 		"longitude": "77.090111"
@@ -1562,7 +1430,7 @@
 		"longitude": "76.9482529"
 	}, {
 		"stationid": "204",
-		"name": "Santa Cruz West Charge point",
+		"name": "Santa Cruz West Charge point - PluginIndia Lab",
 		"contact": "Raphae Halim",
 		"address": "Shop #4, 2nd Hasanabad Lane, Santacruz (West), Willingdon, Santacruz West, Mumbai, Maharashtra 400054, India",
 		"phones": "+91 9869088296",
@@ -1580,7 +1448,7 @@
 		"phones": "+91 9764001799",
 		"pricing": "Rs 50 per hour",
 		"notes": "The charging station has 2 15 Amp sockets for all EVs. Available 9 a.m. to 7 p.m",
-		"type": "1",
+		"type": "4",
 		"isValidated": "1",
 		"lattitude": "18.4476001",
 		"longitude": "73.5822978"
@@ -1592,22 +1460,10 @@
 		"phones": "+91 9880810745",
 		"pricing": "Free",
 		"notes": "The charge point is compatible to Mahindra e2o and Revai. Charging for only for top up and emergency's.",
-		"type": "1",
+		"type": "4",
 		"isValidated": "1",
 		"lattitude": "13.016256332397461",
 		"longitude": "77.54362487792969"
-	}, {
-		"stationid": "207",
-		"name": "Lonavala City Center Charge point",
-		"contact": "Iqbal",
-		"address": "Opposite Kumar Resort, Lonavala",
-		"phones": "+91 08805334996",
-		"pricing": "Rs 40 per hour",
-		"notes": "The charging station has a 15 Amp socket compatible to Mahindra e2o and all EVs. Available 24 hours",
-		"type": "1",
-		"isValidated": "1",
-		"lattitude": "18.752913",
-		"longitude": "73.404102"
 	}, {
 		"stationid": "208",
 		"name": "Thane Community Charge Point - GreenWhyNot",
@@ -1616,7 +1472,7 @@
 		"phones": "+91 98337 09822, +91 9873398229",
 		"pricing": "Rs 50 per charge session",
 		"notes": "The charging station has a 15 Amp socket compatible to Mahindra e2o and all EVs. Strictly call and go.",
-		"type": "1",
+		"type": "4",
 		"isValidated": "1",
 		"lattitude": "19.183008",
 		"longitude": "72.972527"
@@ -1656,18 +1512,6 @@
 		"isValidated": "1",
 		"lattitude": "19.446763",
 		"longitude": "73.347082"
-	}, {
-		"stationid": "212",
-		"name": "GreenLand, IgatPuri",
-		"contact": "Nizam Bhai",
-		"address": "Mumbai Nashik National Highway No 3, Igatpuri, Nashik - 422403, Near Mahindra And Mahindra",
-		"phones": "09224123022",
-		"pricing": "Rs 50 per hour.",
-		"notes": "2 Points. Available to charge all EV's",
-		"type": "1",
-		"isValidated": "1",
-		"lattitude": "19.6955715",
-		"longitude": "73.5375729"
 	}, {
 		"stationid": "213",
 		"name": "Shweta Print Pack Pvt. Ltd, Nashik",
@@ -1760,7 +1604,7 @@
          "phones": "+91 9008543434",
          "pricing": "Free",
          "notes": "1 Point. Available to charge all EV's",
-         "type": "1",
+         "type": "4",
          "isValidated": "1",
          "lattitude": "13.017298",
          "longitude": "77.590737"
@@ -1772,7 +1616,7 @@
          "phones": "+91 9686000533",
          "pricing": "Free",
          "notes": "10 AM - 5 PM. 1 Point. Available to charge all EV's",
-         "type": "1",
+         "type": "4",
          "isValidated": "1",
          "lattitude": "13.035742",
          "longitude": "77.608982"
@@ -1796,7 +1640,7 @@
         "phones": "+91 9762002721",
         "pricing": "Free",
         "notes": " 7:30 am to 11:30pm. 3 Points. Available to charge all EV's",
-        "type": "1",
+        "type": "4",
         "isValidated": "1",
         "lattitude": "18.497127",
         "longitude": "73.794157"
@@ -1808,19 +1652,19 @@
         "phones": "+91 8696177446",
         "pricing": "Free",
         "notes": "0900 hrs to 1800 hrs. 1 Point. Available to charge all EV's. Opposite Army Welfare Education Society",
-        "type": "1",
+        "type": "4",
         "isValidated": "1",
         "lattitude": "28.563222",
         "longitude": "77.141169"
         }, {
         "stationid": "225",
-        "name": " Gemno EV Charging Station",
+        "name": "Gemno EV Charging Station",
         "contact": "Gautam Arunachalam",
         "address": "PD4/5, TNPHC,Kelambakkam road,Melakottaiyur,Chennai,Tamilnadu,India, Pincode-600127",
         "phones": "+91 9445268057",
         "pricing": "Free",
         "notes": "24 hours. 1 Point. One 15A Charging Point with open parking",
-        "type": "1",
+        "type": "4",
         "isValidated": "1",
         "lattitude": "12.836521",
         "longitude": "80.138389"
@@ -1832,7 +1676,7 @@
         "phones": "+91 7983851554",
         "pricing": "250 INR",
         "notes": "5 am to 9 pm 1 Point. One 15A",
-        "type": "1",
+        "type": "4",
         "isValidated": "1",
         "lattitude": "30.293814",
         "longitude": "77.990517"
@@ -1844,7 +1688,7 @@
         "phones": "+91 8527999377",
         "pricing": "Free",
         "notes": "5 am to 9 pm 1 Point. One 15A",
-        "type": "1",
+        "type": "4",
         "isValidated": "1",
         "lattitude": "28.617161",
         "longitude": "77.440982"
@@ -1863,7 +1707,7 @@
         }, {
         "stationid": "229",
         "name": "Pune Satara Road Charge Point",
-        "contact": "Suiit Bhatevara",
+        "contact": "Sujit Bhatevara",
         "address": "692/5B 'Suraj', Nandadeep Society, Near Hotel Tiranga, Pune Satara Road, 411037 ",
         "phones": "+91 9960772266",
         "pricing": "Free",
@@ -1892,7 +1736,7 @@
         "phones": "+91 022 25684338",
         "pricing": "Rs 20 per hour",
         "notes": "5 am to 9 pm 1 Point. Type 2 Cable provided for e2o Plus P8. Contact company for other adapters. There is a DC quick charger too for e-Verito and e2o Plus P8",
-        "type": "1",
+        "type": "5",
         "isValidated": "1",
         "lattitude": "19.096059",
         "longitude": "72.926054"
@@ -1965,7 +1809,7 @@
             "phones": "+91 - 8039513589",
             "pricing": "Free",
             "notes": "The charging station is available 6 days a week between 9:30 AM and  10 PM. Closed on Mondays. There is one Ather Grid Point with a 15 Amp socket.",
-            "type": "1",
+            "type": "3",
             "isValidated": "1",
             "lattitude": "12.9874000549316",
             "longitude": "77.6205978393555"
@@ -1977,7 +1821,7 @@
             "phones": "+91 - 8039513589",
             "pricing": "Free",
             "notes": "The charging station is available days 7 a week between  11 AM and  11 PM. There is one Ather Grid Point with a 15 Amp socket",
-            "type": "1",
+            "type": "3",
             "isValidated": "1",
             "lattitude": "12.934100151062",
             "longitude": "77.5171966552734"
@@ -1989,7 +1833,7 @@
             "phones": "+91 - 8039513589",
             "pricing": "Free",
             "notes": "The charging station is available days 7 a week between  11 AM and  11 PM. There is one Ather Grid Point with a 15 Amp socket",
-            "type": "1",
+            "type": "3",
             "isValidated": "1",
             "lattitude": "12.9231996536255",
             "longitude": "77.5550003051758"
@@ -2001,7 +1845,7 @@
             "phones": "+91 - 8039513589",
             "pricing": "Free",
             "notes": "The charging station is available 7 days a week, 24 hours a day. There is one Ather Grid Point with a 15 Amp socket",
-            "type": "1",
+            "type": "3",
             "isValidated": "1",
             "lattitude": "12.9223003387451",
             "longitude": "77.4954986572266"
@@ -2013,7 +1857,7 @@
             "phones": "+91 - 8039513589",
             "pricing": "Free",
             "notes": "The charging station is available 7 days a week between  12 PM and 12 AM. There is one Ather Grid Point with a 15 Amp socket",
-            "type": "1",
+            "type": "3",
             "isValidated": "1",
             "lattitude": "13.0322999954224",
             "longitude": "77.5697021484375"
@@ -2025,7 +1869,7 @@
             "phones": "+91 - 8039513589",
             "pricing": "Free",
             "notes": "The charging station is available days a week between  AM and  PM. There is one Ather Grid Point with a 15 Amp socket",
-            "type": "1",
+            "type": "3",
             "isValidated": "1",
             "lattitude": "13.0209071",
             "longitude": "77.5979841"
@@ -2037,7 +1881,7 @@
             "phones": "+91 - 8039513589",
             "pricing": "Free",
             "notes": "The charging station is available 7 days a week between 8 AM and 9:30 PM. There is one Ather Grid Point with a 15 Amp socket",
-            "type": "1",
+            "type": "3",
             "isValidated": "1",
             "lattitude": "13.0017995834351",
             "longitude": "77.6234970092773"
@@ -2049,7 +1893,7 @@
             "phones": "+91 - 8039513589",
             "pricing": "Free",
             "notes": "The charging station is available 7 days a week between 11 AM and 8:30 PM. There is one Ather Grid Point with a 15 Amp socket",
-            "type": "1",
+            "type": "3",
             "isValidated": "1",
             "lattitude": "12.975700378418",
             "longitude": "77.5981979370117"
@@ -2061,7 +1905,7 @@
             "phones": "+91 - 8039513589",
             "pricing": "Free",
             "notes": "The charging station is available 7 days a week between 12 PM and 11:30 PM. There is one Ather Grid Point with a 15 Amp socket",
-            "type": "1",
+            "type": "3",
             "isValidated": "1",
             "lattitude": "12.9682998657227",
             "longitude": "77.7502975463867"
@@ -2073,7 +1917,7 @@
             "phones": "+91 - 8039513589",
             "pricing": "Free",
             "notes": "The charging stations are available 7 days a week, 24 hours a day. It is a tech park with restricted access to employees and visitors. There are two Ather Grid Points with 15 Amp socket",
-            "type": "1",
+            "type": "3",
             "isValidated": "1",
             "lattitude": "12.9854001998901",
             "longitude": "77.7387008666992"
@@ -2085,7 +1929,7 @@
             "phones": "+91 - 8039513589",
             "pricing": "Free",
             "notes": "The charging stations are available 7 days a week between 9 AM and 12 PM. There are two Ather Grid Points with 15 Amp socket",
-            "type": "1",
+            "type": "3",
             "isValidated": "1",
             "lattitude": "12.9872999191284",
             "longitude": "77.7363967895508"
@@ -2097,7 +1941,7 @@
             "phones": "+91 - 8039513589",
             "pricing": "Free",
             "notes": "The charging stations are available 7 days a week between 10 AM and 8 PM. There are three Ather Grid Points with a 15 Amp socket",
-            "type": "1",
+            "type": "3",
             "isValidated": "1",
             "lattitude": "12.9756002426147",
             "longitude": "77.6411972045898"
@@ -2109,7 +1953,7 @@
             "phones": "+91 - 8039513589",
             "pricing": "Free",
             "notes": "The charging station is available 7 days a week, 24 hours a day. It is a tech park with restricted access to employees and visitors. There is one Ather Grid Point with a 15 Amp socket",
-            "type": "1",
+            "type": "3",
             "isValidated": "1",
             "lattitude": "12.932469",
             "longitude": "77.603640"
@@ -2133,7 +1977,7 @@
             "phones": "+91 - 7259033232",
             "pricing": "Free",
             "notes": "1 15 Amp socket is available from 6:00 AM to 9:00 PM. Please call before coming. ",
-            "type": "1",
+            "type": "4",
             "isValidated": "1",
             "lattitude": "12.860071",
             "longitude": "77.5727623"
@@ -2641,6 +2485,30 @@
             "isValidated": "1",
             "lattitude": "22.766786",
             "longitude": "75.900633"
+        }, {
+            "stationid": "292",
+            "name": "Zeon office",
+            "contact": "",
+            "address": "167, union mill Rd, opposite Sangeetha theatre, Tirupur 641601",
+            "phones": "9894060700",
+            "pricing": "Rs 50 per session",
+            "notes": "Two 15 Amp sockets are available 7 days a week from 8.30am to 9pm",
+            "type": "1",
+            "isValidated": "1",
+            "lattitude": "11.102187",
+            "longitude": "77.267431"
+        }, {
+            "stationid": "293",
+            "name": "Sun Mobility Technology Center, Bengaluru",
+            "contact": "",
+            "address": "25, 1st cross, 2nd Main road, Behind Graphite Mahadevpura Post, Doddanakundi Industrial Area 2, Phase 1, Doddanekkundi, Bengaluru, Karnataka 560048",
+            "phones": "",
+            "pricing": "N.A",
+            "notes": "Private Battery Swapping Station only meant for Private use as of now. Will get updated when available for public!",
+            "type": "6",
+            "isValidated": "1",
+            "lattitude": "12.977130",
+            "longitude": "77.706759"
         }
     ]
 }
