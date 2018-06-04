@@ -67,21 +67,30 @@
     }
     
     NSInteger chargeStationType = [station.type integerValue];
+    
     if (chargeStationType == 1)
     {
-        chargingTypeImageView.image = [UIImage imageNamed:@"green"];
+        chargingTypeImageView.image = [UIImage imageNamed:@"communityBus"];
     }
     else if (chargeStationType == 2)
     {
-        chargingTypeImageView.image = [UIImage imageNamed:@"red"];
+        chargingTypeImageView.image = [UIImage imageNamed:@"mahindra"];
     }
     else if (chargeStationType == 3)
     {
-        chargingTypeImageView.image = [UIImage imageNamed:@"blue"];
+        chargingTypeImageView.image = [UIImage imageNamed:@"ather"];
     }
-    else
+    else if (chargeStationType == 4)
     {
-        chargingTypeImageView.image = [UIImage imageNamed:@"green"];        
+        chargingTypeImageView.image = [UIImage imageNamed:@"communityHome"];
+    }
+    else if (chargeStationType == 5)
+    {
+        chargingTypeImageView.image = [UIImage imageNamed:@"fastCharger"];
+    }
+    else if (chargeStationType == 6)
+    {
+        chargingTypeImageView.image = [UIImage imageNamed:@"sun"];
     }
     
     [super viewWillAppear:animated];

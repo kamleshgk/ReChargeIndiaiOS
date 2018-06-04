@@ -19,8 +19,7 @@
     NSMutableArray *stationsCache;
     
     NSMutableArray *displayStationTypes;
-    float distanceToBeCovered;          //in km
-    CLLocationCoordinate2D currentUserLocation;    
+    CLLocationCoordinate2D currentUserLocation;
     
     viperTestDependencies *dependencies;
 }
@@ -30,7 +29,6 @@
 @property (nonatomic, copy) NSString *dbVersion;
 @property (nonatomic, copy) NSMutableArray *stationsCache;
 @property (nonatomic, copy) NSMutableArray *displayStationTypes;
-@property (nonatomic, assign) float distanceToBeCovered;
 
 @property (nonatomic, assign) CLLocationCoordinate2D currentUserLocation;
 

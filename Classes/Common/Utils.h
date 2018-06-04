@@ -13,9 +13,12 @@
 #define		CHARGING_STATION_MARKER_DISTANCE		@"200000"  //200 Kilometers (200 Meters)
 
 typedef enum {
-    Community = 1,
+    CommunityBusiness = 1,
     Mahindra,
-    QuickCharge
+    Ather,
+    CommunityHome,
+    QuickCharge,
+    SunMobility
 } StationType;
 
 

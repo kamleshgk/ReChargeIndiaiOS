@@ -105,21 +105,30 @@
     NSString *label = station.name;
     
     UIImage *settingImage;
+    
     if ([station.type integerValue] == 1)
     {
-        settingImage = [UIImage imageNamed:@"green"];
+        settingImage = [UIImage imageNamed:@"communityBus"];
     }
     else if ([station.type integerValue] == 2)
     {
-        settingImage = [UIImage imageNamed:@"red"];
+        settingImage = [UIImage imageNamed:@"mahindra"];
     }
     else if ([station.type integerValue] == 3)
     {
-        settingImage = [UIImage imageNamed:@"blue"];
+        settingImage = [UIImage imageNamed:@"ather"];
     }
-    else
+    else if ([station.type integerValue] == 4)
     {
-        settingImage = [UIImage imageNamed:@"green"];
+        settingImage = [UIImage imageNamed:@"communityHome"];
+    }
+    else if ([station.type integerValue] == 5)
+    {
+        settingImage = [UIImage imageNamed:@"fastCharger"];
+    }
+    else if ([station.type integerValue] == 6)
+    {
+        settingImage = [UIImage imageNamed:@"sun"];
     }
     
     cell.textLabel.text = label;

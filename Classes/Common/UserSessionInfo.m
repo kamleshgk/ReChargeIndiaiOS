@@ -11,7 +11,7 @@ static UserSessionInfo *sharedUser = nil;
 
 @implementation UserSessionInfo
 
-@synthesize databasePath, databaseBackupPath, dbVersion, dependencies, stationsCache, distanceToBeCovered, displayStationTypes, currentUserLocation;
+@synthesize databasePath, databaseBackupPath, dbVersion, dependencies, stationsCache,  displayStationTypes, currentUserLocation;
 
 
 #pragma mark -

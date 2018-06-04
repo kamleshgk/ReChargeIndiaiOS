@@ -416,32 +416,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="50" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ORX-gz-jv9">
-                                <rect key="frame" x="232" y="153" width="63" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="63" id="dwa-9o-mPK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show stations around (km)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQ9-Ax-8ha">
-                                <rect key="frame" x="26" y="158" width="202" height="19"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="202" id="Bq3-hr-mjC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ma3-7C-JK0">
-                                <rect key="frame" x="10" y="218" width="355" height="405"/>
+                                <rect key="frame" x="10" y="81" width="355" height="542"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="405" id="u5I-4H-OID"/>
-                                </constraints>
                                 <color key="sectionIndexBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TypeCell" id="Q58-DR-Fpi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TypeCell" id="Q58-DR-Fpi">
                                         <rect key="frame" x="0.0" y="28" width="355" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q58-DR-Fpi" id="WFn-O7-3Fu">
@@ -467,13 +447,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Ma3-7C-JK0" firstAttribute="top" secondItem="w2I-jE-pGY" secondAttribute="bottom" constant="17" id="3lt-wv-Ha6"/>
                             <constraint firstAttribute="trailing" secondItem="Ma3-7C-JK0" secondAttribute="trailing" constant="10" id="FOg-vx-ALc"/>
-                            <constraint firstItem="OQ9-Ax-8ha" firstAttribute="leading" secondItem="LJv-sh-xJN" secondAttribute="leading" constant="26" id="PeR-Up-hZa"/>
                             <constraint firstItem="Ma3-7C-JK0" firstAttribute="leading" secondItem="LJv-sh-xJN" secondAttribute="leading" constant="10" id="Pha-e6-MfI"/>
-                            <constraint firstItem="Ma3-7C-JK0" firstAttribute="top" secondItem="OQ9-Ax-8ha" secondAttribute="bottom" constant="41" id="aPE-db-hx5"/>
-                            <constraint firstItem="ORX-gz-jv9" firstAttribute="leading" secondItem="OQ9-Ax-8ha" secondAttribute="trailing" constant="4" id="bBv-2a-1nY"/>
                             <constraint firstItem="HEV-8S-9cu" firstAttribute="top" secondItem="Ma3-7C-JK0" secondAttribute="bottom" id="cXY-BH-hPS"/>
-                            <constraint firstItem="ORX-gz-jv9" firstAttribute="centerY" secondItem="OQ9-Ax-8ha" secondAttribute="centerY" id="dkl-9u-Rwq"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -486,13 +463,12 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="distanceTextField" destination="ORX-gz-jv9" id="CZJ-Tt-XuF"/>
                         <outlet property="settingsTableView" destination="Ma3-7C-JK0" id="urc-Lh-aMu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssB-ga-eL9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1485" y="132"/>
+            <point key="canvasLocation" x="1484" y="131.78410794602701"/>
         </scene>
         <!--Report Charge Point-->
         <scene sceneID="czK-cg-VgM">

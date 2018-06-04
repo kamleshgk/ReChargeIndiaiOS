@@ -46,20 +46,22 @@
         stations = [self serializeJSON:arrayOfStations];
     }
     
-    CLLocation *userLocation = [[CLLocation alloc] initWithLatitude:coordinates.latitude longitude:coordinates.longitude];
+    //CLLocation *userLocation = [[CLLocation alloc] initWithLatitude:coordinates.latitude longitude:coordinates.longitude];
     
-    double radius = userSession.distanceToBeCovered;
+    //double radius = userSession.distanceToBeCovered;
     
     for(ChargingStation *station in stations)
     {
-        CLLocation *stationLocation = [[CLLocation alloc] initWithLatitude:[station.lattitude floatValue] longitude:[station.longitude floatValue]];
+        //CLLocation *stationLocation = [[CLLocation alloc] initWithLatitude:[station.lattitude floatValue] longitude:[station.longitude floatValue]];
 
-        CLLocationDistance meters = [stationLocation distanceFromLocation:userLocation];
+        //CLLocationDistance meters = [stationLocation distanceFromLocation:userLocation];
+
+        [matchingStations addObject:station];
         
-        if (meters <= radius)
+        /*if (meters <= radius)
         {
             [matchingStations addObject:station];
-        }
+        }*/
     }
     
     BOOL isSuccess = YES;

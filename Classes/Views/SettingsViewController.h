@@ -18,7 +18,6 @@
     
       NSMutableArray *selectedTypes;
     
-      IBOutlet UITextField *distanceTextField;
 }
 
 @property (weak, nonatomic) id <SettingsViewDelegate> delegate;

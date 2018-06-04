@@ -26,11 +26,6 @@
     settingsTableView.rowHeight = UITableViewAutomaticDimension;
     settingsTableView.estimatedRowHeight = 81.0;
     
-    UserSessionInfo *userSession = [UserSessionInfo sharedUser];
-    NSString *distance = [NSString stringWithFormat:@"%.0f", (userSession.distanceToBeCovered * 0.001)];
-    
-    distanceTextField.text = distance;
-    
     selectedTypes = [[NSMutableArray alloc]init];
     
     [self setupSettingsArray];
@@ -69,18 +64,9 @@
 
 - (IBAction)donePressed:(id)sender {
     
-    [distanceTextField resignFirstResponder];
-    
-    if (([distanceTextField.text floatValue] < 10) || ([distanceTextField.text floatValue] > 200))
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Validation" message:@"Enter distance between 10 and 200 km" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-        return;
-    }
-    
     if (selectedTypes.count == 0)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Validation" message:@"Please select atleast 1 charging station type to be displayed" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Validation" message:@"Please select atleast 1 charge point type to be displayed" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         return;
     }
@@ -93,8 +79,6 @@
     }
     
     userSession.displayStationTypes = arr;
-    
-    userSession.distanceToBeCovered = ([distanceTextField.text floatValue] * 1000);
     
     [self.delegate doneSelected];
 }
@@ -111,11 +95,14 @@
         [selectedTypes addObject:type];
     }
     
-    NSString *communityKey = [Utils getStationTypeToNumberString:Community];
+    NSString *communityHomeKey = [Utils getStationTypeToNumberString:CommunityHome];
+    NSString *communityBusinessKey = [Utils getStationTypeToNumberString:CommunityBusiness];
+    NSString *ather = [Utils getStationTypeToNumberString:Ather];
+    NSString *sun = [Utils getStationTypeToNumberString:SunMobility];
     NSString *revaKey = [Utils getStationTypeToNumberString:Mahindra];
     NSString *QCKey = [Utils getStationTypeToNumberString:QuickCharge];
-        
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"Community Charging Stations", communityKey, @"Mahindra Reva stations", revaKey, @"DC Quick charge stations", QCKey, nil];
+
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"Community Points (Residence)", communityHomeKey, @"Mahindra Electric Dealers", revaKey, @"Ather Charge Pods", ather, @"Community Points (Business)", communityBusinessKey, @"DC Quick charge stations", QCKey, @"Sun Mobility Quick Interchange Stations", sun,nil];
 
     settings = dict;
     
@@ -182,19 +169,31 @@
 
     NSString *key = [NSString stringWithFormat:@"%lu", (row + 1)];
     NSString *label = settings[key];
-	
+    
     UIImage *settingImage;
     if (row == 0)
     {
-        settingImage = [UIImage imageNamed:@"green"];
+        settingImage = [UIImage imageNamed:@"communityHome"];
     }
     else if (row == 1)
     {
-        settingImage = [UIImage imageNamed:@"red"];
+        settingImage = [UIImage imageNamed:@"mahindra"];
     }
-    else
+    else if (row == 2)
     {
-        settingImage = [UIImage imageNamed:@"blue"];
+        settingImage = [UIImage imageNamed:@"ather"];
+    }
+    else if (row == 3)
+    {
+        settingImage = [UIImage imageNamed:@"communityBus"];
+    }
+    else if (row == 4)
+    {
+        settingImage = [UIImage imageNamed:@"fastCharger"];
+    }
+    else if (row == 5)
+    {
+        settingImage = [UIImage imageNamed:@"sun"];
     }
     
     cell.textLabel.text = label;

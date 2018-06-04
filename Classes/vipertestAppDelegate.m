@@ -173,20 +173,26 @@
     
     userSession.databaseBackupPath = backupFilePath;
     
-    NSString *communityKey = [Utils getStationTypeToNumberString:Community];
+    NSString *communityHomeKey = [Utils getStationTypeToNumberString:CommunityHome];
+    NSString *communityBusinessKey = [Utils getStationTypeToNumberString:CommunityBusiness];
+    NSString *ather = [Utils getStationTypeToNumberString:Ather];
+    NSString *sun = [Utils getStationTypeToNumberString:SunMobility];
     NSString *revaKey = [Utils getStationTypeToNumberString:Mahindra];
     NSString *QCKey = [Utils getStationTypeToNumberString:QuickCharge];
     
     NSMutableArray *arrayTypes = [[NSMutableArray alloc]init];
     
-    [arrayTypes addObject:communityKey];
+    [arrayTypes addObject:communityHomeKey];
+    [arrayTypes addObject:communityBusinessKey];
     [arrayTypes addObject:revaKey];
+    [arrayTypes addObject:ather];
+    [arrayTypes addObject:sun];
     [arrayTypes addObject:QCKey];
     
     userSession.displayStationTypes = arrayTypes;
     
-    double radius = [CHARGING_STATION_MARKER_DISTANCE floatValue];
-    userSession.distanceToBeCovered = radius;
+    /*double radius = [CHARGING_STATION_MARKER_DISTANCE floatValue];
+    userSession.distanceToBeCovered = radius;*/
 }
 
 

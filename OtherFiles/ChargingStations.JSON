@@ -1730,11 +1730,11 @@
         "longitude": "72.943477"
         }, {
         "stationid": "231",
-        "name": "Tata Power , Vikhroli",
+        "name": "Tata Power DC Fast Charging Station, Vikhroli",
         "contact": "Office",
         "address": "SEP-2, B- East Pirojshanagar,, 3, Vikhroli Village Rd, Pirojshanagar, Vikhroli East, Mumbai, Maharashtra 400079",
         "phones": "+91 022 25684338",
-        "pricing": "Rs 20 per hour",
+        "pricing": "Rs 20 per hour for slow charging & Rs 100 per hour for fast charging",
         "notes": "5 am to 9 pm 1 Point. Type 2 Cable provided for e2o Plus P8. Contact company for other adapters. There is a DC quick charger too for e-Verito and e2o Plus P8",
         "type": "5",
         "isValidated": "1",

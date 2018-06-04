@@ -182,33 +182,12 @@
             [self addMarkersNearLocation:mapView1.camera.target];
         });
     }
-    else
-    {
-        if (position.zoom <= 6)
-        {
-            //Show all India stations
-            NSMutableArray *markers = [[NSMutableArray alloc] init];
-            UserSessionInfo *userSession = [UserSessionInfo sharedUser];
-            
-            for (ChargingStation *station in userSession.stationsCache)
-            {
-                ChargingMarker *marker = [ChargingMarker alloc];
-                marker = [marker initWithStation:station];
-                
-                [markers addObject:marker];
-            }
-            
-            [self addAllMarkers:markers];
-        }
-    }
 }
 
 - (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker
 {
     ChargingMarker *chargingMarker = (ChargingMarker *)marker;
-    
     [self performSegueWithIdentifier:@"Types SegueDetail" sender:chargingMarker];
-    
 }
 
 
@@ -227,7 +206,6 @@
         mapView.myLocationEnabled = YES;
         mapView.settings.myLocationButton = YES;
     }
-    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations

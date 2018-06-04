@@ -45,14 +45,23 @@
     NSString *result = nil;
     
     switch(huddleKind) {
-        case Community:
+        case CommunityBusiness:
         result = @"1";
         break;
         case Mahindra:
         result = @"2";
         break;
-        case QuickCharge:
+        case Ather:
         result = @"3";
+        break;
+        case CommunityHome:
+        result = @"4";
+        break;
+        case QuickCharge:
+        result = @"5";
+        break;
+        case SunMobility:
+        result = @"6";
         break;
         default:
           result = @"1";
@@ -68,7 +77,7 @@
     
     if ([huddleString isEqualToString:@"1"])
     {
-        result = Community;
+        result = CommunityBusiness;
     }
     else if ([huddleString isEqualToString:@"2"])
     {
@@ -76,11 +85,23 @@
     }
     else if ([huddleString isEqualToString:@"3"])
     {
+        result = Ather;
+    }
+    else if ([huddleString isEqualToString:@"4"])
+    {
+        result = CommunityHome;
+    }
+    else if ([huddleString isEqualToString:@"5"])
+    {
         result = QuickCharge;
+    }
+    else if ([huddleString isEqualToString:@"6"])
+    {
+        result = SunMobility;
     }
     else
     {
-        result = Community;
+        result = CommunityBusiness;
     }
 
     return result;
