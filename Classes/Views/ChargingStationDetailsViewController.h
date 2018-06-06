@@ -23,8 +23,10 @@
       IBOutlet UILabel *notes;
       IBOutlet UIImageView *verifiedImageView;
       IBOutlet UIImageView *chargingTypeImageView;
-    
       IBOutlet UIScrollView *scrollView;
+      IBOutlet UIButton *commentButton;
+      IBOutlet UILabel *commentCountLabel;
+      IBOutlet UIButton *shareButton;
     
       ChargingStation *station;
 }

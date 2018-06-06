@@ -115,6 +115,16 @@
 
 }
 
+- (IBAction)viewComments:(id)sender {
+    
+    
+}
+
+- (IBAction)shareChargePoint:(id)sender {
+    
+}
+
+
 
 - (IBAction)showDirections:(id)sender {
     

@@ -181,18 +181,6 @@
 		"lattitude": "18.45405",
 		"longitude": "73.83551"
 	}, {
-		"stationid": "19",
-		"name": " Katraj-Ambegaon Road Charging Station",
-		"contact": "Mr Hemang Shah",
-		"address": "Navjeevan Sundarban, Ambegaon BK, Pune",
-		"phones": "+91 9822272723",
-		"pricing": "Free",
-		"notes": "The charging station is available between 6 PM and 9 AM. There are 2 charge points (15 Amp) sockets for all Electric Vehicles",
-		"type": "1",
-		"isValidated": "1",
-		"lattitude": "18.45031",
-		"longitude": "73.83513"
-	}, {
 		"stationid": "20",
 		"name": "Sinhagad Road Charging station",
 		"contact": "Mr.  PRADEEP MISHRA",
@@ -639,9 +627,9 @@
 	}, {
 		"stationid": "113",
 		"name": "MAPRO Food Park, Wai - Charging Station",
-		"contact": "Mr. Amit",
+		"contact": "Mr. Vijay Bhilare",
 		"address": "Wai Surur Road 412803, Wai, Maharashtra 412803, India",
-		"phones": "+91 9881765268",
+		"phones": "+91 9850118324",
 		"pricing": "Free",
 		"notes": "The charging station is available all days a week from 9 AM to 8 PM. There are 2 charge point (15 Amp) sockets for all electric vehicles. MAPRO Cafetaria serves good food and a fun food park to explore and enjoy the serene atmosphere.",
 		"type": "1",
@@ -835,7 +823,7 @@
 		"address": "Trinetra Petrol Pump, Mumbai-Pune Express Highway, near Lonavala Toll Plaza, Lonavala, Pune District",
 		"phones": "9822057263, 9850000777",
 		"pricing": "Rs 75 per hour",
-		"notes": "The charging station is available 24 hours and supports all electric vehicles. There are two 15 Amp sockets",
+		"notes": "The charging station is available 24 hours and supports all electric vehicles. There are two 15 Amp sockets. The Pune-Mumbai EV community uses this one heavily!",
 		"type": "1",
 		"isValidated": "1",
 		"lattitude": "18.760835",
@@ -1476,18 +1464,6 @@
 		"isValidated": "1",
 		"lattitude": "19.183008",
 		"longitude": "72.972527"
-	}, {
-		"stationid": "209",
-		"name": "Global Gallarie service station, Thane",
-		"contact": "",
-		"address": "Siddeshwar Garden, Kolshet Road. Dhokali Thane (W) - 400607",
-		"phones": "022 25895600, 022 67145600",
-		"pricing": "Free",
-		"notes": "1 Point. Early morning is allowed. But had to really convince them to charge. People not aware or knowledgeable. Visit preferably during working hours. In case of emergency, reach out to the watchman.",
-		"type": "2",
-		"isValidated": "1",
-		"lattitude": "19.2296125",
-		"longitude": "72.9830562"
 	}, {
 		"stationid": "210",
 		"name": "The Parivar Garden, Asangaon",
