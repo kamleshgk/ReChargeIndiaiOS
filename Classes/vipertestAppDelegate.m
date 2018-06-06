@@ -11,9 +11,10 @@
 #import "Utils.h"
 @import GoogleMaps;
 
+
 @implementation vipertestAppDelegate
 
-@synthesize window;
+@synthesize window, ref;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -24,7 +25,11 @@
     UserSessionInfo *userSession = [UserSessionInfo sharedUser];
     userSession.dependencies = dependenciesInfo;
     
+    [FIRApp configure];
+    
     [GMSServices provideAPIKey:@"AIzaSyBhszcFUcJtiwZv8P0mF6GXXgLVrP-pYVM"];
+    
+    self.ref = [[FIRDatabase database] reference];
     
     // Handle on Terminated state, app launched because of APN
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;

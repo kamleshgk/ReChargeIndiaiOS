@@ -8,6 +8,7 @@
 #import "UserSessionInfo.h"
 #import "Utils.h"
 #import "ChargingStation.h"
+#import "vipertestAppDelegate.h"
 
 @implementation ChargingStationManager
 
@@ -122,6 +123,25 @@
         completionHandler(stations, nil);
     }
 }
+
+- (void)getAllCommentsForStationId:(NSString *)stationId
+                        completion:(void (^)(NSMutableArray *commentList, NSError *error))completionHandler
+{
+    /*vipertestAppDelegate *appDel = (vipertestAppDelegate *)[[UIApplication sharedApplication] delegate];
+    FIRDatabaseReference *ref =appDel.ref;
+    
+    [[[ref child:@"comments"] child:stationId] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        
+        // Get user value
+        User *user = [[User alloc] initWithUsername:snapshot.value[@"username"]];
+        
+        // ...
+    } withCancelBlock:^(NSError * _Nonnull error) {
+        NSLog(@"%@", error.localizedDescription);
+    }];*/
+    
+}
+
 
 //private
 - (NSMutableArray *) serializeJSON:(NSArray *)arrayOfStations

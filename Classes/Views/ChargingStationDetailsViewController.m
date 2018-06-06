@@ -19,9 +19,8 @@
 - (void)viewDidLoad
 {
     [scrollView setContentSize:CGSizeMake(scrollView.contentSize.width, 1500)];
-    
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
+
     [super viewDidLoad];
 }
 

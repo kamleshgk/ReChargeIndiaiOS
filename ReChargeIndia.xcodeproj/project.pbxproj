@@ -24,6 +24,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765580DF743DE002DB57D /* CoreGraphics.framework */; };
+		6202C5CA20C801370036A05E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6202C5C920C801370036A05E /* GoogleService-Info.plist */; };
 		62E7226A20BEE6350021DB7B /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E7226920BEE6350021DB7B /* GoogleMapsBase.framework */; };
 		DC2378C61B4FB62100929A91 /* viperTestDependencies.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2378C51B4FB62100929A91 /* viperTestDependencies.m */; };
 		DC23B6491C2564EB00603BCB /* ChargingStations.JSON in Resources */ = {isa = PBXBuildFile; fileRef = DC23B6481C2564EB00603BCB /* ChargingStations.JSON */; };
@@ -141,6 +142,7 @@
 		288765580DF743DE002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ReChargeIndia_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReChargeIndia_Prefix.pch; sourceTree = "<group>"; };
+		6202C5C920C801370036A05E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "OtherFiles/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		62E7226920BEE6350021DB7B /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Pods/GoogleMaps/Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
 		7EBD5754191277EE004A4B4F /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* ReChargeIndia-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ReChargeIndia-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6202C5C920C801370036A05E /* GoogleService-Info.plist */,
 				DC23B6481C2564EB00603BCB /* ChargingStations.JSON */,
 				DCA79ED51B4E6EA7005425E0 /* countries.plist */,
 				DCA79ED61B4E6EA7005425E0 /* addcommunitystation.html */,
@@ -920,6 +923,7 @@
 				DC376E091C620AE400045EAB /* About.storyboard in Resources */,
 				DC30E8761C86EAE100F0C113 /* AddStation.storyboard in Resources */,
 				DC3F71771C6B322700CFAA05 /* appprivacypolicy.html in Resources */,
+				6202C5CA20C801370036A05E /* GoogleService-Info.plist in Resources */,
 				DCA79EDF1B4E6EA7005425E0 /* communitystationfaq.html in Resources */,
 				DC376E031C61FB7300045EAB /* tour1.PNG in Resources */,
 				DC58233E1C537FEC0042CB3D /* UpdateDB.storyboard in Resources */,

@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "ChargingStation.h"
 @import CoreLocation;
+@import Firebase;
 
 @interface ChargingStationManager : NSObject
 {
@@ -20,6 +21,8 @@
 
 - (void)getStationsNearCordinate:(CLLocationCoordinate2D)coordinates
                             completion:(void (^)(NSMutableArray *stationList, NSError *error))completionHandler;
+
+- (void)getAllCommentsForStationId:(void (^)(NSString *stationId, NSError *error))completionHandler;
 
 
 @end

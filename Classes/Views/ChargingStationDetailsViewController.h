@@ -29,6 +29,8 @@
       IBOutlet UIButton *shareButton;
     
       ChargingStation *station;
+    
+    
 }
 
 @property (weak, nonatomic) id <ChargingStationDetailsDelegate> delegate;

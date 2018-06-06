@@ -7,12 +7,16 @@
 #import <UIKit/UIKit.h>
 
 @class RegistrationViewController;
+@import Firebase;
 
 @interface vipertestAppDelegate : NSObject <UIApplicationDelegate> {
 	
     UIWindow *window;
     RegistrationViewController *rootController;
+    FIRDatabaseReference *ref;
 }
+
+@property (strong, nonatomic) FIRDatabaseReference *ref;
 
 @property (nonatomic, readonly)         NSString *applicationDocumentsDirectory;
 @property (nonatomic, retain) IBOutlet  UIWindow *window;
