@@ -138,29 +138,43 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgi-cH-CfX" userLabel="ActionView">
                                 <rect key="frame" x="0.0" y="64" width="414" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 Positive 20 Negative " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFH-Mf-2r4">
-                                        <rect key="frame" x="55" y="5" width="100" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Dht-nn-IYU"/>
-                                            <constraint firstAttribute="width" constant="100" id="U31-p5-Lye"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bn4-Rk-VpT">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bn4-Rk-VpT">
                                         <rect key="frame" x="10" y="3" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="i0U-JL-3LY"/>
                                             <constraint firstAttribute="height" constant="45" id="nBN-vM-xfO"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" image="comment"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="50" maxY="0.0"/>
+                                        <state key="normal" title="5" image="comment"/>
                                         <connections>
-                                            <action selector="showDirections:" destination="MlA-8J-IzH" eventType="touchUpInside" id="wOL-Ns-7oj"/>
                                             <action selector="viewComments:" destination="MlA-8J-IzH" eventType="touchUpInside" id="ILt-u4-OXr"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ti1-f4-5M5">
+                                        <rect key="frame" x="13" y="10" width="40" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="0Mr-hr-v76"/>
+                                            <constraint firstAttribute="width" constant="40" id="kxq-2L-Vdi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8ag-N8-9BY">
+                                        <rect key="frame" x="174" y="7" width="37" height="37"/>
+                                        <color key="color" red="0.4039215686" green="0.6705882353" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 Positive 20 Negative " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFH-Mf-2r4">
+                                        <rect key="frame" x="65" y="5" width="100" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Dht-nn-IYU"/>
+                                            <constraint firstAttribute="width" constant="100" id="U31-p5-Lye"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kH0-6T-2wW">
                                         <rect key="frame" x="361" y="3" width="45" height="45"/>
                                         <constraints>
@@ -171,17 +185,20 @@
                                         <state key="normal" image="share"/>
                                         <connections>
                                             <action selector="shareChargePoint:" destination="MlA-8J-IzH" eventType="touchUpInside" id="H0M-Ut-wiO"/>
-                                            <action selector="showDirections:" destination="MlA-8J-IzH" eventType="touchUpInside" id="ztz-k4-83L"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="BFH-Mf-2r4" firstAttribute="leading" secondItem="bn4-Rk-VpT" secondAttribute="trailing" id="MCB-4d-8NS"/>
+                                    <constraint firstItem="Ti1-f4-5M5" firstAttribute="top" secondItem="bgi-cH-CfX" secondAttribute="top" constant="10" id="Kog-nw-h9v"/>
+                                    <constraint firstItem="BFH-Mf-2r4" firstAttribute="leading" secondItem="bn4-Rk-VpT" secondAttribute="trailing" constant="10" id="MCB-4d-8NS"/>
                                     <constraint firstAttribute="trailing" secondItem="kH0-6T-2wW" secondAttribute="trailing" constant="8" id="T8s-jK-NW1"/>
                                     <constraint firstItem="bn4-Rk-VpT" firstAttribute="top" secondItem="bgi-cH-CfX" secondAttribute="top" constant="3" id="UPp-RO-1Al"/>
+                                    <constraint firstItem="Ti1-f4-5M5" firstAttribute="leading" secondItem="bgi-cH-CfX" secondAttribute="leading" constant="13" id="aqc-jh-0cD"/>
+                                    <constraint firstItem="8ag-N8-9BY" firstAttribute="top" secondItem="bgi-cH-CfX" secondAttribute="top" constant="7" id="f2A-Gm-Dsx"/>
                                     <constraint firstItem="bn4-Rk-VpT" firstAttribute="leading" secondItem="bgi-cH-CfX" secondAttribute="leading" constant="10" id="gGf-59-KRb"/>
                                     <constraint firstItem="BFH-Mf-2r4" firstAttribute="centerY" secondItem="bn4-Rk-VpT" secondAttribute="centerY" id="iFb-lZ-pE5"/>
+                                    <constraint firstItem="8ag-N8-9BY" firstAttribute="leading" secondItem="BFH-Mf-2r4" secondAttribute="trailing" constant="9" id="kz2-7U-6fc"/>
                                     <constraint firstItem="kH0-6T-2wW" firstAttribute="top" secondItem="bgi-cH-CfX" secondAttribute="top" constant="3" id="quv-lY-bZ4"/>
                                 </constraints>
                             </view>
@@ -394,10 +411,11 @@ lorem ipsum dipsum dooo lorem ipsum dipsum dooo lorem ipsum dipsum dooo lorem ip
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityGuy" destination="8ag-N8-9BY" id="T8h-Kb-51T"/>
                         <outlet property="address" destination="fGS-Sb-V0E" id="n9d-or-ioB"/>
                         <outlet property="chargingTypeImageView" destination="JwY-4w-pcn" id="Qdu-9P-atP"/>
                         <outlet property="commentButton" destination="bn4-Rk-VpT" id="LE4-cZ-RR8"/>
-                        <outlet property="commentCountLabel" destination="BFH-Mf-2r4" id="t5F-3w-FQ0"/>
+                        <outlet property="commentCountLabel" destination="BFH-Mf-2r4" id="mYu-Ow-pjB"/>
                         <outlet property="contactName" destination="Njk-NT-MwP" id="n13-sN-dHt"/>
                         <outlet property="notes" destination="uq0-XX-jyZ" id="UdD-kr-ygd"/>
                         <outlet property="phones" destination="2rW-vt-HHi" id="Ddd-90-Ipt"/>
@@ -405,8 +423,10 @@ lorem ipsum dipsum dooo lorem ipsum dipsum dooo lorem ipsum dipsum dooo lorem ip
                         <outlet property="scrollView" destination="JCW-gQ-8BB" id="G17-de-iWo"/>
                         <outlet property="shareButton" destination="kH0-6T-2wW" id="DeM-6f-o5L"/>
                         <outlet property="stationName" destination="L61-dH-YFc" id="ngi-tI-YZJ"/>
+                        <outlet property="totalCommentCountLabel" destination="Ti1-f4-5M5" id="yCS-DR-xk9"/>
                         <outlet property="verifiedImageView" destination="5Si-Ti-n3a" id="56d-Rm-nmt"/>
                         <segue destination="OvR-nF-T8t" kind="presentation" identifier="ReportSegue" id="2dx-vu-Ttp"/>
+                        <segue destination="pVo-Ag-Xnc" kind="presentation" identifier="CommentsSegue" id="Le1-fC-6Bg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZo-j3-yjz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -446,6 +466,49 @@ lorem ipsum dipsum dooo lorem ipsum dipsum dooo lorem ipsum dipsum dooo lorem ip
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QqY-Hv-AIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="867" y="933"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="F5I-7a-mEy">
+            <objects>
+                <navigationController id="pVo-Ag-Xnc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D1h-fg-tvh">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Xs1-Vg-JH1" kind="relationship" relationship="rootViewController" id="U5x-JW-00f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Odq-oX-Kgk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="867" y="1672"/>
+        </scene>
+        <!--Message View Controller-->
+        <scene sceneID="H43-F0-9Is">
+            <objects>
+                <viewController id="Xs1-Vg-JH1" customClass="MessageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VPH-qJ-Qly"/>
+                        <viewControllerLayoutGuide type="bottom" id="5kT-CP-tBk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FHJ-Vl-cTl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="d6o-yz-SZ4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="d1n-KN-mff">
+                            <connections>
+                                <action selector="closeComments:" destination="Xs1-Vg-JH1" id="oIM-YL-5BK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rtS-3h-Amy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1601" y="1665"/>
         </scene>
         <!--Settings-->
         <scene sceneID="si8-JK-Zb0">

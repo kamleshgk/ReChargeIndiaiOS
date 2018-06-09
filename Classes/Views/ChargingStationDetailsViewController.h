@@ -6,6 +6,7 @@
 #import <Foundation/Foundation.h>
 #import "ChargingStation.h"
 #import "ReportUsViewController.h"
+#import "MessageViewController.h"
 
 @protocol ChargingStationDetailsDelegate
 
@@ -13,7 +14,7 @@
 
 @end
 
-@interface ChargingStationDetailsViewController : UIViewController<ReportUsDelegate>
+@interface ChargingStationDetailsViewController : UIViewController<ReportUsDelegate, MessageDelegate>
 {
       IBOutlet UILabel *stationName;
       IBOutlet UILabel *contactName;
@@ -27,10 +28,11 @@
       IBOutlet UIButton *commentButton;
       IBOutlet UILabel *commentCountLabel;
       IBOutlet UIButton *shareButton;
+      IBOutlet UILabel *totalCommentCountLabel;
     
       ChargingStation *station;
-    
-    
+      IBOutlet UIActivityIndicatorView *activityGuy;
+      NSMutableArray *commentObjectList;
 }
 
 @property (weak, nonatomic) id <ChargingStationDetailsDelegate> delegate;

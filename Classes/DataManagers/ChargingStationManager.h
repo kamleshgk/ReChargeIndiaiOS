@@ -22,7 +22,8 @@
 - (void)getStationsNearCordinate:(CLLocationCoordinate2D)coordinates
                             completion:(void (^)(NSMutableArray *stationList, NSError *error))completionHandler;
 
-- (void)getAllCommentsForStationId:(void (^)(NSString *stationId, NSError *error))completionHandler;
+- (void)getAllCommentsForStationId:(NSString *)stationId
+                        completion:(void (^)(NSMutableArray *commentList, NSError *error))completionHandler;
 
 
 @end

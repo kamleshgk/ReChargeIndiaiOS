@@ -25,6 +25,11 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765580DF743DE002DB57D /* CoreGraphics.framework */; };
 		6202C5CA20C801370036A05E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6202C5C920C801370036A05E /* GoogleService-Info.plist */; };
+		62314F8320CA4F6400115FFD /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 62314F8120CA4F6300115FFD /* Comment.m */; };
+		62314F8820CAD91100115FFD /* MessageTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62314F8420CAD91000115FFD /* MessageTextView.m */; };
+		62314F8920CAD91100115FFD /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62314F8520CAD91100115FFD /* MessageTableViewCell.m */; };
+		62314F8C20CAD93100115FFD /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62314F8A20CAD93000115FFD /* MessageViewController.m */; };
+		62314F8F20CAD97A00115FFD /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 62314F8E20CAD97A00115FFD /* Message.m */; };
 		62E7226A20BEE6350021DB7B /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E7226920BEE6350021DB7B /* GoogleMapsBase.framework */; };
 		DC2378C61B4FB62100929A91 /* viperTestDependencies.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2378C51B4FB62100929A91 /* viperTestDependencies.m */; };
 		DC23B6491C2564EB00603BCB /* ChargingStations.JSON in Resources */ = {isa = PBXBuildFile; fileRef = DC23B6481C2564EB00603BCB /* ChargingStations.JSON */; };
@@ -143,6 +148,16 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ReChargeIndia_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReChargeIndia_Prefix.pch; sourceTree = "<group>"; };
 		6202C5C920C801370036A05E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "OtherFiles/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		62314F8120CA4F6300115FFD /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Comment.m; path = Classes/Common/Comment.m; sourceTree = "<group>"; };
+		62314F8220CA4F6300115FFD /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Comment.h; path = Classes/Common/Comment.h; sourceTree = "<group>"; };
+		62314F8420CAD91000115FFD /* MessageTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageTextView.m; path = Classes/Views/MessageTextView.m; sourceTree = "<group>"; };
+		62314F8520CAD91100115FFD /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageTableViewCell.m; path = Classes/Views/MessageTableViewCell.m; sourceTree = "<group>"; };
+		62314F8620CAD91100115FFD /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageTableViewCell.h; path = Classes/Views/MessageTableViewCell.h; sourceTree = "<group>"; };
+		62314F8720CAD91100115FFD /* MessageTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageTextView.h; path = Classes/Views/MessageTextView.h; sourceTree = "<group>"; };
+		62314F8A20CAD93000115FFD /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageViewController.m; path = Classes/Views/MessageViewController.m; sourceTree = "<group>"; };
+		62314F8B20CAD93000115FFD /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageViewController.h; path = Classes/Views/MessageViewController.h; sourceTree = "<group>"; };
+		62314F8D20CAD97A00115FFD /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Message.h; path = Classes/Common/Message.h; sourceTree = "<group>"; };
+		62314F8E20CAD97A00115FFD /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Message.m; path = Classes/Common/Message.m; sourceTree = "<group>"; };
 		62E7226920BEE6350021DB7B /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Pods/GoogleMaps/Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
 		7EBD5754191277EE004A4B4F /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* ReChargeIndia-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ReChargeIndia-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -621,6 +636,10 @@
 		DC9CF8DE1B5E5D2B00037448 /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
+				62314F8620CAD91100115FFD /* MessageTableViewCell.h */,
+				62314F8520CAD91100115FFD /* MessageTableViewCell.m */,
+				62314F8720CAD91100115FFD /* MessageTextView.h */,
+				62314F8420CAD91000115FFD /* MessageTextView.m */,
 				DC9CF8DF1B5E5D3A00037448 /* LeftNavCell.h */,
 				DC9CF8E01B5E5D3A00037448 /* LeftNavCell.m */,
 			);
@@ -667,6 +686,10 @@
 				DCA79EE91B4E8C49005425E0 /* ManagerBase.h */,
 				DC9CF8DA1B5E46A400037448 /* ChargingStation.h */,
 				DC9CF8DB1B5E46A400037448 /* ChargingStation.m */,
+				62314F8220CA4F6300115FFD /* Comment.h */,
+				62314F8120CA4F6300115FFD /* Comment.m */,
+				62314F8D20CAD97A00115FFD /* Message.h */,
+				62314F8E20CAD97A00115FFD /* Message.m */,
 				DC8E5BC91C575EF200469228 /* ChargingMarker.h */,
 				DC8E5BCA1C575EF200469228 /* ChargingMarker.m */,
 			);
@@ -730,6 +753,8 @@
 			children = (
 				DCA79DA21B4E69E1005425E0 /* HomeViewController.h */,
 				DCA79DA31B4E69E1005425E0 /* HomeViewController.m */,
+				62314F8B20CAD93000115FFD /* MessageViewController.h */,
+				62314F8A20CAD93000115FFD /* MessageViewController.m */,
 				DC71882A1C59024C00D6F760 /* LocationSearchTable.h */,
 				DC71882B1C59024C00D6F760 /* LocationSearchTable.m */,
 				DC4297141C5CD2B100DB0B80 /* ChargingStationDetailsViewController.h */,
@@ -1019,12 +1044,14 @@
 				DC30E87C1C86FC6100F0C113 /* AddStationViewController.m in Sources */,
 				DCF9BE111C8829CE004D01F1 /* ReportUsViewController.m in Sources */,
 				DC8E5BD11C5779F800469228 /* SettingsViewController.m in Sources */,
+				62314F8C20CAD93100115FFD /* MessageViewController.m in Sources */,
 				DCA79EBB1B4E6BF0005425E0 /* UIImageView+AFNetworking.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				DCB2FCB61C2581BE00285657 /* SWRevealViewController.m in Sources */,
 				DCA79EB81B4E6BF0005425E0 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				DCA79EB01B4E6BF0005425E0 /* AFSecurityPolicy.m in Sources */,
 				DCA79EBA1B4E6BF0005425E0 /* UIButton+AFNetworking.m in Sources */,
+				62314F8920CAD91100115FFD /* MessageTableViewCell.m in Sources */,
 				DC9CF8D91B5E41FB00037448 /* ChargingStationManager.m in Sources */,
 				DC2378C61B4FB62100929A91 /* viperTestDependencies.m in Sources */,
 				DCA79EAD1B4E6BF0005425E0 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -1036,8 +1063,10 @@
 				DCA79DC91B4E6A3B005425E0 /* FMResultSet.m in Sources */,
 				DC71882C1C59024C00D6F760 /* LocationSearchTable.m in Sources */,
 				DCA79EBD1B4E6BF0005425E0 /* UIRefreshControl+AFNetworking.m in Sources */,
+				62314F8320CA4F6400115FFD /* Comment.m in Sources */,
 				DCA79EBC1B4E6BF0005425E0 /* UIProgressView+AFNetworking.m in Sources */,
 				DCA79DAD1B4E69EC005425E0 /* RegistrationViewController.m in Sources */,
+				62314F8F20CAD97A00115FFD /* Message.m in Sources */,
 				DCA79DC81B4E6A3B005425E0 /* FMDatabaseQueue.m in Sources */,
 				DCA79DCB1B4E6A3B005425E0 /* vipertestDBController.m in Sources */,
 				DCA79DA11B4E69C6005425E0 /* Utils.m in Sources */,
@@ -1047,6 +1076,7 @@
 				DCA79DC51B4E6A3B005425E0 /* FMDatabase.m in Sources */,
 				DCA79EBE1B4E6BF0005425E0 /* UIWebView+AFNetworking.m in Sources */,
 				DC376E151C6223CC00045EAB /* UpdateDBViewController.m in Sources */,
+				62314F8820CAD91100115FFD /* MessageTextView.m in Sources */,
 				DCA79DA91B4E69E1005425E0 /* LeftPanelViewController.m in Sources */,
 				DCA79EB11B4E6BF0005425E0 /* AFURLConnectionOperation.m in Sources */,
 				DCA79EB21B4E6BF0005425E0 /* AFURLRequestSerialization.m in Sources */,

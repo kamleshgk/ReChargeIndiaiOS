@@ -7,7 +7,10 @@
 
 #import "ChargingStationDetailsViewController.h"
 #import "UserSessionInfo.h"
+#import "ChargingStationPresenter.h"
 #import "Utils.h"
+#import "Comment.h"
+
 
 @implementation ChargingStationDetailsViewController
 
@@ -21,6 +24,46 @@
     [scrollView setContentSize:CGSizeMake(scrollView.contentSize.width, 1500)];
     self.automaticallyAdjustsScrollViewInsets = NO;
 
+    UserSessionInfo *userSession = [UserSessionInfo sharedUser];
+    ChargingStationPresenter *presentor = userSession.dependencies.chargingStationPresenter;
+    
+    commentCountLabel.text = [NSString stringWithFormat:@"0 Positive\n0 Negative"];
+    totalCommentCountLabel.text = @"0";
+    
+    commentObjectList = [NSMutableArray alloc];
+    activityGuy.hidden = NO;
+    [activityGuy startAnimating];
+    
+    [presentor getAllCommentsForStationId:station.stationid completion:^(NSMutableArray *commentList, NSError *error) {
+
+        NSString *commentCount = [NSString stringWithFormat:@"%lu", (unsigned long)commentList.count];
+        
+        int numberOfPositiveComments = 0;
+        int numberOfNegativeComments = 0;
+        commentObjectList = commentList;
+        for(Comment *commentItem in commentList)
+        {
+            if (commentItem.reaction == YES)
+            {
+                numberOfPositiveComments++;
+            }
+            else
+            {
+                numberOfNegativeComments++;
+            }
+        }
+
+        dispatch_async(dispatch_get_main_queue(),^{
+               //Send pets data into our main thread
+            commentCountLabel.numberOfLines = 0;
+            NSString *likeDislikeString = [NSString stringWithFormat:@"%d Positive\n%d Negative", numberOfPositiveComments, numberOfNegativeComments];
+            commentCountLabel.text = likeDislikeString;
+            totalCommentCountLabel.text = commentCount;
+            [activityGuy stopAnimating];
+            activityGuy.hidden = YES;
+        });
+    }];
+    
     [super viewDidLoad];
 }
 
@@ -100,22 +143,25 @@
 	[super viewDidAppear:animated];
 }
 
-#pragma mark -
-#pragma mark View Will/Did Disappear
-
 - (void)viewWillDisappear:(BOOL)animated
 {
-	[super viewWillDisappear:animated];
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-	[super viewDidDisappear:animated];
-
+    [super viewDidDisappear:animated];
+    
 }
+
+
+#pragma mark -
+#pragma mark Handlers
+
 
 - (IBAction)viewComments:(id)sender {
     
+    [self performSegueWithIdentifier:@"CommentsSegue" sender:nil];
     
 }
 
@@ -252,6 +298,13 @@
         detailVC.stationDetails = self.station;
         detailVC.delegate = self;
     }
+    else if ([segue.identifier isEqualToString:@"CommentsSegue"])
+    {
+        UINavigationController *navVC = (UINavigationController *) segue.destinationViewController;
+        MessageViewController *mainVC = (MessageViewController *) navVC.topViewController;
+        mainVC.commentList = commentObjectList;
+        mainVC.delegate = self;
+    }
 }
 
 #pragma mark -
@@ -260,6 +313,14 @@
 {
     [self dismissViewControllerAnimated:YES completion:NO];
 }
+
+#pragma mark -
+#pragma mark Messages Delegate
+-(void)closeComments
+{
+    [self dismissViewControllerAnimated:YES completion:NO];
+}
+
 
 #pragma mark -
 #pragma mark Default System Code

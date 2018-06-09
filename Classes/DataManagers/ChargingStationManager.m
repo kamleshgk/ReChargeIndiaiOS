@@ -9,6 +9,7 @@
 #import "Utils.h"
 #import "ChargingStation.h"
 #import "vipertestAppDelegate.h"
+#import "Comment.h"
 
 @implementation ChargingStationManager
 
@@ -127,18 +128,51 @@
 - (void)getAllCommentsForStationId:(NSString *)stationId
                         completion:(void (^)(NSMutableArray *commentList, NSError *error))completionHandler
 {
-    /*vipertestAppDelegate *appDel = (vipertestAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSMutableArray *commentArray = [[NSMutableArray alloc]init];
+    vipertestAppDelegate *appDel = (vipertestAppDelegate *)[[UIApplication sharedApplication] delegate];
     FIRDatabaseReference *ref =appDel.ref;
     
     [[[ref child:@"comments"] child:stationId] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         
+        if(snapshot.childrenCount==0){
+            completionHandler(commentArray, nil);
+        }
+        else
+        {
+         
+            NSDictionary *dictResponse = (NSDictionary *) snapshot.value;
+            //NSArray *arrResponse = (NSArray *) snapshot.value;
+            //NSString* str = arrResponse[0];
+            for (NSDictionary* dict in [dictResponse allValues]) {
+
+                NSString *commentId = [dict objectForKey:@"id"];
+                NSString *comment = [dict objectForKey:@"comment"];
+                NSString *addedByUser = [dict objectForKey:@"addedByUser"];
+                NSString *reactionString = [dict objectForKey:@"reaction"];
+                NSString *dateLong = [dict objectForKey:@"date"];
+                
+                long dateComment = [dateLong longLongValue];
+                
+                Comment *commentObj = [Comment alloc];
+                commentObj.commentId = commentId;
+                commentObj.comment = comment;
+                commentObj.userName = addedByUser;
+                commentObj.date = dateComment;
+                commentObj.reaction = reactionString.boolValue;
+                
+                [commentArray addObject:commentObj];
+            }
+            
+            completionHandler(commentArray, nil);
+        }
+        
         // Get user value
-        User *user = [[User alloc] initWithUsername:snapshot.value[@"username"]];
+        //User *user = [[User alloc] initWithUsername:snapshot.value[@"username"]];
         
         // ...
     } withCancelBlock:^(NSError * _Nonnull error) {
         NSLog(@"%@", error.localizedDescription);
-    }];*/
+    }];
     
 }
 

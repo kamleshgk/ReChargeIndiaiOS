@@ -32,11 +32,13 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - SlackTextViewController (1.9.6)
 
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - GoogleMaps
+  - SlackTextViewController
 
 SPEC CHECKSUMS:
   Firebase: c98c8b1fbcbdccd82539a36c2b17a9b1bb0ee798
@@ -48,7 +50,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  SlackTextViewController: b854e62c1c156336bc4fd409c6ca79b5773e8f9d
 
-PODFILE CHECKSUM: 1899dc5ec11a8c6b5f25bb0012fc4ad151f2cd10
+PODFILE CHECKSUM: e07c42de3f937e678e17a3f25c6e92d426696f91
 
 COCOAPODS: 1.4.0

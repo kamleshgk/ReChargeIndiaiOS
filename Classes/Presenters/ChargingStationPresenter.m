@@ -38,6 +38,21 @@
 }
 
 
+- (void)getAllCommentsForStationId:(NSString *)stationId
+                        completion:(void (^)(NSMutableArray *commentList, NSError *error))completionHandler
+{
+    [self.stationManager getAllCommentsForStationId:stationId completion:^(NSMutableArray *commentList, NSError *error) {
+        if (error == nil)
+        {
+            completionHandler(commentList, nil);
+        }
+        else
+        {
+            completionHandler(nil, error);
+        }
+    }];
+}
+
 - (void)getStationMarkersNearCordinate:(CLLocationCoordinate2D)coordinates
                       completion:(void (^)(NSMutableArray *stationMarkerList, NSError *error))completionHandler
 {
