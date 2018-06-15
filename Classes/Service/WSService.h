@@ -29,6 +29,7 @@
 
 +(BOOL)checkInternet: (BOOL)validURL;
 +(void)showNetworkAlert;
++(void)showNetworkAlertWith:(NSString *) message;
 
 @end
 

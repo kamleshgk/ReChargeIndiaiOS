@@ -11,7 +11,9 @@
 #import "MessageTextView.h"
 #import "Message.h"
 #import "Comment.h"
-
+#import "Utils.h"
+#import "UserSessionInfo.h"
+#import "ChargingStationPresenter.h"
 
 
 #define DEBUG_CUSTOM_TYPING_INDICATOR 0
@@ -29,7 +31,7 @@
 
 @implementation MessageViewController
 
-@synthesize commentList;
+@synthesize commentList, station;
 
 - (instancetype)init
 {
@@ -66,7 +68,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    dataChanged = NO;
     // Example's configuration
     [self configureDataSource];
     [self configureActionItems];
@@ -112,12 +114,29 @@
 - (void)configureDataSource
 {
     NSMutableArray *array = [[NSMutableArray alloc] init];
+    NSString *positiveString = @"\U0001F44D";
+    NSString *negativeString = @"\U0001F44E";
+    
     
     for (Comment *item in self.commentList)
     {
         Message *message = [Message new];
         message.username = item.userName;
-        message.text = item.comment;
+        message.textOriginal = item.comment;
+        
+        NSTimeInterval seconds = item.date / 1000;
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:seconds];
+        NSString *dateText = [Utils relativeDateStringForDate:date];
+        
+        if (item.reaction == 0)
+        {
+            message.text = [NSString stringWithFormat:@"%@ %@\n\n%@", item.comment, negativeString, dateText];
+        }
+        else
+        {
+            message.text = [NSString stringWithFormat:@"%@ %@\n\n%@", item.comment, positiveString, dateText];
+        }
+        message.commentObject = item;
         [array addObject:message];
     }
 
@@ -127,20 +146,104 @@
 
 - (void)configureActionItems
 {
-    /*UIBarButtonItem *pipItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icn_pic"]
-                                                                style:UIBarButtonItemStylePlain
-                                                               target:self
-                                                               action:@selector(togglePIPWindow:)];
+    int numberOfPositiveComments = 0;
+    int numberOfNegativeComments = 0;
+    for(Comment *commentItem in commentList)
+    {
+        if (commentItem.reaction == YES)
+        {
+            numberOfPositiveComments++;
+        }
+        else
+        {
+            numberOfNegativeComments++;
+        }
+    }
+    /*NSString *positiveString = @"\U0001F44D";
+    NSString *negativeString = @"\U0001F44E";
     
-    self.navigationItem.rightBarButtonItems = @[pipItem];*/
+    NSString *likeDislikeString = [NSString stringWithFormat:@"Comments : %d %@ %d %@", numberOfPositiveComments, positiveString , numberOfNegativeComments, negativeString];*/
+    
+    if ((numberOfPositiveComments == 0) && (numberOfNegativeComments == 0))
+    {
+        self.navigationItem.title = @"Be the first to comment!";
+    }
+    else
+    {
+        self.navigationItem.title = @"Comments";
+    }
+    
+    //Set user name in our cache and also add button on top left for easy log out
+    NSString *userNameForComment = [[NSUserDefaults standardUserDefaults] objectForKey:@"userNameForComments"];
+    if (userNameForComment == nil)
+    {
+        
+    }
+    else
+    {
+        UIBarButtonItem *pipItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout"
+                                                                    style:UIBarButtonItemStylePlain
+                                                                   target:self
+                                                                   action:@selector(logout:)];
+        
+        self.navigationItem.leftBarButtonItems = @[pipItem];
+    }
 }
 
 
 #pragma mark - Action Methods
 
 - (IBAction)closeComments:(id)sender {
-    [self.delegate closeComments];
+    [self.delegate closeComments:dataChanged];
 }
+
+- (IBAction)logout:(id)sender {
+
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle: @"Assign UserName"
+                                                                              message: @"Input your name, so users can identify you!"
+                                                                       preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"name";
+        textField.textColor = [UIColor blueColor];
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        textField.borderStyle = UITextBorderStyleRoundedRect;
+    }];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSArray * textfields = alertController.textFields;
+        UITextField * namefield = textfields[0];
+        NSString *newString = [namefield.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if ([newString isEqualToString:@""])
+        {
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Invalid user name"
+                                                                           message:@"Please enter a valid user name"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+        else
+        {
+            [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"userNameForComments"];
+            
+            //Set user name in our cache and also add button on top left for easy log out
+            [[NSUserDefaults standardUserDefaults] setObject:newString forKey:@"userNameForComments"];
+            
+            UIBarButtonItem *pipItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout"
+                                                                        style:UIBarButtonItemStylePlain
+                                                                       target:self
+                                                                       action:@selector(logout:)];
+            
+            self.navigationItem.leftBarButtonItems = @[pipItem];
+        }
+    }]];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+}
+
 
 - (void)didLongPressCell:(UIGestureRecognizer *)gesture
 {
@@ -169,23 +272,101 @@
 - (void)editCellMessage:(UIGestureRecognizer *)gesture
 {
     MessageTableViewCell *cell = (MessageTableViewCell *)gesture.view;
-    
     self.editingMessage = self.messages[cell.indexPath.row];
     
-    [self editText:self.editingMessage.text];
+    NSString *userNameForComment = [[NSUserDefaults standardUserDefaults] objectForKey:@"userNameForComments"];
     
-    [self.tableView scrollToRowAtIndexPath:cell.indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    if ([userNameForComment isEqualToString:self.editingMessage.username])
+    {
+        [self editText:self.editingMessage.textOriginal];
+        
+        [self.tableView scrollToRowAtIndexPath:cell.indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    }
+    else
+    {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Bad Action!"
+                                                                       message:@"You can only edit your comment!"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 - (void)deleteCellMessage:(UIGestureRecognizer *)gesture
 {
     MessageTableViewCell *cell = (MessageTableViewCell *)gesture.view;
-    
+    Comment *deletedComment = self.deletingMessage.commentObject;
     self.deletingMessage = self.messages[cell.indexPath.row];
     
-    [self editText:self.deletingMessage.text];
+    NSString *userNameForComment = [[NSUserDefaults standardUserDefaults] objectForKey:@"userNameForComments"];
     
-    [self.tableView scrollToRowAtIndexPath:cell.indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    if ([userNameForComment isEqualToString:self.deletingMessage.username])
+    {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Are you sure?!"
+                                                                       message:@"You cannot undo this action."
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action)
+        {
+            UserSessionInfo *userSession = [UserSessionInfo sharedUser];
+            ChargingStationPresenter *presentor = userSession.dependencies.chargingStationPresenter;
+            
+            [presentor deleteCommentForStation:self.deletingMessage.commentObject stationId:[self.station.stationid longLongValue] completion:^(NSError *error) {
+                if (error == nil)
+                {
+                    dataChanged = YES;
+                    
+                    dispatch_async(dispatch_get_main_queue(),^{
+                        
+                        // Notifies the view controller when tapped on the right "Accept" button for commiting the edited text
+                        [self.messages removeObjectAtIndex:cell.indexPath.row];
+                        [self.tableView reloadData];
+                        
+                    });
+                }
+                else
+                {
+                    NSLog(@"%@", error.localizedDescription);
+                    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error Deleting Comment"
+                                                                                   message:@"We encountered an error while deleting the comment. Please try later."
+                                                                            preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                          handler:^(UIAlertAction * action) {}];
+                    
+                    [alert addAction:defaultAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                }
+            }];
+                                                                  
+                                                                  
+          }];
+        
+        UIAlertAction* defaultAction1 = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [alert addAction:defaultAction1];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Bad Action!"
+                                                                       message:@"You can only delete your comment!"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    
 }
 
 
@@ -274,27 +455,139 @@
     
     // This little trick validates any pending auto-correction or auto-spelling just after hitting the 'Send' button
     [self.textView refreshFirstResponder];
+    NSString *newComment = self.textView.text;
     
-    Message *message = [Message new];
-    message.username = @"Anonymous";
-    message.text = [self.textView.text copy];
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    UITableViewRowAnimation rowAnimation = self.inverted ? UITableViewRowAnimationBottom : UITableViewRowAnimationTop;
-    UITableViewScrollPosition scrollPosition = self.inverted ? UITableViewScrollPositionBottom : UITableViewScrollPositionTop;
-    
-    [self.tableView beginUpdates];
-    [self.messages insertObject:message atIndex:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:rowAnimation];
-    [self.tableView endUpdates];
-    
-    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:scrollPosition animated:YES];
-    
-    // Fixes the cell from blinking (because of the transform, when using translucent cells)
-    // See https://github.com/slackhq/SlackTextViewController/issues/94#issuecomment-69929927
-    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userNameForComments"];
+    if (userName == nil)
+    {
+        UIAlertController * alertController = [UIAlertController alertControllerWithTitle: @"Assign UserName"
+                                                                                  message: @"Input your name, so users can identify you!"
+                                                                           preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+            textField.placeholder = @"name";
+            textField.textColor = [UIColor blueColor];
+            textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+            textField.borderStyle = UITextBorderStyleRoundedRect;
+        }];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            NSArray * textfields = alertController.textFields;
+            UITextField * namefield = textfields[0];
+            NSString *newString = [namefield.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            if ([newString isEqualToString:@""])
+            {
+                UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Invalid user name"
+                                                                               message:@"Please enter a valid user name"
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                      handler:^(UIAlertAction * action) {}];
+                
+                [alert addAction:defaultAction];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
+            else
+            {
+                [self saveNewComment:newString newComment:newComment];
+            }
+        }]];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+    else
+    {
+        [self saveNewComment:userName newComment:newComment];
+    }
     
     [super didPressRightButton:sender];
+}
+
+- (void) saveNewComment:(NSString *) userName
+                newComment: (NSString *) newComment
+{
+    NSString *UUID = [[NSUUID UUID] UUIDString];
+    Comment *comment = [Comment alloc];
+    comment.commentId = UUID;
+    comment.comment = newComment;
+    comment.userName = userName;
+    comment.date = [[NSDate date] timeIntervalSince1970] * 1000;
+    comment.reaction = self.leftButton.tag;
+    
+    UserSessionInfo *userSession = [UserSessionInfo sharedUser];
+    ChargingStationPresenter *presentor = userSession.dependencies.chargingStationPresenter;
+
+    [presentor addCommentForStation:comment stationId:[self.station.stationid longLongValue] completion:^(NSError *error) {
+        if (error == nil)
+        {
+            dataChanged = YES;
+            
+            Message *message = [Message new];
+            message.username = comment.userName;
+            message.text = comment.comment;
+            
+            NSTimeInterval seconds = comment.date / 1000;
+            NSDate *date = [NSDate dateWithTimeIntervalSince1970:seconds];
+            NSString *dateText = [Utils relativeDateStringForDate:date];
+            NSString *positiveString = @"\U0001F44D";
+            NSString *negativeString = @"\U0001F44E";
+            
+            if (comment.reaction == 0)
+            {
+                message.text = [NSString stringWithFormat:@"%@ %@\n\n%@", comment.comment, negativeString, dateText];
+            }
+            else
+            {
+                message.text = [NSString stringWithFormat:@"%@ %@\n\n%@", comment.comment, positiveString, dateText];
+            }
+            
+            self.navigationItem.title = @"Comments";
+            //Set user name in our cache and also add button on top left for easy log out
+            NSString *userNameForComment = [[NSUserDefaults standardUserDefaults] objectForKey:@"userNameForComments"];
+            if (userNameForComment == nil)
+            {
+                [[NSUserDefaults standardUserDefaults] setObject:userName forKey:@"userNameForComments"];
+                
+                dispatch_async(dispatch_get_main_queue(),^{
+                    UIBarButtonItem *pipItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout"
+                                                                            style:UIBarButtonItemStylePlain
+                                                                           target:self
+                                                                           action:@selector(logout:)];
+                
+                    self.navigationItem.leftBarButtonItems = @[pipItem];
+                });
+            }
+            
+            dispatch_async(dispatch_get_main_queue(),^{
+                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+                UITableViewRowAnimation rowAnimation = self.inverted ? UITableViewRowAnimationBottom : UITableViewRowAnimationTop;
+                UITableViewScrollPosition scrollPosition = self.inverted ? UITableViewScrollPositionBottom : UITableViewScrollPositionTop;
+                
+                [self.tableView beginUpdates];
+                [self.messages insertObject:message atIndex:0];
+                [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:rowAnimation];
+                [self.tableView endUpdates];
+                
+                [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:scrollPosition animated:YES];
+                
+                
+                // Fixes the cell from blinking (because of the transform, when using translucent cells)
+                // See https://github.com/slackhq/SlackTextViewController/issues/94#issuecomment-69929927
+                [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            });
+        }
+        else
+        {
+            NSLog(@"%@", error.localizedDescription);
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error Saving Comment"
+                                                                           message:@"We encountered an error while saving the comment. Please try later."
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
 }
 
 - (NSString *)keyForTextCaching
@@ -316,12 +609,44 @@
 
 - (void)didCommitTextEditing:(id)sender
 {
-    // Notifies the view controller when tapped on the right "Accept" button for commiting the edited text
-    self.editingMessage.text = [self.textView.text copy];
+    Comment *editedComment = self.editingMessage.commentObject;
+    editedComment.comment =self.textView.text;
     
-    [self.tableView reloadData];
+    UserSessionInfo *userSession = [UserSessionInfo sharedUser];
+    ChargingStationPresenter *presentor = userSession.dependencies.chargingStationPresenter;
+    
+    [presentor updateCommentForStation:editedComment stationId:[self.station.stationid longLongValue] completion:^(NSError *error) {
+        if (error == nil)
+        {
+            dataChanged = YES;
+            
+            dispatch_async(dispatch_get_main_queue(),^{
+                
+                // Notifies the view controller when tapped on the right "Accept" button for commiting the edited text
+                self.editingMessage.text = editedComment.comment;
+                
+                [self.tableView reloadData];
+                
+            });
+        }
+        else
+        {
+            NSLog(@"%@", error.localizedDescription);
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error Updating Comment"
+                                                                           message:@"We encountered an error while updating the comment. Please try later."
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
+    
     
     [super didCommitTextEditing:sender];
+
 }
 
 - (void)didCancelTextEditing:(id)sender

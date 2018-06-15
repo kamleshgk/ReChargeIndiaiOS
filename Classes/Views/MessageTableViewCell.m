@@ -60,8 +60,8 @@
     
     CGFloat pointSize = [MessageTableViewCell defaultFontSize];
     
-    self.titleLabel.font = [UIFont boldSystemFontOfSize:pointSize];
-    self.bodyLabel.font = [UIFont systemFontOfSize:pointSize];
+    self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:14];
+    self.bodyLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:pointSize];
     
     self.titleLabel.text = @"";
     self.bodyLabel.text = @"";
@@ -79,7 +79,7 @@
         _titleLabel.userInteractionEnabled = NO;
         _titleLabel.numberOfLines = 0;
         _titleLabel.textColor = [UIColor grayColor];
-        _titleLabel.font = [UIFont boldSystemFontOfSize:[MessageTableViewCell defaultFontSize]];
+        _titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:14];
     }
     return _titleLabel;
 }
@@ -93,7 +93,7 @@
         _bodyLabel.userInteractionEnabled = NO;
         _bodyLabel.numberOfLines = 0;
         _bodyLabel.textColor = [UIColor darkGrayColor];
-        _bodyLabel.font = [UIFont systemFontOfSize:[MessageTableViewCell defaultFontSize]];
+        _bodyLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:13];
     }
     return _bodyLabel;
 }
@@ -114,7 +114,7 @@
 
 + (CGFloat)defaultFontSize
 {
-    CGFloat pointSize = 16.0;
+    CGFloat pointSize = 13.0;
     
     NSString *contentSizeCategory = [[UIApplication sharedApplication] preferredContentSizeCategory];
     pointSize += SLKPointSizeDifferenceForCategory(contentSizeCategory);

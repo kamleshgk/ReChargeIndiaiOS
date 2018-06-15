@@ -9,154 +9,58 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Classes/DataManagers/ChargingStationManager.m"
-            timestampString = "550148365.088128"
+            filePath = "Classes/Views/MessageViewController.m"
+            timestampString = "550766250.248709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "-getStationsNearCordinate:completion:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Classes/Presenters/ChargingStationPresenter.m"
-            timestampString = "550148365.088279"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "-getStationMarkersNearCordinate:completion:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Classes/Views/ChargingStationDetailsViewController.m"
-            timestampString = "550224521.356082"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "319"
+            endingLineNumber = "319"
+            landmarkName = "-deleteCellMessage:"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[ChargingStationDetailsViewController viewDidLoad]"
+                  symbolName = "__43-[MessageViewController deleteCellMessage:]_block_invoke"
                   moduleName = "ReChargeIndia"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Kamlesh/PlugInIndia/ReChargeIndiaiOS/Classes/Views/ChargingStationDetailsViewController.m"
-                  timestampString = "550130129.128814"
+                  urlString = "file:///Kamlesh/PlugInIndia/ReChargeIndiaiOS/Classes/Views/MessageViewController.m"
+                  timestampString = "550765918.212767"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "274">
+                  startingLineNumber = "319"
+                  endingLineNumber = "319"
+                  offsetFromSymbolStart = "165">
                </Location>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__51-[ChargingStationDetailsViewController viewDidLoad]_block_invoke"
+                  symbolName = "__43-[MessageViewController deleteCellMessage:]_block_invoke_2"
                   moduleName = "ReChargeIndia"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Kamlesh/PlugInIndia/ReChargeIndiaiOS/Classes/Views/ChargingStationDetailsViewController.m"
-                  timestampString = "550130129.132686"
+                  urlString = "file:///Kamlesh/PlugInIndia/ReChargeIndiaiOS/Classes/Views/MessageViewController.m"
+                  timestampString = "550765918.217411"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "82">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Classes/Presenters/ChargingStationPresenter.m"
-            timestampString = "550148365.088927"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "-getAllCommentsForStationId:completion:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Classes/DataManagers/ChargingStationManager.m"
-            timestampString = "550148365.089004"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "-getAllCommentsForStationId:completion:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ChargingStationManager getAllCommentsForStationId:completion:]"
-                  moduleName = "ReChargeIndia"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Kamlesh/PlugInIndia/ReChargeIndiaiOS/Classes/DataManagers/ChargingStationManager.m"
-                  timestampString = "550140113.215812"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "232">
+                  startingLineNumber = "320"
+                  endingLineNumber = "320"
+                  offsetFromSymbolStart = "47">
                </Location>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__64-[ChargingStationManager getAllCommentsForStationId:completion:]_block_invoke"
+                  symbolName = "__destroy_helper_block_.489"
                   moduleName = "ReChargeIndia"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Kamlesh/PlugInIndia/ReChargeIndiaiOS/Classes/DataManagers/ChargingStationManager.m"
-                  timestampString = "550140113.219974"
+                  urlString = "file:///Kamlesh/PlugInIndia/ReChargeIndiaiOS/Classes/Views/MessageViewController.m"
+                  timestampString = "550765918.222275"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137"
-                  offsetFromSymbolStart = "79">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_"
-                  moduleName = "ReChargeIndia"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Kamlesh/PlugInIndia/ReChargeIndiaiOS/Classes/DataManagers/ChargingStationManager.m"
-                  timestampString = "550140113.224138"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
+                  startingLineNumber = "319"
+                  endingLineNumber = "319"
                   offsetFromSymbolStart = "16">
                </Location>
             </Locations>
@@ -168,13 +72,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Classes/DataManagers/ChargingStationManager.m"
-            timestampString = "550148365.089087"
+            filePath = "Classes/Views/MessageViewController.m"
+            timestampString = "550766250.249535"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "-getAllCommentsForStationId:completion:"
+            startingLineNumber = "320"
+            endingLineNumber = "320"
+            landmarkName = "-deleteCellMessage:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -185,60 +89,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Classes/DataManagers/ChargingStationManager.m"
-            timestampString = "550148365.089166"
+            timestampString = "550766250.249858"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "-getAllCommentsForStationId:completion:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__64-[ChargingStationManager getAllCommentsForStationId:completion:]_block_invoke"
-                  moduleName = "ReChargeIndia"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Kamlesh/PlugInIndia/ReChargeIndiaiOS/Classes/DataManagers/ChargingStationManager.m"
-                  timestampString = "550132391.89932"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "146"
-                  endingLineNumber = "146"
-                  offsetFromSymbolStart = "212">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__64-[ChargingStationManager getAllCommentsForStationId:completion:]_block_invoke"
-                  moduleName = "ReChargeIndia"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Kamlesh/PlugInIndia/ReChargeIndiaiOS/Classes/DataManagers/ChargingStationManager.m"
-                  timestampString = "550132391.903633"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "146"
-                  endingLineNumber = "146"
-                  offsetFromSymbolStart = "217">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Classes/DataManagers/ChargingStationManager.m"
-            timestampString = "550148365.089242"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "-getAllCommentsForStationId:completion:"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
+            landmarkName = "-deleteCommentForStation:stationId:completion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -249,28 +105,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Classes/DataManagers/ChargingStationManager.m"
-            timestampString = "550148365.089316"
+            timestampString = "550766250.250095"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
-            landmarkName = "-getAllCommentsForStationId:completion:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Classes/Views/ChargingStationDetailsViewController.m"
-            timestampString = "550224521.3567131"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
+            landmarkName = "-deleteCommentForStation:stationId:completion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -281,12 +121,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Classes/Views/MessageViewController.m"
-            timestampString = "550224521.357046"
+            timestampString = "550766250.250164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "-configureDataSource"
+            startingLineNumber = "327"
+            endingLineNumber = "327"
+            landmarkName = "-deleteCellMessage:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Classes/Views/MessageViewController.m"
+            timestampString = "550766250.25046"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "328"
+            endingLineNumber = "328"
+            landmarkName = "-deleteCellMessage:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -53,6 +53,55 @@
     }];
 }
 
+- (void)addCommentForStation:(Comment *)comment
+                   stationId: (long) stationId
+                  completion:(void (^)(NSError *error))completionHandler
+{
+    [self.stationManager addCommentForStation:comment stationId:stationId completion:^(NSError *error) {
+        if (error == nil)
+        {
+            completionHandler(nil);
+        }
+        else
+        {
+            completionHandler(error);
+        }
+    }];
+}
+
+- (void)updateCommentForStation:(Comment *)comment
+                      stationId: (long) stationId
+                     completion:(void (^)(NSError *error))completionHandler
+{
+    [self.stationManager updateCommentForStation:comment stationId:stationId completion:^(NSError *error) {
+        if (error == nil)
+        {
+            completionHandler(nil);
+        }
+        else
+        {
+            completionHandler(error);
+        }
+    }];
+}
+
+- (void)deleteCommentForStation:(Comment *)comment
+                      stationId: (long) stationId
+                     completion:(void (^)(NSError *error))completionHandler
+{
+    [self.stationManager deleteCommentForStation:comment stationId:stationId completion:^(NSError *error) {
+        if (error == nil)
+        {
+            completionHandler(nil);
+        }
+        else
+        {
+            completionHandler(error);
+        }
+    }];
+    
+}
+
 - (void)getStationMarkersNearCordinate:(CLLocationCoordinate2D)coordinates
                       completion:(void (^)(NSMutableArray *stationMarkerList, NSError *error))completionHandler
 {

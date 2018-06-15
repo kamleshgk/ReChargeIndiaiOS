@@ -2485,6 +2485,18 @@
             "isValidated": "1",
             "lattitude": "12.977130",
             "longitude": "77.706759"
+        }, {
+            "stationid": "294",
+            "name": "Vivek's car charge point",
+            "contact": "9810015461",
+            "address": "E-103 Patel's Green Front Meherr road, Yapral Secunderabad",
+            "phones": "Free",
+            "pricing": "N.A",
+            "notes": "All day when i am there. Call before coming.",
+            "type": "4",
+            "isValidated": "1",
+            "lattitude": "17.5080414",
+            "longitude": "78.5309534"
         }
     ]
 }

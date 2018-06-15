@@ -24,7 +24,14 @@
                                                                     options:0];
     
     if (components.year > 0) {
-        return [NSString stringWithFormat:@"%ld years ago", (long)components.year];
+        
+        if (components.year > 0) {
+            return [NSString stringWithFormat:@"%ld year ago", (long)components.year];
+        }
+        else
+        {
+            return [NSString stringWithFormat:@"%ld years ago", (long)components.year];
+        }
     } else if (components.month > 0) {
         return [NSString stringWithFormat:@"%ld months ago", (long)components.month];
     } else if (components.weekOfYear > 0) {

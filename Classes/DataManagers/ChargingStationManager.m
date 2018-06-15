@@ -9,7 +9,6 @@
 #import "Utils.h"
 #import "ChargingStation.h"
 #import "vipertestAppDelegate.h"
-#import "Comment.h"
 
 @implementation ChargingStationManager
 
@@ -175,6 +174,99 @@
     }];
     
 }
+
+
+
+- (void)addCommentForStation:(Comment *)comment
+                   stationId: (long) stationId
+                  completion:(void (^)(NSError *error))completionHandler
+{
+    NSNumber *reaction = [NSNumber numberWithInt:comment.reaction];
+    NSNumber *dateOfComment = [NSNumber numberWithLong:comment.date];
+    
+    NSDictionary *commentData = @{ @"addedByUser" : comment.userName, @"comment" : comment.comment, @"date" : dateOfComment, @"id" : comment.commentId, @"reaction" : reaction};
+    
+    //NSDictionary *commentDataWithID = @{ comment.commentId : commentData};
+    
+    vipertestAppDelegate *appDel = (vipertestAppDelegate *)[[UIApplication sharedApplication] delegate];
+    FIRDatabaseReference *ref =appDel.ref;
+    
+    NSString *stationIdString = [NSString stringWithFormat:@"%ld", stationId];
+    //NSDictionary *commentDataWithStationID = @{ stationIdString : commentDataWithID};
+    
+    FIRDatabaseReference *commentsRef = [[[ref child:@"comments"] child:stationIdString] child:comment.commentId];
+    // The value is null
+    [commentsRef setValue:commentData withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+        
+        if (error == nil)
+        {
+            completionHandler(nil);
+        }
+        else
+        {
+            completionHandler(error);
+        }
+    }];
+
+    
+}
+
+- (void)updateCommentForStation:(Comment *)comment
+                    stationId: (long) stationId
+                    completion:(void (^)(NSError *error))completionHandler
+{
+    NSNumber *reaction = [NSNumber numberWithInt:comment.reaction];
+    NSNumber *dateOfComment = [NSNumber numberWithLong:comment.date];
+    
+    NSDictionary *commentData = @{ @"addedByUser" : comment.userName, @"comment" : comment.comment, @"date" : dateOfComment, @"id" : comment.commentId, @"reaction" : reaction};
+    
+    //NSDictionary *commentDataWithID = @{ comment.commentId : commentData};
+    
+    vipertestAppDelegate *appDel = (vipertestAppDelegate *)[[UIApplication sharedApplication] delegate];
+    FIRDatabaseReference *ref =appDel.ref;
+    
+    NSString *stationIdString = [NSString stringWithFormat:@"%ld", stationId];
+    //NSDictionary *commentDataWithStationID = @{ stationIdString : commentDataWithID};
+    
+    FIRDatabaseReference *commentsRef = [[[ref child:@"comments"] child:stationIdString] child:comment.commentId];
+    // The value is null
+    [commentsRef updateChildValues:commentData withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+        
+        if (error == nil)
+        {
+            completionHandler(nil);
+        }
+        else
+        {
+            completionHandler(error);
+        }
+    }];
+}
+
+- (void)deleteCommentForStation:(Comment *)comment
+                      stationId: (long) stationId
+                     completion:(void (^)(NSError *error))completionHandler
+{
+    vipertestAppDelegate *appDel = (vipertestAppDelegate *)[[UIApplication sharedApplication] delegate];
+    FIRDatabaseReference *ref =appDel.ref;
+    
+    NSString *stationIdString = [NSString stringWithFormat:@"%ld", stationId];
+    //NSDictionary *commentDataWithStationID = @{ stationIdString : commentDataWithID};
+    
+    FIRDatabaseReference *commentsRef = [[[ref child:@"comments"] child:stationIdString] child:comment.commentId];
+    // The value is null
+    [commentsRef removeValueWithCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+        if (error == nil)
+        {
+            completionHandler(nil);
+        }
+        else
+        {
+            completionHandler(error);
+        }
+    }];
+}
+
 
 
 //private

@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ChargingStation.h"
+#import "Comment.h"
 @import CoreLocation;
 @import Firebase;
 
@@ -25,5 +26,17 @@
 - (void)getAllCommentsForStationId:(NSString *)stationId
                         completion:(void (^)(NSMutableArray *commentList, NSError *error))completionHandler;
 
+- (void)addCommentForStation:(Comment *)comment
+                    stationId: (long) stationId
+                    completion:(void (^)(NSError *error))completionHandler;
+
+
+- (void)updateCommentForStation:(Comment *)comment
+                    stationId: (long) stationId
+                    completion:(void (^)(NSError *error))completionHandler;
+
+- (void)deleteCommentForStation:(Comment *)comment
+                      stationId: (long) stationId
+                     completion:(void (^)(NSError *error))completionHandler;
 
 @end

@@ -133,6 +133,12 @@ static WSService *sharedWSServiceInstance = nil;
 	[alert show];
 }
 
++(void)showNetworkAlertWith:(NSString *) message
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+}
+
 
 #pragma mark -
 #pragma mark Singleton Methods

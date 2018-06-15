@@ -7,21 +7,26 @@
 //
 
 #import "SLKTextViewController.h"
+#import "ChargingStation.h"
+
 
 @protocol MessageDelegate
 
--(void)closeComments;
+-(void)closeComments:(BOOL) reloadComments;
 
 @end
 
 @interface MessageViewController : SLKTextViewController
 {
+    ChargingStation *station;
     NSMutableArray *commentList;
+    BOOL dataChanged;
     
 }
 
 @property (weak, nonatomic) id <MessageDelegate> delegate;
 
 @property (nonatomic, strong) NSMutableArray *commentList;
+@property (nonatomic, strong) ChargingStation *station;
 
 @end

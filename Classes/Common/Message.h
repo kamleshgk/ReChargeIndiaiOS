@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "Comment.h"
 
 @interface Message : NSObject
 
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) NSString *textOriginal;
+@property (nonatomic, strong) Comment *commentObject;
 
 @end

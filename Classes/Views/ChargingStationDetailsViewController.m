@@ -10,7 +10,7 @@
 #import "ChargingStationPresenter.h"
 #import "Utils.h"
 #import "Comment.h"
-
+#import "WSService.h"
 
 @implementation ChargingStationDetailsViewController
 
@@ -24,45 +24,12 @@
     [scrollView setContentSize:CGSizeMake(scrollView.contentSize.width, 1500)];
     self.automaticallyAdjustsScrollViewInsets = NO;
 
-    UserSessionInfo *userSession = [UserSessionInfo sharedUser];
-    ChargingStationPresenter *presentor = userSession.dependencies.chargingStationPresenter;
-    
     commentCountLabel.text = [NSString stringWithFormat:@"0 Positive\n0 Negative"];
     totalCommentCountLabel.text = @"0";
     
     commentObjectList = [NSMutableArray alloc];
-    activityGuy.hidden = NO;
-    [activityGuy startAnimating];
-    
-    [presentor getAllCommentsForStationId:station.stationid completion:^(NSMutableArray *commentList, NSError *error) {
 
-        NSString *commentCount = [NSString stringWithFormat:@"%lu", (unsigned long)commentList.count];
-        
-        int numberOfPositiveComments = 0;
-        int numberOfNegativeComments = 0;
-        commentObjectList = commentList;
-        for(Comment *commentItem in commentList)
-        {
-            if (commentItem.reaction == YES)
-            {
-                numberOfPositiveComments++;
-            }
-            else
-            {
-                numberOfNegativeComments++;
-            }
-        }
-
-        dispatch_async(dispatch_get_main_queue(),^{
-               //Send pets data into our main thread
-            commentCountLabel.numberOfLines = 0;
-            NSString *likeDislikeString = [NSString stringWithFormat:@"%d Positive\n%d Negative", numberOfPositiveComments, numberOfNegativeComments];
-            commentCountLabel.text = likeDislikeString;
-            totalCommentCountLabel.text = commentCount;
-            [activityGuy stopAnimating];
-            activityGuy.hidden = YES;
-        });
-    }];
+    [self loadCommentData];
     
     [super viewDidLoad];
 }
@@ -284,6 +251,58 @@
 }
 
 
+-(void) loadCommentData
+{
+    activityGuy.hidden = YES;
+    commentButton.enabled = NO;
+    
+    if (![WSService checkInternet:NO])
+    {
+        [WSService showNetworkAlertWith:@"Could not load comment data. Please check your data connection."];
+        [super viewDidLoad];
+        return;
+    }
+    UserSessionInfo *userSession = [UserSessionInfo sharedUser];
+    ChargingStationPresenter *presentor = userSession.dependencies.chargingStationPresenter;
+
+    activityGuy.hidden = NO;
+    [activityGuy startAnimating];
+    commentButton.enabled = NO;
+    [presentor getAllCommentsForStationId:station.stationid completion:^(NSMutableArray *commentList, NSError *error) {
+        
+        NSString *commentCount = [NSString stringWithFormat:@"%lu", (unsigned long)commentList.count];
+        
+        int numberOfPositiveComments = 0;
+        int numberOfNegativeComments = 0;
+        NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
+        NSArray *sortedArray = [commentList sortedArrayUsingDescriptors:@[sortDescriptor]];
+        
+        commentObjectList = [sortedArray mutableCopy];
+        for(Comment *commentItem in commentList)
+        {
+            if (commentItem.reaction == YES)
+            {
+                numberOfPositiveComments++;
+            }
+            else
+            {
+                numberOfNegativeComments++;
+            }
+        }
+        
+        dispatch_async(dispatch_get_main_queue(),^{
+            //Send pets data into our main thread
+            commentCountLabel.numberOfLines = 0;
+            NSString *likeDislikeString = [NSString stringWithFormat:@"%d Positive\n%d Negative", numberOfPositiveComments, numberOfNegativeComments];
+            commentCountLabel.text = likeDislikeString;
+            totalCommentCountLabel.text = commentCount;
+            [activityGuy stopAnimating];
+            activityGuy.hidden = YES;
+            commentButton.enabled = YES;
+        });
+    }];
+}
+
 
 
 #pragma mark -
@@ -303,6 +322,7 @@
         UINavigationController *navVC = (UINavigationController *) segue.destinationViewController;
         MessageViewController *mainVC = (MessageViewController *) navVC.topViewController;
         mainVC.commentList = commentObjectList;
+        mainVC.station = station;
         mainVC.delegate = self;
     }
 }
@@ -316,8 +336,12 @@
 
 #pragma mark -
 #pragma mark Messages Delegate
--(void)closeComments
+-(void)closeComments:(BOOL) reloadComments
 {
+    if (reloadComments == YES)
+    {
+        [self loadCommentData];
+    }
     [self dismissViewControllerAnimated:YES completion:NO];
 }
 

@@ -11,14 +11,14 @@
     NSString*   userName;
     NSString*   comment;
     long date;
-    bool reaction;
+    BOOL reaction;
 }
 
 @property (nonatomic, retain)     NSString*   commentId;
 @property (nonatomic, retain)     NSString*   userName;
 @property (nonatomic, retain)     NSString*   comment;
 @property (nonatomic, assign)     long date;
-@property (nonatomic, assign)     bool reaction;
+@property (nonatomic, assign)     BOOL reaction;
 
 @end
 
