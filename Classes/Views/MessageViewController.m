@@ -14,7 +14,8 @@
 #import "Utils.h"
 #import "UserSessionInfo.h"
 #import "ChargingStationPresenter.h"
-
+#import "SVProgressHud.h"
+#import "WSService.h"
 
 #define DEBUG_CUSTOM_TYPING_INDICATOR 0
 #define DEBUG_CUSTOM_BOTTOM_VIEW 0
@@ -298,8 +299,14 @@
 
 - (void)deleteCellMessage:(UIGestureRecognizer *)gesture
 {
+    if (![WSService checkInternet:NO])
+    {
+        [WSService showNetworkAlertWith:@"Could not delete comment. Please check your internet data connection."];
+        [super viewDidLoad];
+        return;
+    }
+    
     MessageTableViewCell *cell = (MessageTableViewCell *)gesture.view;
-    Comment *deletedComment = self.deletingMessage.commentObject;
     self.deletingMessage = self.messages[cell.indexPath.row];
     
     NSString *userNameForComment = [[NSUserDefaults standardUserDefaults] objectForKey:@"userNameForComments"];
@@ -316,6 +323,8 @@
             UserSessionInfo *userSession = [UserSessionInfo sharedUser];
             ChargingStationPresenter *presentor = userSession.dependencies.chargingStationPresenter;
             
+            [SVProgressHUD showWithStatus:@"Deleting comment..."];
+
             [presentor deleteCommentForStation:self.deletingMessage.commentObject stationId:[self.station.stationid longLongValue] completion:^(NSError *error) {
                 if (error == nil)
                 {
@@ -327,20 +336,15 @@
                         [self.messages removeObjectAtIndex:cell.indexPath.row];
                         [self.tableView reloadData];
                         
+                        [SVProgressHUD showInfoWithStatus:@"The comment deleted."];
+                        
                     });
                 }
                 else
                 {
-                    NSLog(@"%@", error.localizedDescription);
-                    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error Deleting Comment"
-                                                                                   message:@"We encountered an error while deleting the comment. Please try later."
-                                                                            preferredStyle:UIAlertControllerStyleAlert];
-                    
-                    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                          handler:^(UIAlertAction * action) {}];
-                    
-                    [alert addAction:defaultAction];
-                    [self presentViewController:alert animated:YES completion:nil];
+                    dispatch_async(dispatch_get_main_queue(),^{
+                        [SVProgressHUD showErrorWithStatus:@"We encountered an error while deleting the comment. Please try later."];
+                    });
                 }
             }];
                                                                   
@@ -455,6 +459,14 @@
     
     // This little trick validates any pending auto-correction or auto-spelling just after hitting the 'Send' button
     [self.textView refreshFirstResponder];
+    
+    if (![WSService checkInternet:NO])
+    {
+        [WSService showNetworkAlertWith:@"Could not save comment. Please check your internet data connection."];
+        [super viewDidLoad];
+        return;
+    }
+    
     NSString *newComment = self.textView.text;
     
     NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userNameForComments"];
@@ -515,6 +527,8 @@
     UserSessionInfo *userSession = [UserSessionInfo sharedUser];
     ChargingStationPresenter *presentor = userSession.dependencies.chargingStationPresenter;
 
+    [SVProgressHUD showWithStatus:@"Saving new comment..."];
+    
     [presentor addCommentForStation:comment stationId:[self.station.stationid longLongValue] completion:^(NSError *error) {
         if (error == nil)
         {
@@ -522,8 +536,8 @@
             
             Message *message = [Message new];
             message.username = comment.userName;
-            message.text = comment.comment;
-            
+            message.textOriginal = comment.comment;
+            message.commentObject = comment;
             NSTimeInterval seconds = comment.date / 1000;
             NSDate *date = [NSDate dateWithTimeIntervalSince1970:seconds];
             NSString *dateText = [Utils relativeDateStringForDate:date];
@@ -567,7 +581,7 @@
                 [self.tableView endUpdates];
                 
                 [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:scrollPosition animated:YES];
-                
+                [SVProgressHUD showInfoWithStatus:@"The comment is created."];
                 
                 // Fixes the cell from blinking (because of the transform, when using translucent cells)
                 // See https://github.com/slackhq/SlackTextViewController/issues/94#issuecomment-69929927
@@ -577,15 +591,9 @@
         else
         {
             NSLog(@"%@", error.localizedDescription);
-            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error Saving Comment"
-                                                                           message:@"We encountered an error while saving the comment. Please try later."
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                  handler:^(UIAlertAction * action) {}];
-            
-            [alert addAction:defaultAction];
-            [self presentViewController:alert animated:YES completion:nil];
+            dispatch_async(dispatch_get_main_queue(),^{
+                [SVProgressHUD showErrorWithStatus:@"We encountered an error while saving the comment. Please try later."];
+            });
         }
     }];
 }
@@ -609,12 +617,37 @@
 
 - (void)didCommitTextEditing:(id)sender
 {
+    if (![WSService checkInternet:NO])
+    {
+        [WSService showNetworkAlertWith:@"Could not save comment. Please check your internet data connection."];
+        [super viewDidLoad];
+        return;
+    }
+    
     Comment *editedComment = self.editingMessage.commentObject;
     editedComment.comment =self.textView.text;
     
     UserSessionInfo *userSession = [UserSessionInfo sharedUser];
     ChargingStationPresenter *presentor = userSession.dependencies.chargingStationPresenter;
     
+    NSString *positiveString = @"\U0001F44D";
+    NSString *negativeString = @"\U0001F44E";
+    
+    NSTimeInterval seconds = editedComment.date / 1000;
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:seconds];
+    NSString *dateText = [Utils relativeDateStringForDate:date];
+    
+    NSString *displayEditedComment = @"";
+    if (editedComment.reaction == 0)
+    {
+        displayEditedComment = [NSString stringWithFormat:@"%@ %@\n\n%@", editedComment.comment, negativeString, dateText];
+    }
+    else
+    {
+        displayEditedComment = [NSString stringWithFormat:@"%@ %@\n\n%@", editedComment.comment, positiveString, dateText];
+    }
+    
+    [SVProgressHUD showWithStatus:@"Updating Comment..."];
     [presentor updateCommentForStation:editedComment stationId:[self.station.stationid longLongValue] completion:^(NSError *error) {
         if (error == nil)
         {
@@ -622,8 +655,10 @@
             
             dispatch_async(dispatch_get_main_queue(),^{
                 
+                [SVProgressHUD showInfoWithStatus:@"The comment is updated."];
                 // Notifies the view controller when tapped on the right "Accept" button for commiting the edited text
-                self.editingMessage.text = editedComment.comment;
+                self.editingMessage.textOriginal = editedComment.comment;
+                self.editingMessage.text = displayEditedComment;
                 
                 [self.tableView reloadData];
                 
@@ -631,16 +666,9 @@
         }
         else
         {
-            NSLog(@"%@", error.localizedDescription);
-            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error Updating Comment"
-                                                                           message:@"We encountered an error while updating the comment. Please try later."
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                  handler:^(UIAlertAction * action) {}];
-            
-            [alert addAction:defaultAction];
-            [self presentViewController:alert animated:YES completion:nil];
+            dispatch_async(dispatch_get_main_queue(),^{
+                [SVProgressHUD showErrorWithStatus:@"We encountered an error while updating the comment. Please try later."];
+            });
         }
     }];
     

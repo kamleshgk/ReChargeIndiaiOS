@@ -102,7 +102,7 @@
     NSString *revaKey = [Utils getStationTypeToNumberString:Mahindra];
     NSString *QCKey = [Utils getStationTypeToNumberString:QuickCharge];
 
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"Community Points (Residence)", communityHomeKey, @"Mahindra Electric Dealers", revaKey, @"Ather Charge Pods", ather, @"Community Points (Business)", communityBusinessKey, @"DC Quick charge stations", QCKey, @"Sun Mobility Quick Interchange Stations", sun,nil];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"Community Points (Residence)", communityHomeKey, @"Mahindra Electric Dealers", revaKey, @"Ather Charge Pods", ather, @"Community Points (Business)", communityBusinessKey, @"DC Quick Charge Stations", QCKey, @"Sun Mobility Quick Interchange Stations", sun,nil];
 
     settings = dict;
     

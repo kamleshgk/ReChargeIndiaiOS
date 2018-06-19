@@ -14,6 +14,8 @@
 @property (nonatomic, strong) ChargingStationManager *stationManager;
 
 
+- (void)doesLocalDBNeedUpdate:(void (^)(BOOL serverDBChanged, NSError *error))completionHandler;
+
 - (void)downloadUpdatedStationDB:(void (^)(NSMutableArray *stationList, NSError *error))completionHandler;
 
 - (void) getAllStations:(void (^)(NSMutableArray *stationList, NSError *error))completionHandler;

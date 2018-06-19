@@ -9,6 +9,20 @@
 @implementation ChargingStationPresenter
 
 
+- (void)doesLocalDBNeedUpdate:(void (^)(BOOL serverDBChanged, NSError *error))completionHandler
+{
+    [self.stationManager doesLocalDBNeedUpdate:^(BOOL serverDBChanged, NSError *error) {
+        if (error == nil)
+        {
+            completionHandler(serverDBChanged, nil);
+        }
+        else
+        {
+            completionHandler(nil, error);
+        }
+    }];
+}
+
 - (void)downloadUpdatedStationDB:(void (^)(NSMutableArray *stationList, NSError *error))completionHandler
 {
     [self.stationManager downloadUpdatedStationDB:^(NSMutableArray *stationList, NSError *error) {

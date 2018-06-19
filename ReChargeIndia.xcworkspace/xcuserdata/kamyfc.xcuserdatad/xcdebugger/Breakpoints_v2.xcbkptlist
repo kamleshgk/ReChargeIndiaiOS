@@ -9,76 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Classes/Views/MessageViewController.m"
-            timestampString = "550766250.248709"
+            filePath = "Classes/DataManagers/ChargingStationManager.m"
+            timestampString = "551020433.487124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319"
-            landmarkName = "-deleteCellMessage:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__43-[MessageViewController deleteCellMessage:]_block_invoke"
-                  moduleName = "ReChargeIndia"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Kamlesh/PlugInIndia/ReChargeIndiaiOS/Classes/Views/MessageViewController.m"
-                  timestampString = "550765918.212767"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "319"
-                  endingLineNumber = "319"
-                  offsetFromSymbolStart = "165">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__43-[MessageViewController deleteCellMessage:]_block_invoke_2"
-                  moduleName = "ReChargeIndia"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Kamlesh/PlugInIndia/ReChargeIndiaiOS/Classes/Views/MessageViewController.m"
-                  timestampString = "550765918.217411"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "320"
-                  endingLineNumber = "320"
-                  offsetFromSymbolStart = "47">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.489"
-                  moduleName = "ReChargeIndia"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Kamlesh/PlugInIndia/ReChargeIndiaiOS/Classes/Views/MessageViewController.m"
-                  timestampString = "550765918.222275"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "319"
-                  endingLineNumber = "319"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Classes/Views/MessageViewController.m"
-            timestampString = "550766250.249535"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "320"
-            endingLineNumber = "320"
-            landmarkName = "-deleteCellMessage:"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "-doesLocalDBNeedUpdate:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Classes/DataManagers/ChargingStationManager.m"
-            timestampString = "550766250.249858"
+            timestampString = "551020433.48748"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
-            landmarkName = "-deleteCommentForStation:stationId:completion:"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "-doesLocalDBNeedUpdate:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -104,45 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Classes/DataManagers/ChargingStationManager.m"
-            timestampString = "550766250.250095"
+            filePath = "Classes/Views/UpdateDBViewController.m"
+            timestampString = "551020433.487565"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
-            landmarkName = "-deleteCommentForStation:stationId:completion:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Classes/Views/MessageViewController.m"
-            timestampString = "550766250.250164"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "327"
-            endingLineNumber = "327"
-            landmarkName = "-deleteCellMessage:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Classes/Views/MessageViewController.m"
-            timestampString = "550766250.25046"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "328"
-            endingLineNumber = "328"
-            landmarkName = "-deleteCellMessage:"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "-viewWillAppear:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

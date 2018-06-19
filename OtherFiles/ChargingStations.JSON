@@ -1,5 +1,5 @@
 {
-	"version": "3.00",
+	"version": "3.0",
 	"data": [{
 		"stationid": "1",
 		"name": "Smoky Mountains Charging Station (Khandala/Lonavala)",
@@ -2488,15 +2488,27 @@
         }, {
             "stationid": "294",
             "name": "Vivek's car charge point",
-            "contact": "9810015461",
+            "contact": "Vivek",
             "address": "E-103 Patel's Green Front Meherr road, Yapral Secunderabad",
-            "phones": "Free",
-            "pricing": "N.A",
+            "phones": "9810015461",
+            "pricing": "Free",
             "notes": "All day when i am there. Call before coming.",
             "type": "4",
             "isValidated": "1",
             "lattitude": "17.5080414",
             "longitude": "78.5309534"
+        }, {
+            "stationid": "295",
+            "name": "Magenta DC Fast Charging 3",
+            "contact": "1800 300 29 444 (24x7 tollfree)",
+            "address": "D-298, T.T.C. Industrial Area, Turbhe, MIDC Industrial Area, Turbhe, Navi Mumbai, Maharashtra 400705",
+            "phones": "",
+            "pricing": "Free. Introductory Offer",
+            "notes": "24 hour availability. There is a DC fast charger and a 15 Amp socket for slow AC charging too.",
+            "type": "5",
+            "isValidated": "1",
+            "lattitude": "19.068773",
+            "longitude": "73.022560"
         }
     ]
 }

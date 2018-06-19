@@ -12,8 +12,10 @@
       IBOutlet UILabel *databaseDateAdded;
       IBOutlet UILabel *stationCount;
       IBOutlet UIButton *updateButton;
+      BOOL fromAutoUpdate;
 }
 
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *sideMenuBarBtn;  //Need this for left nav
+@property (nonatomic, assign) BOOL fromAutoUpdate;
 
 @end

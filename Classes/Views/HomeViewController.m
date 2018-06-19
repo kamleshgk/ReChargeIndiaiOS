@@ -13,6 +13,8 @@
 #import "ChargingMarker.h"
 #import "LocationSearchTable.h"
 #import "ChargingStationDetailsViewController.h"
+#import "WSService.h"
+#import "UpdateDBViewController.h"
 
 @interface HomeViewController () <SWRevealViewControllerDelegate, ChargingStationDetailsDelegate> {
     
@@ -85,6 +87,8 @@
     mapView.delegate = self;
     
     NSLog(@"Debug f_load is complete");
+    
+    [self checkforDBUpdate];
     
 	[super viewDidLoad];
 }
@@ -252,6 +256,41 @@
 
 #pragma mark - Private Methods
 
+-(void) checkforDBUpdate
+{
+    if (![WSService checkInternet:NO])
+    {
+        return;
+    }
+    NSLog(@"Auto DB Check : Checking Server for new version of the database...");
+    [presentor doesLocalDBNeedUpdate:^(BOOL serverDBChanged, NSError *error) {
+        if (serverDBChanged == YES)
+        {
+            NSLog(@"Auto DB Check : New version of the database found. Asking User...");
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"More Charge Points found!"
+                                                                           message:@"\nThe PluginIndia team has added new charge points. \n\nWould you like to download them and update your local database?"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Sure!" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action)
+                                            {
+                                                [self performSegueWithIdentifier:@"SegueToUpdateDB" sender:nil];
+                                            }];
+            
+            UIAlertAction* defaultAction1 = [UIAlertAction actionWithTitle:@"Maybe later" style:UIAlertActionStyleDefault
+                                                                   handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            [alert addAction:defaultAction1];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+        else
+        {
+            NSLog(@"Auto DB Check : User is using latest version of the database. No need to update.");
+        }
+    }];
+}
+
 -(void) addAllMarkers:(NSMutableArray *)markerList
 {
     [mapView clear];
@@ -336,7 +375,15 @@
         detailVC.station = chargingMarker.stationDetails;
         detailVC.delegate = self;
     }
+    else if ([segue.identifier isEqualToString:@"SegueToUpdateDB"])
+    {
+        UINavigationController *navVC = (UINavigationController *) segue.destinationViewController;
+        UpdateDBViewController *detailVC = (UpdateDBViewController *) navVC.topViewController;
+        detailVC.fromAutoUpdate = YES;
+    }
 }
+
+
 
 
 

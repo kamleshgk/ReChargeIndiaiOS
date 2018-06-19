@@ -41,7 +41,7 @@
     else if ([stationDetails.type isEqualToString:@"4"])
         typeText = @"Community Charge Point (Residence)";
     else if ([stationDetails.type isEqualToString:@"5"])
-        typeText = @"DC Fast Charger";
+        typeText = @"DC Quick Charge Station";
     else if ([stationDetails.type isEqualToString:@"6"])
         typeText = @"Sun Mobility Battery Swap Station";
     

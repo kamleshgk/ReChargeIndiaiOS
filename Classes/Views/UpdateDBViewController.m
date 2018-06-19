@@ -15,8 +15,20 @@
 
 @implementation UpdateDBViewController
 
+@synthesize fromAutoUpdate;
+
 #pragma mark -
 #pragma mark View Did Load/Unload
+
+-(id)init{
+    if ((self = [super init]))
+    {
+        //This is where you are supposed to initialise anythin you need
+        
+        fromAutoUpdate = NO;
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -48,6 +60,10 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
+    if (fromAutoUpdate == YES)
+    {
+        [self updateDBNow];
+    }
     
     [super viewWillAppear:animated];
 }
@@ -85,20 +101,11 @@
     }
 }
 
-#pragma mark - IBButton Handlers
-
-
-- (IBAction)UpdateDBNow:(id)sender {
+-(void) updateDBNow
+{
+    [updateButton setEnabled:NO];
     
-   if (![WSService checkInternet:NO])
-   {
-     [WSService showNetworkAlert];
-     return;
-   }
-    
-   [updateButton setEnabled:NO];
-    
-   [SVProgressHUD showWithStatus:@"Checking for updated database..."];
+    [SVProgressHUD showWithStatus:@"Checking for updated database..."];
     
     UserSessionInfo *userSession = [UserSessionInfo sharedUser];
     ChargingStationPresenter *presentor = userSession.dependencies.chargingStationPresenter;
@@ -116,7 +123,7 @@
                 databaseVersion.text = dbVersion;
                 stationCount.text = totalStations;
                 databaseDateAdded.text = [Utils relativeDateStringForDate:[NSDate date]];
-
+                
                 NSDate *myDate = [NSDate date];
                 [[NSUserDefaults standardUserDefaults] setObject:myDate forKey:@"rechargedbdate"];
                 
@@ -133,8 +140,22 @@
             });
         }
     }];
+}
+
+#pragma mark - IBButton Handlers
+
+
+- (IBAction)UpdateDBNow:(id)sender {
     
-    return;
+   if (![WSService checkInternet:NO])
+   {
+     [WSService showNetworkAlert];
+     return;
+   }
+    
+   [self updateDBNow];
+    
+   return;
 }
 
 

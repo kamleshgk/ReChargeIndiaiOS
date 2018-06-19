@@ -25,6 +25,14 @@
             </objects>
             <point key="canvasLocation" x="-719" y="132"/>
         </scene>
+        <!--UpdateDB-->
+        <scene sceneID="db9-P4-D1z">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UpdateDB" id="K8l-33-fyr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="slh-uo-B67" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="519" y="-405"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="SZy-JO-mN8">
             <objects>
@@ -101,6 +109,7 @@
                         <outlet property="searchTextView" destination="hDO-QE-SzQ" id="vWz-EZ-EYa"/>
                         <outlet property="sideMenuButton" destination="j0U-Nn-z0j" id="9LZ-Uo-R56"/>
                         <segue destination="gob-ke-D7w" kind="presentation" identifier="Types SegueDetail" id="mLp-Jb-35k"/>
+                        <segue destination="K8l-33-fyr" kind="custom" identifier="SegueToUpdateDB" customClass="SWRevealViewControllerSeguePushController" id="awk-UT-VPT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJJ-R5-lal" userLabel="First Responder" sceneMemberID="firstResponder"/>
