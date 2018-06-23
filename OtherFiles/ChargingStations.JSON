@@ -1378,8 +1378,8 @@
 		"notes": "The charging station has a 15 Amp socket.  Available 24 hours",
 		"type": "1",
 		"isValidated": "1",
-		"lattitude": "17.3272166",
-		"longitude": "74.0100898"
+		"lattitude": "17.273710",
+		"longitude": "74.180434"
 	}, {
 		"stationid": "201",
 		"name": "Dehradun Community Charge Point",

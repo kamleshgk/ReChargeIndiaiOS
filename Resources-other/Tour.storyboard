@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rD7-7r-6Gd">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rD7-7r-6Gd">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -10,7 +14,7 @@
             <objects>
                 <navigationController id="rD7-7r-6Gd" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AQ2-Pb-zlk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -19,9 +23,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bu7-FQ-PcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="373" y="-103"/>
+            <point key="canvasLocation" x="255" y="-104"/>
         </scene>
-        <!--ReCharge India Tour-->
+        <!--ReChargeIndia Tour-->
         <scene sceneID="nQg-yQ-fab">
             <objects>
                 <viewController storyboardIdentifier="TourController" id="NBe-Gw-pav" customClass="TourController" sceneMemberID="viewController">
@@ -30,15 +34,15 @@
                         <viewControllerLayoutGuide type="bottom" id="cbW-Rl-wW7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IIf-7G-7Jm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tour1.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="Nqx-VW-O1Q">
-                                <rect key="frame" x="0.0" y="64" width="600" height="455"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="591"/>
                             </imageView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="VZo-df-grQ">
-                                <rect key="frame" x="0.0" y="519" width="600" height="37"/>
-                                <color key="backgroundColor" red="0.074074902139999996" green="0.1444222943" blue="0.7205024807" alpha="1" colorSpace="calibratedRGB"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="7" translatesAutoresizingMaskIntoConstraints="NO" id="VZo-df-grQ">
+                                <rect key="frame" x="0.0" y="655" width="414" height="37"/>
+                                <color key="backgroundColor" red="0.4039215686" green="0.6705882353" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="sCY-1s-WE6"/>
                                 </constraints>
@@ -47,7 +51,7 @@
                                 </connections>
                             </pageControl>
                         </subviews>
-                        <color key="backgroundColor" red="0.013284633949558906" green="0.033466242898848406" blue="0.22880456396666671" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.013284633949558906" green="0.033466242898848406" blue="0.22880456396666671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Nqx-VW-O1Q" firstAttribute="leading" secondItem="IIf-7G-7Jm" secondAttribute="leading" id="22a-Bp-HKm"/>
                             <constraint firstItem="cbW-Rl-wW7" firstAttribute="top" secondItem="VZo-df-grQ" secondAttribute="bottom" id="6Ol-bj-njq"/>
@@ -59,7 +63,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="ReCharge India Tour" id="GyT-bs-iJE">
+                    <navigationItem key="navigationItem" title="ReChargeIndia Tour" id="GyT-bs-iJE">
                         <barButtonItem key="leftBarButtonItem" image="sidemenu" id="Mig-M7-o4n"/>
                         <barButtonItem key="rightBarButtonItem" title="Start" id="BTn-Qm-V5E">
                             <connections>
@@ -81,7 +85,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="sidemenu" width="17" height="12"/>
+        <image name="sidemenu" width="22" height="16"/>
         <image name="tour1.PNG" width="640" height="1136"/>
     </resources>
 </document>

@@ -59,7 +59,6 @@
     self.searchController.searchResultsUpdater = locationSearchTable;
     
     // This is obviously needed because the search bar will be contained in the navigation bar
-    self.searchController.hidesNavigationBarDuringPresentation = YES;
     
     // Required (?) to set place a search bar in a navigation bar
     self.searchController.searchBar.searchBarStyle = UISearchBarStyleDefault;
@@ -67,17 +66,19 @@
     
     [self.searchController.searchBar sizeToFit];
     self.searchController.searchBar.placeholder = @"City, Area";
-    [self.searchController.searchBar setFrame:CGRectMake(0, 0, 200, 45)];
+    [self.searchController.searchBar setFrame:CGRectMake(0, 2, 200, 45)];
     self.searchController.searchBar.barTintColor = [UIColor colorWithRed:103.0/255.0 green:171.0/255.0 blue:69.0/255.0 alpha:1];
+    self.searchController.searchBar.tintColor = [UIColor whiteColor];
+    //self.searchController.searchBar.backgroundColor = [UIColor colorWithRed:103.0/255.0 green:171.0/255.0 blue:69.0/255.0 alpha:1];
+    self.searchController.searchBar.backgroundImage = [UIImage new];
+    //self.searchController.searchBar.layer.position = CGPoint(x: self.view.bounds.width/2, y: 100)
+    self.searchController.searchBar.clipsToBounds = YES;
     // This is where you set the search bar in the navigation bar, instead of using table view's header ...
     [searchTextView addSubview:self.searchController.searchBar];
-    
-    // To ensure search results controller is presented in the current view controller
-    self.definesPresentationContext = YES;
+    [searchTextView layoutIfNeeded];
     
     // Setting delegates and other stuff
     self.searchController.delegate = locationSearchTable;
-    self.searchController.dimsBackgroundDuringPresentation = NO;
     self.searchController.searchBar.delegate = locationSearchTable;
     
     // Load data
@@ -128,6 +129,16 @@
 
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if (object == self.searchController.searchBar) {
+        NSLog(@"%f : %f", self.searchController.searchBar.frame.size.width, searchTextView.frame.size.width);
+        if (self.searchController.searchBar.frame.size.width != searchTextView.frame.size.width) {
+            self.searchController.searchBar.superview.clipsToBounds = NO;
+            self.searchController.searchBar.frame = CGRectMake(0, 3, 206, 40);
+            self.searchController.searchBar.backgroundImage = [UIImage new];
+        }
+    }
+}
 
 #pragma mark - SettingsDelegate
 -(void)dropPinZoomIn:(ChargingStation *)station
@@ -153,7 +164,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     [self addMarkersNearLocation:mapView.camera.target];
 }
-
 
 #pragma mark - Charging Station Details
 -(void)doneSelectedDetails

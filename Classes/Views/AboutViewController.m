@@ -70,10 +70,10 @@
         NSString * version = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
         NSString * build = [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey];
         
-        NSString * versionBuild = [NSString stringWithFormat: @"v%@", version];
+        NSString * versionBuild = [NSString stringWithFormat: @"Version %@", version];
         
         if (![version isEqualToString: build]) {
-            versionBuild = [NSString stringWithFormat: @"About App  %@(%@)", versionBuild, build];
+            versionBuild = [NSString stringWithFormat: @"%@ (Build : %@)", versionBuild, build];
         }
         
         item.title = versionBuild;

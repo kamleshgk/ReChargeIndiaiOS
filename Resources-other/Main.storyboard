@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MGn-P0-zWf">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -22,7 +22,7 @@
             <objects>
                 <navigationController id="MGn-P0-zWf" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UaE-e8-5Y4">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -33,7 +33,7 @@
             </objects>
             <point key="canvasLocation" x="-344" y="298"/>
         </scene>
-        <!--ReCharge India-->
+        <!--ReChargeIndia 2.0-->
         <scene sceneID="Ouz-eD-Tzg">
             <objects>
                 <viewController storyboardIdentifier="RegistrationViewController" id="1BO-6w-6kp" customClass="RegistrationViewController" sceneMemberID="viewController">
@@ -42,37 +42,80 @@
                         <viewControllerLayoutGuide type="bottom" id="eBp-qj-mmh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Qla-i9-GXT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="u6A-kH-AUC">
-                                <rect key="frame" x="10" y="96" width="100" height="100"/>
+                                <rect key="frame" x="10" y="84" width="60" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="FCk-fY-8dv"/>
-                                    <constraint firstAttribute="height" constant="100" id="Xwh-sA-j9R"/>
+                                    <constraint firstAttribute="width" constant="60" id="FCk-fY-8dv"/>
+                                    <constraint firstAttribute="height" constant="60" id="Xwh-sA-j9R"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ReCharge India Charging Stations App" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWW-oL-K4C">
-                                <rect key="frame" x="125" y="125" width="230" height="41"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWW-oL-K4C">
+                                <rect key="frame" x="85" y="84" width="319" height="60"/>
+                                <string key="text">ReChargeIndia 
+EV Charge Point Locator</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xht-7K-h03">
-                                <rect key="frame" x="10" y="222" width="325" height="163"/>
+                                <rect key="frame" x="10" y="154" width="394" height="110"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="163" id="5KQ-k8-PAu"/>
+                                    <constraint firstAttribute="height" constant="110" id="5KQ-k8-PAu"/>
                                 </constraints>
-                                <string key="text">The ReCharge India Charging Stations App needs to access your location to provide a full featured experience.
+                                <string key="text">The ReChargeIndia App needs to access your location to provide a full featured experience.
 
 We use your location to find nearby chargers and display your position on the map.</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made possible by Indian EV Community in association with " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICB-3b-bOE">
+                                <rect key="frame" x="10" y="545" width="394" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="G1X-51-W0I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PluginIndia.com" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JR-fN-3T4">
+                                <rect key="frame" x="10" y="590" width="104.33333333333333" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="a6E-NK-4co"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hytech" translatesAutoresizingMaskIntoConstraints="NO" id="wEO-Ro-nHs">
+                                <rect key="frame" x="254" y="626" width="148" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="NvD-8H-Ngv"/>
+                                    <constraint firstAttribute="height" constant="69" id="QP3-2Q-Gtu"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pluginIndia" translatesAutoresizingMaskIntoConstraints="NO" id="Usc-J6-3pG">
+                                <rect key="frame" x="12" y="618" width="102" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="102" id="6Qy-AW-S12"/>
+                                    <constraint firstAttribute="height" constant="85" id="R1j-lp-UdN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HyTechPro.com" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iK8-G8-xPD">
+                                <rect key="frame" x="291.66666666666669" y="590" width="102.33333333333331" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="uBt-TN-S4f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gke-Lb-fR7">
-                                <rect key="frame" x="83" y="512" width="209" height="30"/>
-                                <color key="backgroundColor" red="0.3061083342" green="0.62534893999999996" blue="0.99850118160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="102.66666666666669" y="353" width="209" height="30"/>
+                                <color key="backgroundColor" red="0.4039215686" green="0.6705882353" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="209" id="4WN-vM-J1T"/>
                                     <constraint firstAttribute="height" constant="30" id="7iW-pU-fdF"/>
@@ -88,30 +131,43 @@ We use your location to find nearby chargers and display your position on the ma
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Usc-J6-3pG" firstAttribute="leading" secondItem="Qla-i9-GXT" secondAttribute="leading" constant="12" id="0cu-rH-OH5"/>
+                            <constraint firstItem="4JR-fN-3T4" firstAttribute="top" secondItem="ICB-3b-bOE" secondAttribute="bottom" constant="5" id="0sI-kW-JoF"/>
                             <constraint firstItem="Gke-Lb-fR7" firstAttribute="centerX" secondItem="Qla-i9-GXT" secondAttribute="centerX" id="2Ts-HJ-TaM"/>
+                            <constraint firstItem="4JR-fN-3T4" firstAttribute="leading" secondItem="Qla-i9-GXT" secondAttribute="leading" constant="10" id="D0l-oa-n0v"/>
+                            <constraint firstItem="eBp-qj-mmh" firstAttribute="top" secondItem="wEO-Ro-nHs" secondAttribute="bottom" constant="41" id="FB1-cT-bLV"/>
                             <constraint firstItem="gWW-oL-K4C" firstAttribute="leading" secondItem="u6A-kH-AUC" secondAttribute="trailing" constant="15" id="GCE-Hk-e1h"/>
-                            <constraint firstItem="Xht-7K-h03" firstAttribute="top" secondItem="u6A-kH-AUC" secondAttribute="bottom" constant="26" id="SoV-6r-34z"/>
-                            <constraint firstItem="eBp-qj-mmh" firstAttribute="top" secondItem="Gke-Lb-fR7" secondAttribute="bottom" constant="125" id="dzG-PX-mke"/>
-                            <constraint firstAttribute="trailing" secondItem="gWW-oL-K4C" secondAttribute="trailing" constant="20" id="ea4-Wc-tKP"/>
+                            <constraint firstItem="Xht-7K-h03" firstAttribute="top" secondItem="u6A-kH-AUC" secondAttribute="bottom" constant="10" id="SoV-6r-34z"/>
+                            <constraint firstAttribute="trailing" secondItem="iK8-G8-xPD" secondAttribute="trailing" constant="20" id="Vq1-Ta-h5k"/>
+                            <constraint firstAttribute="trailing" secondItem="ICB-3b-bOE" secondAttribute="trailing" constant="10" id="cEp-o9-5uS"/>
+                            <constraint firstItem="Usc-J6-3pG" firstAttribute="top" secondItem="4JR-fN-3T4" secondAttribute="bottom" constant="8" id="d9L-eG-sWi"/>
+                            <constraint firstAttribute="trailing" secondItem="gWW-oL-K4C" secondAttribute="trailing" constant="10" id="ea4-Wc-tKP"/>
                             <constraint firstItem="u6A-kH-AUC" firstAttribute="leading" secondItem="Qla-i9-GXT" secondAttribute="leading" constant="10" id="ehw-KM-0pd"/>
-                            <constraint firstItem="gWW-oL-K4C" firstAttribute="top" secondItem="X24-pN-z1L" secondAttribute="bottom" constant="61" id="mE0-01-Qb2"/>
-                            <constraint firstItem="u6A-kH-AUC" firstAttribute="top" secondItem="X24-pN-z1L" secondAttribute="bottom" constant="32" id="nUJ-yZ-PhJ"/>
-                            <constraint firstAttribute="trailing" secondItem="Xht-7K-h03" secondAttribute="trailing" constant="40" id="slM-CZ-CxD"/>
+                            <constraint firstItem="gWW-oL-K4C" firstAttribute="top" secondItem="X24-pN-z1L" secondAttribute="bottom" constant="20" id="mE0-01-Qb2"/>
+                            <constraint firstItem="u6A-kH-AUC" firstAttribute="top" secondItem="X24-pN-z1L" secondAttribute="bottom" constant="20" id="nUJ-yZ-PhJ"/>
+                            <constraint firstAttribute="trailing" secondItem="wEO-Ro-nHs" secondAttribute="trailing" constant="12" id="oGN-Eb-coM"/>
+                            <constraint firstItem="Gke-Lb-fR7" firstAttribute="centerY" secondItem="Qla-i9-GXT" secondAttribute="centerY" id="oOB-DG-tZj"/>
+                            <constraint firstItem="eBp-qj-mmh" firstAttribute="top" secondItem="Usc-J6-3pG" secondAttribute="bottom" constant="33" id="rqD-iB-Bfb"/>
+                            <constraint firstAttribute="trailing" secondItem="Xht-7K-h03" secondAttribute="trailing" constant="10" id="slM-CZ-CxD"/>
+                            <constraint firstItem="wEO-Ro-nHs" firstAttribute="top" secondItem="iK8-G8-xPD" secondAttribute="bottom" constant="16" id="t9y-xv-L0d"/>
+                            <constraint firstItem="ICB-3b-bOE" firstAttribute="leading" secondItem="Xht-7K-h03" secondAttribute="leading" id="vf9-xp-2ua"/>
                             <constraint firstItem="Xht-7K-h03" firstAttribute="leading" secondItem="Qla-i9-GXT" secondAttribute="leading" constant="10" id="xhw-3H-Mrf"/>
                             <constraint firstItem="gWW-oL-K4C" firstAttribute="centerY" secondItem="u6A-kH-AUC" secondAttribute="centerY" id="z8w-PU-VH5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ReCharge India" id="XwG-qO-jVC"/>
+                    <navigationItem key="navigationItem" title="ReChargeIndia 2.0" id="XwG-qO-jVC"/>
                     <connections>
                         <outlet property="getStarted" destination="Gke-Lb-fR7" id="q5G-OQ-CGJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyd-ks-jHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="367" y="298"/>
+            <point key="canvasLocation" x="430" y="298"/>
         </scene>
     </scenes>
     <resources>
         <image name="Icon" width="180" height="180"/>
+        <image name="hytech" width="240" height="93"/>
+        <image name="pluginIndia" width="400" height="400"/>
     </resources>
 </document>

@@ -120,6 +120,18 @@
         img = [UIImage imageNamed:@"tour5.PNG"];
         [tourImage setImage:img];
     }
+    else if (pageControl.currentPage == 5)
+    {
+        UIImage *img;
+        img = [UIImage imageNamed:@"tour6.PNG"];
+        [tourImage setImage:img];
+    }
+    else if (pageControl.currentPage == 6)
+    {
+        UIImage *img;
+        img = [UIImage imageNamed:@"tour7.PNG"];
+        [tourImage setImage:img];
+    }
 }
 
 -(void) addSideMenuAction {

@@ -32,6 +32,17 @@
 #pragma mark === UISearchResultsUpdating ===
 #pragma mark -
 
+- (void)willPresentSearchController:(UISearchController *)searchController {
+    [searchController.searchBar addObserver:(NSObject *)self.delegate forKeyPath:@"frame" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+}
+
+- (void)willDismissSearchController:(UISearchController *)searchController{
+    [searchController.searchBar removeObserver:(NSObject *)self.delegate forKeyPath:@"frame"];
+}
+
+
+
+
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController
 {
     NSString *searchString = searchController.searchBar.text;

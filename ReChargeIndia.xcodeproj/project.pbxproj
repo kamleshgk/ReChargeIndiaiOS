@@ -30,6 +30,8 @@
 		62314F8920CAD91100115FFD /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62314F8520CAD91100115FFD /* MessageTableViewCell.m */; };
 		62314F8C20CAD93100115FFD /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62314F8A20CAD93000115FFD /* MessageViewController.m */; };
 		62314F8F20CAD97A00115FFD /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 62314F8E20CAD97A00115FFD /* Message.m */; };
+		62A3FC6E20DD15D80081B787 /* tour6.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 62A3FC6D20DD15D80081B787 /* tour6.PNG */; };
+		62A3FC7220DD18D90081B787 /* tour7.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 62A3FC7120DD18D80081B787 /* tour7.PNG */; };
 		62E7226A20BEE6350021DB7B /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E7226920BEE6350021DB7B /* GoogleMapsBase.framework */; };
 		DC2378C61B4FB62100929A91 /* viperTestDependencies.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2378C51B4FB62100929A91 /* viperTestDependencies.m */; };
 		DC23B6491C2564EB00603BCB /* ChargingStations.JSON in Resources */ = {isa = PBXBuildFile; fileRef = DC23B6481C2564EB00603BCB /* ChargingStations.JSON */; };
@@ -158,6 +160,8 @@
 		62314F8B20CAD93000115FFD /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageViewController.h; path = Classes/Views/MessageViewController.h; sourceTree = "<group>"; };
 		62314F8D20CAD97A00115FFD /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Message.h; path = Classes/Common/Message.h; sourceTree = "<group>"; };
 		62314F8E20CAD97A00115FFD /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Message.m; path = Classes/Common/Message.m; sourceTree = "<group>"; };
+		62A3FC6D20DD15D80081B787 /* tour6.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tour6.PNG; path = OtherFiles/tour6.PNG; sourceTree = "<group>"; };
+		62A3FC7120DD18D80081B787 /* tour7.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tour7.PNG; path = OtherFiles/tour7.PNG; sourceTree = "<group>"; };
 		62E7226920BEE6350021DB7B /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Pods/GoogleMaps/Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
 		7EBD5754191277EE004A4B4F /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* ReChargeIndia-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ReChargeIndia-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -432,6 +436,8 @@
 				DC376E001C61FB7300045EAB /* tour3.PNG */,
 				DC376E011C61FB7300045EAB /* tour4.PNG */,
 				DC376E021C61FB7300045EAB /* tour5.PNG */,
+				62A3FC6D20DD15D80081B787 /* tour6.PNG */,
+				62A3FC7120DD18D80081B787 /* tour7.PNG */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -898,7 +904,7 @@
 				LastUpgradeCheck = 0710;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = 8HKBCE62TS;
+						DevelopmentTeam = RVYSQC2BAL;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -943,7 +949,9 @@
 				DCA79ED41B4E6CE9005425E0 /* Images.xcassets in Resources */,
 				DC3F71791C6B322B00CFAA05 /* aboutus.html in Resources */,
 				DC376DF71C61F58E00045EAB /* Tour.storyboard in Resources */,
+				62A3FC6E20DD15D80081B787 /* tour6.PNG in Resources */,
 				DC23B6491C2564EB00603BCB /* ChargingStations.JSON in Resources */,
+				62A3FC7220DD18D90081B787 /* tour7.PNG in Resources */,
 				DC376E061C61FB7300045EAB /* tour4.PNG in Resources */,
 				DC376E091C620AE400045EAB /* About.storyboard in Resources */,
 				DC30E8761C86EAE100F0C113 /* AddStation.storyboard in Resources */,
@@ -1113,7 +1121,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = 8HKBCE62TS;
+				DEVELOPMENT_TEAM = RVYSQC2BAL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1158,7 +1166,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
-				DEVELOPMENT_TEAM = 8HKBCE62TS;
+				DEVELOPMENT_TEAM = RVYSQC2BAL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
