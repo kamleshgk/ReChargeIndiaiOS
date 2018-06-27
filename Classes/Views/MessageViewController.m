@@ -7,7 +7,6 @@
 //
 
 #import "MessageViewController.h"
-#import "MessageTableViewCell.h"
 #import "MessageTextView.h"
 #import "Message.h"
 #import "Comment.h"
@@ -81,8 +80,8 @@
     self.shouldScrollToBottomAfterKeyboardShows = NO;
     self.inverted = YES;
     
-    [self.leftButton setImage:[UIImage imageNamed:@"icn_arrow_up"] forState:UIControlStateNormal];
-    [self.leftButton setTintColor:[UIColor grayColor]];
+    UIImage *btnImage = [UIImage imageNamed:@"up.png"];
+    [self.leftButton setImage:btnImage forState:UIControlStateNormal];
     self.leftButton.tag = 1;
     [self.rightButton setTitle:NSLocalizedString(@"Send", nil) forState:UIControlStateNormal];
     
@@ -115,28 +114,13 @@
 - (void)configureDataSource
 {
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    NSString *positiveString = @"\U0001F44D";
-    NSString *negativeString = @"\U0001F44E";
-    
     
     for (Comment *item in self.commentList)
     {
         Message *message = [Message new];
         message.username = item.userName;
         message.textOriginal = item.comment;
-        
-        NSTimeInterval seconds = item.date / 1000;
-        NSDate *date = [NSDate dateWithTimeIntervalSince1970:seconds];
-        NSString *dateText = [Utils relativeDateStringForDate:date];
-        
-        if (item.reaction == 0)
-        {
-            message.text = [NSString stringWithFormat:@"%@ %@\n\n%@", item.comment, negativeString, dateText];
-        }
-        else
-        {
-            message.text = [NSString stringWithFormat:@"%@ %@\n\n%@", item.comment, positiveString, dateText];
-        }
+        message.text = item.comment;
         message.commentObject = item;
         [array addObject:message];
     }
@@ -160,10 +144,6 @@
             numberOfNegativeComments++;
         }
     }
-    /*NSString *positiveString = @"\U0001F44D";
-    NSString *negativeString = @"\U0001F44E";
-    
-    NSString *likeDislikeString = [NSString stringWithFormat:@"Comments : %d %@ %d %@", numberOfPositiveComments, positiveString , numberOfNegativeComments, negativeString];*/
     
     if ((numberOfPositiveComments == 0) && (numberOfNegativeComments == 0))
     {
@@ -198,9 +178,61 @@
     [self.delegate closeComments:dataChanged];
 }
 
+-(void)updateCommentReaction:(NSIndexPath *) indexPath
+{
+    NSString *userNameForComment = [[NSUserDefaults standardUserDefaults] objectForKey:@"userNameForComments"];
+    
+    Message *messageReaction = self.messages[indexPath.row];
+    if ([userNameForComment isEqualToString:messageReaction.username])
+    {
+        messageReaction.commentObject.reaction = !(messageReaction.commentObject.reaction);
+        
+        [self.tableView reloadData];
+        
+        UserSessionInfo *userSession = [UserSessionInfo sharedUser];
+        ChargingStationPresenter *presentor = userSession.dependencies.chargingStationPresenter;
+        
+        [SVProgressHUD showWithStatus:@"Updating Preference..."];
+        [presentor updateCommentForStation: messageReaction.commentObject stationId:[self.station.stationid longLongValue] completion:^(NSError *error) {
+            if (error == nil)
+            {
+                dataChanged = YES;
+                
+                dispatch_async(dispatch_get_main_queue(),^{
+                    
+                    [SVProgressHUD showInfoWithStatus:@"Reaction is updated."];
+                    
+                });
+            }
+            else
+            {
+                dispatch_async(dispatch_get_main_queue(),^{
+                    [SVProgressHUD showErrorWithStatus:@"We encountered an error while updating the comment preference. Please try later."];
+                });
+            }
+        }];
+    }
+    else
+    {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Bad Action!"
+                                                                       message:@"You can only update reaction to your comment!"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+
+}
+
 - (IBAction)logout:(id)sender {
 
-    UIAlertController * alertController = [UIAlertController alertControllerWithTitle: @"Assign UserName"
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"userNameForComments"];
+    self.navigationItem.leftBarButtonItems = @[];
+    
+    /*UIAlertController * alertController = [UIAlertController alertControllerWithTitle: @"Assign UserName"
                                                                               message: @"Input your name, so users can identify you!"
                                                                        preferredStyle:UIAlertControllerStyleAlert];
     [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
@@ -241,7 +273,7 @@
             self.navigationItem.leftBarButtonItems = @[pipItem];
         }
     }]];
-    [self presentViewController:alertController animated:YES completion:nil];
+    [self presentViewController:alertController animated:YES completion:nil];*/
     
 }
 
@@ -442,13 +474,13 @@
     if (self.leftButton.tag == 1)
     {
         self.leftButton.tag = 0;
-        UIImage *btnImage = [UIImage imageNamed:@"icn_arrow_down.png"];
+        UIImage *btnImage = [UIImage imageNamed:@"down.png"];
         [self.leftButton setImage:btnImage forState:UIControlStateNormal];
     }
     else
     {
         self.leftButton.tag = 1;
-        UIImage *btnImage = [UIImage imageNamed:@"icn_arrow_up.png"];
+        UIImage *btnImage = [UIImage imageNamed:@"up.png"];
         [self.leftButton setImage:btnImage forState:UIControlStateNormal];
     }
 }
@@ -527,6 +559,7 @@
     UserSessionInfo *userSession = [UserSessionInfo sharedUser];
     ChargingStationPresenter *presentor = userSession.dependencies.chargingStationPresenter;
 
+    [self.textView resignFirstResponder];
     [SVProgressHUD showWithStatus:@"Saving new comment..."];
     
     [presentor addCommentForStation:comment stationId:[self.station.stationid longLongValue] completion:^(NSError *error) {
@@ -538,21 +571,7 @@
             message.username = comment.userName;
             message.textOriginal = comment.comment;
             message.commentObject = comment;
-            NSTimeInterval seconds = comment.date / 1000;
-            NSDate *date = [NSDate dateWithTimeIntervalSince1970:seconds];
-            NSString *dateText = [Utils relativeDateStringForDate:date];
-            NSString *positiveString = @"\U0001F44D";
-            NSString *negativeString = @"\U0001F44E";
-            
-            if (comment.reaction == 0)
-            {
-                message.text = [NSString stringWithFormat:@"%@ %@\n\n%@", comment.comment, negativeString, dateText];
-            }
-            else
-            {
-                message.text = [NSString stringWithFormat:@"%@ %@\n\n%@", comment.comment, positiveString, dateText];
-            }
-            
+            message.text = comment.comment;
             self.navigationItem.title = @"Comments";
             //Set user name in our cache and also add button on top left for easy log out
             NSString *userNameForComment = [[NSUserDefaults standardUserDefaults] objectForKey:@"userNameForComments"];
@@ -626,26 +645,11 @@
     
     Comment *editedComment = self.editingMessage.commentObject;
     editedComment.comment =self.textView.text;
-    
+    [self.textView resignFirstResponder];
     UserSessionInfo *userSession = [UserSessionInfo sharedUser];
     ChargingStationPresenter *presentor = userSession.dependencies.chargingStationPresenter;
     
-    NSString *positiveString = @"\U0001F44D";
-    NSString *negativeString = @"\U0001F44E";
-    
-    NSTimeInterval seconds = editedComment.date / 1000;
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:seconds];
-    NSString *dateText = [Utils relativeDateStringForDate:date];
-    
-    NSString *displayEditedComment = @"";
-    if (editedComment.reaction == 0)
-    {
-        displayEditedComment = [NSString stringWithFormat:@"%@ %@\n\n%@", editedComment.comment, negativeString, dateText];
-    }
-    else
-    {
-        displayEditedComment = [NSString stringWithFormat:@"%@ %@\n\n%@", editedComment.comment, positiveString, dateText];
-    }
+    NSString *displayEditedComment = editedComment.comment;
     
     [SVProgressHUD showWithStatus:@"Updating Comment..."];
     [presentor updateCommentForStation:editedComment stationId:[self.station.stationid longLongValue] completion:^(NSError *error) {
@@ -785,9 +789,22 @@
     }
     
     Message *message = self.messages[indexPath.row];
+    NSTimeInterval seconds = message.commentObject.date / 1000;
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:seconds];
+    NSString *dateText = [Utils relativeDateStringForDate:date];
     
     cell.titleLabel.text = message.username;
     cell.bodyLabel.text = message.text;
+    cell.dateStringLabel.text = dateText;
+    cell.delegate = self;
+    if (message.commentObject.reaction == YES)
+    {
+        cell.thumbsView.image = [UIImage imageNamed:@"up.png"];
+    }
+    else
+    {
+        cell.thumbsView.image = [UIImage imageNamed:@"down.png"];
+    }
     
     cell.indexPath = indexPath;
     cell.usedForMessage = YES;
@@ -826,7 +843,7 @@
         
         CGFloat height = CGRectGetHeight(titleBounds);
         height += CGRectGetHeight(bodyBounds);
-        height += 40.0;
+        height += 60.0;
         
         if (height < kMessageTableViewCellMinimumHeight) {
             height = kMessageTableViewCellMinimumHeight;

@@ -133,9 +133,24 @@
 }
 
 - (IBAction)shareChargePoint:(id)sender {
+    NSString* shareText = [NSString stringWithFormat:@"You can charge your Electric Vehicle here! \n\nhttp://maps.google.com/maps?q=%@, %@. \n\nFind more at www.pluginIndia.com/charging", station.lattitude, station.longitude];
+    NSArray *shareArray = @[shareText];
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:shareArray applicationActivities:nil];
     
+    [activityVC setValue:@"You can charge your EV here!" forKey:@"subject"];
+    
+    NSArray *excludeActivities = @[UIActivityTypeAirDrop,
+                                   UIActivityTypePrint,
+                                   UIActivityTypeAssignToContact,
+                                   UIActivityTypeSaveToCameraRoll,
+                                   UIActivityTypeAddToReadingList,
+                                   UIActivityTypePostToFlickr,
+                                   UIActivityTypePostToVimeo];
+    
+    activityVC.excludedActivityTypes = excludeActivities;
+    
+    [self.navigationController presentViewController:activityVC animated:YES completion:nil];
 }
-
 
 
 - (IBAction)showDirections:(id)sender {

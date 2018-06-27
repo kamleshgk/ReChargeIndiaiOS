@@ -72,9 +72,7 @@
         
         NSString * versionBuild = [NSString stringWithFormat: @"Version %@", version];
         
-        if (![version isEqualToString: build]) {
-            versionBuild = [NSString stringWithFormat: @"%@ (Build : %@)", versionBuild, build];
-        }
+        versionBuild = [NSString stringWithFormat: @"%@ (Build : %@)", versionBuild, build];
         
         item.title = versionBuild;
         

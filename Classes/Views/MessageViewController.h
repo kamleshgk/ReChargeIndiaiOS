@@ -8,7 +8,7 @@
 
 #import "SLKTextViewController.h"
 #import "ChargingStation.h"
-
+#import "MessageTableViewCell.h"
 
 @protocol MessageDelegate
 
@@ -16,7 +16,7 @@
 
 @end
 
-@interface MessageViewController : SLKTextViewController
+@interface MessageViewController : SLKTextViewController<MessageCellDelegate>
 {
     ChargingStation *station;
     NSMutableArray *commentList;
