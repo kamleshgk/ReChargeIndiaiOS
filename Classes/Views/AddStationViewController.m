@@ -204,7 +204,7 @@
         return;
     }
     
-    NSString *body = [NSString stringWithFormat: @"Hello ReCharge India, \n I would like to create a community charge point. "
+    NSString *body = [NSString stringWithFormat: @"Hello ReChargeIndia, \n I would like to create a community charge point. "
                                                  @"Here are the details. \n\n Email - %@ \n Charge Point Unique Name - %@ \n Address - \n%@ \n\n No. of Charge Points - %@ \n "
                                                  @"Timings - %@ \n Phone - %@ \n Cost - %@ \n\n ChargePoint Compatibility - \n%@ \n\n Additional Information - \n%@",
                                                  [Utils getTrimmedString:emailTextField.text], [Utils getTrimmedString:nameTextField.text],

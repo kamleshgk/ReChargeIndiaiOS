@@ -8,7 +8,7 @@
 
 @interface LeftPanelViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
-      UITableView *leftNavTableView;
+      UITableView *leftNavTableView;     
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *leftNavTableView;

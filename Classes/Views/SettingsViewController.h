@@ -17,7 +17,12 @@
       NSDictionary *settings;
     
       NSMutableArray *selectedTypes;
-    
+      int communityBusinessCount;
+      int mahindraCount;
+      int atherCount;
+      int communityHomeCount;
+      int quickChargeCount;
+      int sunMobilityCount;
 }
 
 @property (weak, nonatomic) id <SettingsViewDelegate> delegate;

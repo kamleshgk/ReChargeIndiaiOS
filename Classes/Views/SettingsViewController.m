@@ -28,6 +28,42 @@
     
     selectedTypes = [[NSMutableArray alloc]init];
     
+    communityBusinessCount = 0;
+    mahindraCount = 0;
+    atherCount = 0;
+    communityHomeCount = 0;
+    quickChargeCount = 0;
+    sunMobilityCount = 0;
+    
+    UserSessionInfo *userSession = [UserSessionInfo sharedUser];
+    for (ChargingStation *station in userSession.stationsCache)
+    {
+        if (CommunityBusiness == [Utils getStationStringToStationType:station.type])
+        {
+            communityBusinessCount++;
+        }
+        else if (CommunityHome == [Utils getStationStringToStationType:station.type])
+        {
+            communityHomeCount++;
+        }
+        else if (Mahindra == [Utils getStationStringToStationType:station.type])
+        {
+            mahindraCount++;
+        }
+        else if (Ather == [Utils getStationStringToStationType:station.type])
+        {
+            atherCount++;
+        }
+        else if (QuickCharge == [Utils getStationStringToStationType:station.type])
+        {
+            quickChargeCount++;
+        }
+        else if (SunMobility == [Utils getStationStringToStationType:station.type])
+        {
+            sunMobilityCount++;
+        }
+    }
+    
     [self setupSettingsArray];
 }
 
@@ -102,9 +138,15 @@
     NSString *revaKey = [Utils getStationTypeToNumberString:Mahindra];
     NSString *QCKey = [Utils getStationTypeToNumberString:QuickCharge];
 
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"Community Points (Residence)", communityHomeKey, @"Mahindra Electric Dealers", revaKey, @"Ather Charge Pods", ather, @"Community Points (Business)", communityBusinessKey, @"DC Quick Charge Stations", QCKey, @"Sun Mobility Quick Interchange Stations", sun,nil];
-
-    settings = dict;
+    NSMutableDictionary *mutableDict = [[NSMutableDictionary alloc]init];
+    [mutableDict setObject:@"Community Points (Residence)" forKey:communityHomeKey];
+    [mutableDict setObject:@"Mahindra Electric Dealers" forKey:revaKey];
+    [mutableDict setObject:@"Ather Charge Pods" forKey:ather];
+    [mutableDict setObject:@"Community Points (Business)" forKey:communityBusinessKey];
+    [mutableDict setObject:@"DC Quick Charge Stations" forKey:QCKey];
+    [mutableDict setObject:@"Sun Mobility Quick Interchange Stations" forKey:sun];
+    
+    settings = mutableDict;
     
     [settingsTableView reloadData];
 }
@@ -124,7 +166,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 46;
+    return 70;
 }
 
 
@@ -171,33 +213,51 @@
     NSString *label = settings[key];
     
     UIImage *settingImage;
-    if (row == 0)
+    NSString *detailCountLabel = @"";
+    if ([key isEqualToString:[Utils getStationTypeToNumberString:CommunityHome]])
     {
         settingImage = [UIImage imageNamed:@"communityHome"];
+        detailCountLabel = [NSString stringWithFormat:@"%d homes have offered charging to the community!", communityHomeCount];
     }
-    else if (row == 1)
+    else if ([key isEqualToString:[Utils getStationTypeToNumberString:Mahindra]])
     {
         settingImage = [UIImage imageNamed:@"mahindra"];
+        detailCountLabel = [NSString stringWithFormat:@"%d dealers of Mahindra offer charging to Mahindra Electric Cars only.", mahindraCount];
     }
-    else if (row == 2)
+    else if ([key isEqualToString:[Utils getStationTypeToNumberString:Ather]])
     {
         settingImage = [UIImage imageNamed:@"ather"];
+        detailCountLabel = [NSString stringWithFormat:@"%d Ather Energy charge pods, offer charging to Ather electric scooters & all EV's. Use the 'Ather Grid' app to use these points.", atherCount];
     }
-    else if (row == 3)
+    else if ([key isEqualToString:[Utils getStationTypeToNumberString:CommunityBusiness]])
     {
         settingImage = [UIImage imageNamed:@"communityBus"];
+        detailCountLabel = [NSString stringWithFormat:@"%d businesses offer charging to all EV's!", communityBusinessCount];
     }
-    else if (row == 4)
+    else if ([key isEqualToString:[Utils getStationTypeToNumberString:QuickCharge]])
     {
         settingImage = [UIImage imageNamed:@"fastCharger"];
+        detailCountLabel = [NSString stringWithFormat:@"%d DC Quick charge stations, that offers rapid charging of electric cars at > 10 kw!", quickChargeCount];
     }
-    else if (row == 5)
+    else if ([key isEqualToString:[Utils getStationTypeToNumberString:SunMobility]])
     {
         settingImage = [UIImage imageNamed:@"sun"];
+        if (sunMobilityCount == 1)
+        {
+            detailCountLabel = [NSString stringWithFormat:@"%d Sun Mobility quick interchange station for battery swapping!", sunMobilityCount];
+        }
+        else
+        {
+            detailCountLabel = [NSString stringWithFormat:@"%d Sun Mobility quick interchange stations for battery swapping!", sunMobilityCount];
+        }
     }
     
+    cell.textLabel.numberOfLines = 0;
     cell.textLabel.text = label;
+    cell.detailTextLabel.numberOfLines = 0;
+    cell.detailTextLabel.text = detailCountLabel;
     cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:13];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:11];
     cell.imageView.image = settingImage;
     
     BOOL found = NO;
