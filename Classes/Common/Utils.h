@@ -11,8 +11,8 @@
 
 #define		CHARGING_STATION_ERRORDOMAIN			@"com.recharge.station.ErrorDomain"
 #define		CHARGING_STATION_MARKER_DISTANCE		@"200000"  //200 Kilometers (200 Meters)
-#define     PROD_DB_PATH                            @"https://drive.google.com/uc?export=download&id=0B474e0D1-uDrUWZieTB5MUh0VVk"
-#define     STAGE_DB_PATH                           @"https://drive.google.com/uc?export=download&id=1vCEXffSilU3GSN-rky3zYr4IKxqanfYc"
+#define     STAGE_DB_PATH                           @"https://drive.google.com/uc?export=download&id=0B474e0D1-uDrUWZieTB5MUh0VVk"
+#define     PROD_DB_PATH                            @"https://drive.google.com/uc?export=download&id=1vCEXffSilU3GSN-rky3zYr4IKxqanfYc"
 
 typedef enum {
     CommunityBusiness = 1,

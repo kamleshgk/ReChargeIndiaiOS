@@ -18,7 +18,7 @@
     UserSessionInfo *userSession = [UserSessionInfo sharedUser];
     NSURLSession *session = [NSURLSession sharedSession];
     
-    [[session dataTaskWithURL:[NSURL URLWithString:STAGE_DB_PATH]
+    [[session dataTaskWithURL:[NSURL URLWithString:PROD_DB_PATH]
             completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             if (error == nil)
             {
@@ -66,7 +66,7 @@
     UserSessionInfo *userSession = [UserSessionInfo sharedUser];
     NSURLSession *session = [NSURLSession sharedSession];
     
-    [[session dataTaskWithURL:[NSURL URLWithString:STAGE_DB_PATH]
+    [[session dataTaskWithURL:[NSURL URLWithString:PROD_DB_PATH]
         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
          if (error == nil)
          {

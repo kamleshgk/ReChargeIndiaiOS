@@ -904,8 +904,8 @@
 				LastUpgradeCheck = 0710;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = 8HKBCE62TS;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = RVYSQC2BAL;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -1119,11 +1119,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: HyTech Professionals India Pvt Ltd (RVYSQC2BAL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: HyTech Professionals India Pvt Ltd (RVYSQC2BAL)";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = 8HKBCE62TS;
+				DEVELOPMENT_TEAM = RVYSQC2BAL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1147,9 +1147,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hytechpro.recharge;
 				PRODUCT_NAME = ReChargeIndia;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "cefdd901-fe31-45f0-804f-fa5d4dd1d48c";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = DamishDistri;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
@@ -1166,11 +1166,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: HyTech Professionals India Pvt Ltd (RVYSQC2BAL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: HyTech Professionals India Pvt Ltd (RVYSQC2BAL)";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = YES;
-				DEVELOPMENT_TEAM = 8HKBCE62TS;
+				DEVELOPMENT_TEAM = RVYSQC2BAL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1192,9 +1192,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hytechpro.recharge;
 				PRODUCT_NAME = ReChargeIndia;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "cefdd901-fe31-45f0-804f-fa5d4dd1d48c";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = DamishDistri;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";

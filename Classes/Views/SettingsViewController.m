@@ -144,7 +144,10 @@
     [mutableDict setObject:@"Ather Charge Pods" forKey:ather];
     [mutableDict setObject:@"Community Points (Business)" forKey:communityBusinessKey];
     [mutableDict setObject:@"DC Quick Charge Stations" forKey:QCKey];
-    [mutableDict setObject:@"Sun Mobility Quick Interchange Stations" forKey:sun];
+    if (sunMobilityCount > 0)
+    {
+        [mutableDict setObject:@"Sun Mobility Quick Interchange Stations" forKey:sun];
+    }
     
     settings = mutableDict;
     
@@ -227,7 +230,7 @@
     else if ([key isEqualToString:[Utils getStationTypeToNumberString:Ather]])
     {
         settingImage = [UIImage imageNamed:@"ather"];
-        detailCountLabel = [NSString stringWithFormat:@"%d Ather Energy charge pods, offer charging to Ather electric scooters & all EV's. Use the 'Ather Grid' app to use these points.", atherCount];
+        detailCountLabel = [NSString stringWithFormat:@"%d Ather charge pods for Ather electric scooters & all EV's. Use the 'Ather Grid' app to use these points.", atherCount];
     }
     else if ([key isEqualToString:[Utils getStationTypeToNumberString:CommunityBusiness]])
     {
@@ -237,7 +240,7 @@
     else if ([key isEqualToString:[Utils getStationTypeToNumberString:QuickCharge]])
     {
         settingImage = [UIImage imageNamed:@"fastCharger"];
-        detailCountLabel = [NSString stringWithFormat:@"%d DC Quick charge stations, that offers rapid charging of electric cars at > 10 kw!", quickChargeCount];
+        detailCountLabel = [NSString stringWithFormat:@"%d DC Quick charge stations, that offers rapid charging of electric cars from 7 kw to upto 20 kw!", quickChargeCount];
     }
     else if ([key isEqualToString:[Utils getStationTypeToNumberString:SunMobility]])
     {
@@ -256,8 +259,8 @@
     cell.textLabel.text = label;
     cell.detailTextLabel.numberOfLines = 0;
     cell.detailTextLabel.text = detailCountLabel;
-    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:13];
-    cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:11];
+    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:12];
     cell.imageView.image = settingImage;
     
     BOOL found = NO;
