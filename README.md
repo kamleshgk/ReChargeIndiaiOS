@@ -5,8 +5,8 @@ https://itunes.apple.com/us/app/re-charge/id1088549964?mt=8
 The app uses Google Map SDK, Location Services, REST APIs, SqlLite Database. 
 App supports offline use, without internet connection.
 
-The new version uses Firebase API's which ensured cloud storage - which meant more features like comments, photos, notifications were now possible.
-
+The new version uses Firebase API's which - which meant more 'online' features like real time comments comments, photos, notifications etc.
+Also a Firebase Cloud function is used to trigger emails to admins on Database entry.
 
 ![alt text](https://image.ibb.co/iUQC5f/tour1.png)
 ![alt text](https://image.ibb.co/gPQC5f/tour4.png)
