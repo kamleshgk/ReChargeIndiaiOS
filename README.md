@@ -1,11 +1,16 @@
-# iOSStarterTemplate
+iOS app which enables users to find nearest Electric Vehicle chargers in India.
+Link : 
+https://itunes.apple.com/us/app/re-charge/id1088549964?mt=8
 
-API
-===
+The app uses Google Map SDK, Location Services, REST APIs, SqlLite Database. 
+App supports offline use, without internet connection.
 
-Objective C based starter template used for our iOS projects. 
+The new version uses Firebase API's which ensured cloud storage - which meant more features like comments, photos, notifications were now possible.
 
-A custom version of viper architecture ensures separation of concerns and high maintainability 
+
+![alt text](https://image.ibb.co/iUQC5f/tour1.png)
+![alt text](https://image.ibb.co/gPQC5f/tour4.png)
+
 
 ********************************************************************************
 The codebase is organized into the following folders
